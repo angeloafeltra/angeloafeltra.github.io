@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--  il tag precedente è utilizzato per rendere gli item responsive-->
-    <link rel="stylesheet" href="./CSS/styles.css" />
+
+    <link rel="stylesheet" href="CSS/home_styles.css"/>
+    <link rel="stylesheet" href="CSS/navbar_style.css" />
+    <link rel="stylesheet" href="CSS/footer_style.css" />
+
     <link rel="icon" href="./Immagini/logo.svg">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Kristi" />
     <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Home</title>
 </head>
-<body onScroll="coloreNavBar();" onresize="restoreDesktopMenu();">
+<body onScroll="coloreNavBar();" onresize="restoreDesktopMenu(); setSizeContainerShowRoom();" onload="setSizeContainerShowRoom();">
 
     <header>
         <nav class="navbar">
@@ -37,129 +40,149 @@
         </nav>
     </header>
 
-    <div class="main">
-        <div class="section" id="section1">
-
-            <div class="over-text">
+    <div  class="main_img">
+        <div class="over-text">
                 <span class="logo_grande">
                     <img src="./Immagini/logo.svg" style="width: 100%; height: 100%;">
                 </span>
-                <span class="frase_space">
+            <span class="frase_space">
                     <p class="frase">
                         Infissi su misura, qualità che si insinua in ogni dettaglio della tua vita quotidiana
                     </p>
                 </span>
-            </div>
-
         </div>
-        <div class="section" id="section2">
-            <div class="bussines_block" style="background-color: #770404;">
+    </div>
+
+    <div  class="sezione_bussines_block">
+        <div class="bussines_block" style="background-color: #770404;">
                 <span class="icon_bussines_space">
-                    <img src="./Immagini/SVG/Finestra.svg" alt="Finesta" style="width:auto; height: auto">
+                    <img src="./Immagini/SVG/Finestra.svg" alt="Finesta" style="width:100%; height: 100%">
                 </span>
 
-                <span  class="bussines_description_space">
+            <span  class="bussines_description_space">
                     <p class="descrizioneBussiness">
                        Immergiti nell'arte dell'eleganza e dell'eccellenza con la nostra straordinaria collezione di infissi. Ogni dettaglio è un capolavoro di design, dove la forma incontra la funzione in un equilibrio perfetto.
                     </p>
                 </span>
-            </div>
-            <div class="bussines_block" style="background-color: #191A1A;">
+        </div>
+        <div class="bussines_block" style="background-color: #191A1A;">
                 <span class="icon_bussines_space">
-                    <img src="./Immagini/SVG/Porta.svg" alt="Porta" style="width:auto; height: auto;">
+                    <img src="./Immagini/SVG/Porta.svg" alt="Porta" style="width:100%; height: 100%;">
                 </span>
-                <span class="bussines_description_space">
+            <span class="bussines_description_space">
                     <p class="descrizioneBussiness">
                        Esplora il culmine dell'eleganza e dell'eccellenza attraverso la nostra superba collezione di porte. Ogni elemento è una sinfonia di design, in cui estetica e funzionalità convergono in una fusione armoniosa.
                     </p>
                 </span>
-            </div>
         </div>
-        <div class="section" id="section3">
+    </div>
 
-            <div class="content">
-                <h1 class="header_style">CHI SIAMO</h1>
-                <p class="body_style">Entra con fiducia nel nostro universo, dove la nostra storia è intessuta di anni di esperienza e di un impegno incessante per l'eccellenza.
-                    Oltre ad essere fornitori di infissi, siamo artigiani appassionati che plasmano il tuo spazio abitativo con cura e maestria.
-                    Naviga attraverso la sezione 'Chi Siamo' per scoprire il nostro patrimonio, i valori che ci guidano e la forza trainante dietro ogni prodotto che produciamo.
-                    La tua casa merita il meglio, e noi siamo qui per offrirtelo. Benvenuto nel cuore di Inda.</p>
-                <div class="list_parole_chiavi">
-                    <p class="parola_chiave">Infissi</p>
-                    <span class="circle"></span>
-                    <p class="parola_chiave">Porte</p>
-                    <span class="circle"></span>
-                    <p class="parola_chiave">Serramenti</p>
-                </div>
-                <button class="btn_chisiamo">LA NOSTRA STORIA</button>
+    <div  class="section" id="chiSiamo" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+                                 background-size: cover;">
+        <div class="descrizione_sezione">
 
+            <h1 class="header_style">CHI SIAMO</h1>
+            <p class="body_style">Entra con fiducia nel nostro universo, dove la nostra storia è intessuta di anni di esperienza e di un impegno incessante per l'eccellenza.
+                Oltre ad essere fornitori di infissi, siamo artigiani appassionati che plasmano il tuo spazio abitativo con cura e maestria.
+                Naviga attraverso la sezione 'Chi Siamo' per scoprire il nostro patrimonio, i valori che ci guidano e la forza trainante dietro ogni prodotto che produciamo.
+                La tua casa merita il meglio, e noi siamo qui per offrirtelo. Benvenuto nel cuore di Inda.</p>
+            <div class="list_parole_chiavi">
+                <p class="parola_chiave">Infissi</p>
+                <span class="circle"></span>
+                <p class="parola_chiave">Porte</p>
+                <span class="circle"></span>
+                <p class="parola_chiave">Serramenti</p>
             </div>
-            <div class="img_content">
-                <img src="./Immagini/Background/background_13.jpg" style="width: 100%; height: auto">
-            </div>
-
+            <button class="btn_chisiamo">LA NOSTRA STORIA</button>
 
         </div>
-        <div class="section" id="section4">
-            <div class="img_content">
-                <img src="./Immagini/Background/background_14.jpg" style="width: 100%; height: auto">
+        <div class="immagine_sezione">
+            <div class="img_bg"></div>
+            <div class="img_container">
+                <img src="./Immagini/Background/background_13.jpg" alt="ChiSiamo_Img" style="width: 100%; height: 100%">
             </div>
-            <div class="content">
-                <h1 class="header_style">IL NOSTRO<br>SHOW ROOM</h1>
-                <p  class="body_style">Benvenuto nell'epicentro del nostro mondo di eleganza e innovazione: il nostro esclusivo Showroom.
-                    Immagina un luogo dove il design prende vita e dove ogni finestra e porta diventano un'opera d'arte funzionale.
-                    Nel nostro Showroom, ti invitiamo a esplorare un panorama avvincente di stili,
-                    materiali e dettagli impeccabili che trasformano le abitazioni in spazi straordinari.
-                    Il nostro spazio espositivo è concepito per ispirare le tue scelte, offrendoti la possibilità di toccare con mano la qualità dei materiali e di visualizzare
-                    l'impatto visivo dei nostri infissi in ambienti reali. Entra nel nostro mondo e lasciati guidare dalla passione per l'eccellenza
-                    che caratterizza ogni dettaglio dei nostri prodotti.
-                </p>
-                <button class="btn_chisiamo">ESPLORA IL NOSTRO SHOWROOM</button>
-            </div>
+        </div>
+    </div>
 
+    <div  class="section" id="showroom">
+        <div class="immagine_sezione" onload="setSizeContainerShowRoom();">
+            <img src="./Immagini/Background/background_14.jpg" style="width: 100%; height: 100%">
+        </div>
+        <div class="descrizione_sezione">
+            <h1 class="header_style">IL NOSTRO<br>SHOW ROOM</h1>
+            <p  class="body_style">Benvenuto nell'epicentro del nostro mondo di eleganza e innovazione: il nostro esclusivo Showroom.
+                Immagina un luogo dove il design prende vita e dove ogni finestra e porta diventano un'opera d'arte funzionale.
+                Nel nostro Showroom, ti invitiamo a esplorare un panorama avvincente di stili,
+                materiali e dettagli impeccabili che trasformano le abitazioni in spazi straordinari.
+                Il nostro spazio espositivo è concepito per ispirare le tue scelte, offrendoti la possibilità di toccare con mano la qualità dei materiali e di visualizzare
+                l'impatto visivo dei nostri infissi in ambienti reali. Entra nel nostro mondo e lasciati guidare dalla passione per l'eccellenza
+                che caratterizza ogni dettaglio dei nostri prodotti.
+            </p>
+            <button class="btn_showroom">ESPLORA IL NOSTRO SHOWROOM</button>
+        </div>
+    </div>
+
+    <div  class="section" id="prodotti" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+                                 background-size: cover;">
+        <div class="descrizione_sezione">
+
+            <h1 class="header_style">I NOSTRI PRODOTTI</h1>
+            <p class="body_style">Esplora la nostra esclusiva gamma di Prodotti, progettati per trasformare la tua casa in uno spazio elegante, sicuro e confortevole.
+                Dalla finestra alla porta, ogni nostro prodotto è realizzato con cura artigianale e materiali di alta qualità, garantendo durata,
+                efficienza energetica e stile senza compromessi.
+                Scopri la collezione completa dei nostri Prodotti e porta il comfort e lo stile nella tua casa oggi.</p>
+            <button class="btn_prodotti">SCOPRI I NOSTRI PRODOTTI</button>
 
         </div>
-        <div class="section" id="section5">
-
-            <div class="content">
-                <h1 class="header_style">I NOSTRI<br>PRODOTTI</h1>
-                <p class="body_style">Esplora la nostra esclusiva gamma di Prodotti, progettati per trasformare la tua casa in uno spazio elegante, sicuro e confortevole.
-                    Dalla finestra alla porta, ogni nostro prodotto è realizzato con cura artigianale e materiali di alta qualità, garantendo durata,
-                    efficienza energetica e stile senza compromessi.
-                    Scopri la collezione completa dei nostri Prodotti e porta il comfort e lo stile nella tua casa oggi
-                </p>
-                <button class="btn_chisiamo">SCOPRI I NOSTRI PRODOTTI</button>
-
-            </div>
-            <div class="img_content">
-                <img src="./Immagini/Background/background_15.jpg" style="width: 100%; height: auto">
+        <div class="immagine_sezione">
+            <div class="img_bg1"></div>
+            <div class="img_bg2"></div>
+            <div class="img_container">
+                <img src="./Immagini/Background/background_15.jpg" alt="ChiSiamo_Img" style="width: 100%; height: 100%">
             </div>
         </div>
     </div>
 
 
-    <footer style="width: 100%;  background-color: #F0B357; padding: 50px 10% 50px 10%">
-        <h2 class="footer-header">Dove Siamo</h2>
-        <p class="footer-body">Show Room - Sant'Antonio Abate (NA)</p>
-        <p class="footer-body">Sede Operativa - Sant'Antonio Abate (NA)</p>
-        <div style="margin-top: 30px; width:1px; height: 1px"></div>
-        <h2 class="footer-header">Recapiti</h2>
-        <p class="footer-body">+39 3394487294</p>
-        <p class="footer-body">indainfissi@gmail.com</p>
-        <div class="social_link">
-            <div class="social">
-                <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%; color: white">
+    <footer>
+        <div class="info_container">
+            <h1 class="footer-header">Dove Siamo</h1>
+            <p class="footer-body">Show Room - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
+            <p class="footer-body">Sede Operativa - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
+            <div class="space"></div>
+            <h1 class="footer-header">Recapiti</h1>
+            <p class="footer-body">+39 3394487294</p>
+            <p class="footer-body">indainfissi@gmail.com</p>
+            <!--<button class="contattaci_footer">Contattaci</button>-->
+        </div>
+
+        <div class="end_container">
+            <div class="social_container">
+                <div class="social">
+                    <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%;">
+                </div>
+                <div class="social">
+                    <img src="Immagini/SVG/instagram.svg" alt="instagram_logo" style="width: 100%; height: 100%;">
+                </div>
+                <div class="social">
+                    <img src="Immagini/SVG/linkedin.svg" alt="linkedin_logo" style="width: 100%; height: 100%;">
+                </div>
             </div>
-            <div class="social">
-                <img src="Immagini/SVG/instagram.svg" alt="instagram_logo" style="width: 100%; height: 100%; color: white">
-            </div>
-            <div class="social">
-                <img src="Immagini/SVG/linkedin.svg" alt="linkedin_logo" style="width: 100%; height: 100%; color: white">
+
+            <div class="end_footer_container">
+                <h1  style="font-family: Kristi;">Inda <span>spa</span></h1>
+                <p>P.Iva 02607220908</p>
+                <p>Privacy e Cookies Policy</p>
+                <p>Design Angelo Afeltra</p>
             </div>
         </div>
+
+
+
     </footer>
 
 </body>
-<script src="./Script/index_script.js">
-
-</script>
+<script src="./Script/navbar_effect.js"></script>
+<script src="./Script/footer_effect.js"></script>
+<script src="./Script/home_script.js"></script>
 </html>
