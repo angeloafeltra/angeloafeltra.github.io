@@ -1,0 +1,659 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: sans-serif;
+    background-color: #EDEAEA;
+    height: 100%;
+    margin: 0;
+    margin-bottom: 500px;
+}
+
+/* || Main Image Element Style */
+    .main_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_9.jpg") no-repeat center center fixed;
+    }
+
+    .over-text{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 100px auto 0 auto;
+        animation: fadeIn 1.5s ease;
+        width: 70%;
+        height: 40%;
+    }
+
+    .logo_grande{
+        width: 65%;
+        height: 30%;
+    }
+
+    .frase_space{
+        width: 100%;
+        height: 50%;
+        margin-top: 10px;
+        border-top: solid #F0B357;
+        border-width: 3px;
+    }
+
+    .over-text span{
+        margin: 0 auto 0 auto;
+    }
+
+    .frase{
+        font-family: Kristi;
+        font-size: 26px;
+        text-align: center;
+        color: #F0B357;
+    }
+
+    @media (min-width: 600px) {
+        .frase_space{
+            width: 90%;
+        }
+
+        .frase{
+            font-size: 35px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .frase_space{
+            width: 80%;
+        }
+
+        .frase{
+            font-size: 40px;
+        }
+    }
+/* ... */
+
+
+
+
+
+/* || BussinessBlock Element Style */
+    .sezione_bussines_block{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .bussines_block{
+        flex-basis: 100%;
+        padding: 50px 10px 50px 10px;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .descrizioneBussiness{
+        font-family: Montserrat;
+        font-weight: bold;
+        text-align: center;
+        font-size: 17px;
+        color: #F0B357;
+        animation: fadeIn 1.5s ease;
+    }
+
+    .icon_bussines_space{
+        height: 80px;
+        width: 80px;
+        margin: 0 auto 1.5rem auto;
+        animation: fadeIn 1.5s ease;
+    }
+
+    .bussines_description_space{
+        width:70%;
+        margin: 0 auto 0 auto
+    }
+
+    @media (min-width: 600px){
+        .sezione_bussines_block{
+            flex-wrap: nowrap;
+        }
+
+        .bussines_block{
+            flex-basis: 55%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .bussines_block {
+            padding: 80px 20px 80px 20px;
+        }
+
+        .descrizioneBussiness {
+            font-size: 18px;
+        }
+
+        .icon_bussines_space {
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+    @media (min-width: 1920px){
+        .bussines_block{
+            padding: 110px 50px 110px 50px;
+        }
+
+        .descrizioneBussiness{
+            font-size: 22px;
+        }
+
+        .icon_bussines_space{
+            height: 100px;
+            width: 100px;
+        }
+
+    }
+/* ... */
+
+
+
+
+
+/* ||  Section1 Element Style */
+
+    #chiSiamo{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15% 7% 15% 7%;
+    }
+
+    #chiSiamo .descrizione_sezione{
+        flex-basis: 100%;
+        align-self: stretch;
+        height: 100%;
+        /*background-color: green;*/
+    }
+
+    #chiSiamo .immagine_sezione{
+        display: inline-block;
+        flex-basis: 100%;
+        /*background-color: yellow;*/
+        align-self: stretch;
+        position: relative;
+        height: 400px;
+    }
+
+    #chiSiamo .immagine_sezione .img_bg{
+        position:absolute;
+        background:rgba(119,4,4,1);
+        width: 75%;
+        height: 75%; top:0; left:0;
+    }
+
+    #chiSiamo .immagine_sezione .img_container{
+        position:absolute;
+        /*background:red;*/
+        width: 93%;
+        height: 95%;
+        top:5%; left:7%;
+    }
+
+    #chiSiamo .descrizione_sezione .header_style{
+        font-family: 'Alfa Slab One';
+        font-size: 40px;
+        color: white;
+        font-weight: lighter;
+    }
+
+    #chiSiamo .descrizione_sezione .body_style{
+        font-family: 'Montserrat';
+        font-size: 18px;
+        color: white;
+    }
+
+    #chiSiamo .descrizione_sezione .list_parole_chiavi{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 5px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #chiSiamo .descrizione_sezione .list_parole_chiavi .parola_chiave{
+        font-family: Montserrat;
+        font-weight: bolder;
+        font-size: 18px;
+        color: #FBFBFB;
+    }
+
+    #chiSiamo .descrizione_sezione .list_parole_chiavi .circle{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #D9D9D9;
+        border-radius: 5px;
+    }
+
+    #chiSiamo .descrizione_sezione .btn_chisiamo{
+        display: block;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        background-color: rgba(119,4,4,1);
+        padding: 10px 30px 10px 30px;
+        margin: 20px auto 20px auto;
+        border: none;
+        cursor:pointer;
+    }
+
+    @media (min-width: 600px){
+
+        #chiSiamo {
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15% 7% 15% 7%;
+        }
+
+        #chiSiamo .descrizione_sezione{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #chiSiamo .immagine_sezione{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
+            height: 450px;
+
+        }
+
+    }
+
+    @media (min-width: 1024px){
+
+        #chiSiamo {
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 5% 10% 5% 10%;
+        }
+
+        #chiSiamo .descrizione_sezione{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #chiSiamo .immagine_sezione{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+
+    }
+
+    @media (min-width: 1920px){
+
+        #chiSiamo {
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 5% 12% 5% 12%;
+        }
+
+        #chiSiamo .descrizione_sezione{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #chiSiamo .immagine_sezione{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #chiSiamo .descrizione_sezione .header_style{
+            font-size: 50px;
+        }
+
+        #chiSiamo .descrizione_sezione .body_style{
+            font-size: 24px;
+        }
+
+        #chiSiamo .descrizione_sezione .list_parole_chiavi .parola_chiave{
+            font-size: 26px;
+        }
+
+        #chiSiamo .descrizione_sezione .list_parole_chiavi .circle{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #D9D9D9;
+            border-radius: 5px;
+        }
+
+        #chiSiamo .descrizione_sezione .btn_chisiamo{
+            font-size: 22px;
+        }
+
+    }
+
+/* ... */
+
+
+
+
+
+/* ||  Section2 Element Style */
+
+    #showroom{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0px;
+        padding: 0% 0% 0% 0%;
+    }
+
+    #showroom .immagine_sezione{
+        display: inline-block;
+        flex-basis: 100%;
+        align-self: stretch;
+        height: 400px;
+    }
+
+    #showroom .descrizione_sezione{
+        flex-basis: 100%;
+        align-self: stretch;
+        height: 100%;
+        background-color: #770404;
+        padding: 7% 7% 7% 7%;
+    }
+
+    #showroom .descrizione_sezione .header_style{
+        font-family: 'Alfa Slab One';
+        font-size: 40px;
+        color: white;
+        font-weight: lighter;
+    }
+
+    #showroom .descrizione_sezione .body_style{
+        font-family: 'Montserrat';
+        font-size: 18px;
+        color: white;
+    }
+
+    #showroom .descrizione_sezione .btn_showroom{
+        display: block;
+        font-family: 'Montserrat';
+        font-size: 16px;
+        color: #770404;
+        font-weight: bold;
+        background-color: rgba(255,255,255,1);
+        padding: 15px 10px 15px 10px;
+        margin: 20px auto 20px auto;
+        border: none;
+        cursor:pointer;
+    }
+
+    @media (min-width: 600px){
+
+        #showroom .descrizione_sezione{
+            flex-basis: 55%;
+        }
+
+        #showroom .immagine_sezione{
+            display: inline-block;
+            flex-basis: 45%;
+            align-self: center;
+
+        }
+
+        #showroom .descrizione_sezione .header_style{
+            font-size: 36px;
+        }
+
+        #showroom .descrizione_sezione .body_style{
+            font-size: 18px;
+        }
+
+    }
+
+    @media (min-width: 1024px){
+
+        #showroom .descrizione_sezione{
+            flex-basis: 55%;
+            padding: 5% 5% 5% 5%;
+        }
+
+        #showroom .immagine_sezione{
+            display: inline-block;
+            flex-basis: 45%;
+            align-self: center;
+
+        }
+
+        #showroom .descrizione_sezione .header_style{
+            font-size: 40px;
+        }
+
+        #showroom .descrizione_sezione .body_style{
+            font-size: 20px;
+        }
+
+    }
+
+    @media (min-width: 1920px){
+
+        #showroom .descrizione_sezione{
+            flex-basis: 55%;
+            padding: 3% 5% 3% 5%;
+        }
+
+        #showroom .immagine_sezione{
+            display: inline-block;
+            flex-basis: 45%;
+            align-self: center;
+
+        }
+
+        #showroom .descrizione_sezione .header_style{
+            font-size: 44px;
+        }
+
+        #showroom .descrizione_sezione .body_style{
+            font-size: 24px;
+        }
+
+        #showroom .descrizione_sezione .btn_showroom{
+            font-size: 20px;
+            padding: 15px 30px 15px 30px;
+        }
+
+    }
+
+/* ... */
+
+
+
+
+
+/* ||  Section3 Element Style */
+
+    #prodotti{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15% 7% 15% 7%;
+    }
+
+    #prodotti .descrizione_sezione{
+        flex-basis: 100%;
+        align-self: stretch;
+        height: 100%;
+        /*background-color: green;*/
+    }
+
+    #prodotti .immagine_sezione{
+        display: inline-block;
+        flex-basis: 100%;
+        /*background-color: yellow;*/
+        align-self: stretch;
+        position: relative;
+        height: 400px;
+    }
+
+    #prodotti .immagine_sezione .img_bg1{
+        position:absolute;
+        background:rgba(119,4,4,1);
+        width: 75%;
+        height: 75%;
+        top:0;
+        left:0;
+        z-index: 1;
+    }
+
+    #prodotti .immagine_sezione .img_bg2{
+        position:absolute;
+        background:rgba(119,4,4,1);
+        width: 75%;
+        height: 75%;
+        bottom:0;
+        right: 0;
+        z-index: 2;
+    }
+
+    #prodotti .immagine_sezione .img_container{
+        position:absolute;
+        width: 86%;
+        height: 90%;
+        top:5%;
+        bottom:5%;
+        left:7%;
+        right: 7%;
+        z-index: 3;
+    }
+
+    #prodotti .descrizione_sezione .header_style{
+        font-family: 'Alfa Slab One';
+        font-size: 40px;
+        color: white;
+        font-weight: lighter;
+    }
+
+    #prodotti .descrizione_sezione .body_style{
+        font-family: 'Montserrat';
+        font-size: 18px;
+        color: white;
+    }
+
+    #prodotti .descrizione_sezione .btn_prodotti{
+        display: block;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        background-color: rgba(119,4,4,1);
+        padding: 10px 20px 10px 20px;
+        margin: 20px auto 20px auto;
+        border: none;
+        cursor:pointer;
+    }
+
+    @media (min-width: 600px){
+
+        #prodotti {
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15% 7% 15% 7%;
+        }
+
+        #prodotti .descrizione_sezione{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #prodotti .immagine_sezione{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
+            height: 450px;
+        }
+
+    }
+
+    @media (min-width: 1024px){
+
+        #prodotti {
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 5% 10% 5% 10%;
+        }
+
+        #prodotti .descrizione_sezione{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #prodotti .immagine_sezione{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+    }
+
+    @media (min-width: 1920px){
+
+        #prodotti {
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 5% 12% 5% 12%;
+        }
+
+        #prodotti .descrizione_sezione{
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #prodotti .immagine_sezione{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
+        }
+
+        #prodotti .descrizione_sezione .header_style{
+            font-size: 50px;
+        }
+
+        #prodotti .descrizione_sezione .body_style{
+            font-size: 24px;
+        }
+
+        #prodotti .descrizione_sezione .btn_prodotti{
+            font-size: 22px;
+        }
+
+    }
+
+/* ... */
+
+
+
+
+
+
+
+
+
