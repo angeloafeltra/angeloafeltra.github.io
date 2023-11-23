@@ -1,11 +1,11 @@
 
 .swipe_up_animation_start{
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(3vh);
 }
 
 .swipe_up_animation_end{
-    transform: translateY(0px);
+    transform: translateY(0vh);
     opacity: 1;
     transition: transform 1.5s ease, opacity 2s ease;
 }
@@ -27,11 +27,11 @@
 
 .swipe_right_animation_start{
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10%);
 }
 
 .swipe_right_animation_end{
-    transform: translateX(0px);
+    transform: translateX(0%);
     opacity: 1;
     transition: transform 1.5s ease, opacity 2s ease;
 }
@@ -40,11 +40,11 @@
 
 .entrate_right_animation_start{
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(5%);
 }
 
 .entrate_right_animation_end{
-    transform: translateX(0px);
+    transform: translateX(0%);
     opacity: 1;
     transition: transform 2s ease, opacity 2s ease;
 }
@@ -54,11 +54,11 @@
 
 .entrate_left_animation_start{
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-5%);
 }
 
 .entrate_left_animation_end{
-    transform: translateX(0px);
+    transform: translateX(0%);
     opacity: 1;
     transition: transform 2s ease, opacity 2s ease;
 }
