@@ -1,0 +1,67 @@
+
+.swipe_up_animation_start{
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.swipe_up_animation_end{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: transform 1.5s ease, opacity 2s ease;
+}
+
+
+
+
+.comparsa_graduale_start{
+    opacity: 0;
+}
+
+.comparsa_graduale_end{
+    opacity: 1;
+    transition: opacity 2.4s ease;
+}
+
+
+
+
+.swipe_right_animation_start{
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.swipe_right_animation_end{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 1.5s ease, opacity 2s ease;
+}
+
+
+
+.entrate_right_animation_start{
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.entrate_right_animation_end{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+
+
+
+.entrate_left_animation_start{
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.entrate_left_animation_end{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+
+
