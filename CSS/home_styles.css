@@ -9,13 +9,14 @@ body, html {
     background-color: #EDEAEA;
     height: 100%;
     margin: 0;
-    margin-bottom: 500px;
+    overscroll-behavior-y: none;
 }
 
 
 
 
 /* || Main Image Element Style */
+
     .main_img{
         display: flex;
         align-items: center;
@@ -83,6 +84,7 @@ body, html {
             font-size: 40px;
         }
     }
+
 /* ... */
 
 
@@ -90,6 +92,7 @@ body, html {
 
 
 /* || BussinessBlock Element Style */
+
     .sezione_bussines_block{
         display: flex;
         flex-wrap: wrap;
@@ -166,6 +169,7 @@ body, html {
         }
 
     }
+
 /* ... */
 
 
@@ -610,8 +614,6 @@ body, html {
         color: rgba(119,4,4,1);
         background-color: white;
     }
-
-
 
     @media (min-width: 600px){
 

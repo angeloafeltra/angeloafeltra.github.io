@@ -9,16 +9,17 @@ body, html {
     background-color: #EDEAEA;
     height: 100%;
     margin: 0;
-    margin-bottom: 500px;
+    overscroll-behavior-y: none;
 }
 
 /* || Main Image Element Style */
+
     .main_img{
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center;
         background-size: cover;
         text-align: center;
         padding-right: 10%;
@@ -55,6 +56,22 @@ body, html {
         }
 
     }
+
+    @media (min-width: 1920px) {
+
+        .main_img{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
+            background-size: cover;
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .frase{
+            font-size: 28px;
+        }
+
+    }
+
 /* ... */
 
 
@@ -62,27 +79,25 @@ body, html {
 
 /* || Section1 Element Style */
 
-@media (min-width: 1024px) {
-
     .info_preventivo{
         background-color: #D9D9D9;
         width: 100%;
         display: flex;
-        flex-wrap: nowrap;
-        align-items: stretch;
+        flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
-        padding: 5% 10% 5% 10%;
+        padding: 5% 0% 0% 0%;
     }
 
     .descrizione_sezione{
-        flex-basis: 50%;
-        padding: 10px;
+        flex-basis: 100%;
+        padding: 15px;
         /*border: black solid;*/
     }
 
     .descrizione_sezione h1{
         font-family: 'Alfa Slab One';
-        font-size: 40px;
+        font-size: 30px;
         font-weight: lighter;
         margin-bottom: 5%;
         color: black;
@@ -90,15 +105,15 @@ body, html {
 
     .descrizione_sezione p{
         font-family: 'Montserrat';
-        font-size: 20px;
+        font-size: 18px;
         font-weight: lighter;
         margin-bottom: 5%;
         color: black;
     }
 
     .info{
-        flex-basis: 40%;
-        padding: 4% 1% 4% 1%;
+        flex-basis: 100%;
+        padding: 4% 3% 4% 3%;
         /*border: black solid;*/
         background-color: #770404;
     }
@@ -152,7 +167,84 @@ body, html {
         font-size: 14px;
     }
 
-}
+    @media (min-width: 600px) {
+
+        .info_preventivo{
+            flex-wrap: nowrap;
+            align-items: stretch;
+            padding: 5% 2% 5% 2%;
+        }
+
+        .descrizione_sezione{
+            flex-basis: 55%;
+            padding: 10px;
+            /*border: black solid;*/
+        }
+
+        .info{
+            flex-basis: 40%;
+            padding: 4% 1% 4% 1%;
+            /*border: black solid;*/
+            background-color: #770404;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .info_preventivo{
+            flex-wrap: nowrap;
+            align-items: stretch;
+            padding: 5% 10% 5% 10%;
+        }
+
+        .descrizione_sezione{
+            flex-basis: 50%;
+            padding: 10px;
+            /*border: black solid;*/
+        }
+
+        .info{
+            flex-basis: 40%;
+            padding: 4% 1% 4% 1%;
+            /*border: black solid;*/
+            background-color: #770404;
+        }
+
+
+
+    }
+
+    @media (min-width: 1920px) {
+
+        .info_preventivo{
+            flex-wrap: nowrap;
+            align-items: stretch;
+            padding: 5% 10% 5% 10%;
+        }
+
+        .descrizione_sezione{
+            flex-basis: 50%;
+            padding: 10px;
+            /*border: black solid;*/
+        }
+
+        .info{
+            flex-basis: 40%;
+            padding: 4% 1% 4% 1%;
+            /*border: black solid;*/
+            background-color: #770404;
+        }
+
+        .descrizione_sezione h1{
+            font-size: 40px;
+        }
+
+        .descrizione_sezione p{
+            font-size: 20px;
+        }
+
+    }
 
 /* ... */
 
@@ -160,38 +252,36 @@ body, html {
 
 /* || Section2 Element Style */
 
-@media (min-width: 1024px) {
-
     .richiedi_preventivo{
         background-color: #D9D9D9;
         width: 100%;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap-reverse;
         align-items: center;
         justify-content: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center;
+        background-size: cover;
     }
 
     .map_container{
-        flex-basis: 50%;
+        flex-basis: 100%;
     }
 
-
-
     .form_container{
-        flex-basis: 50%;
-        padding:3%;
+        flex-basis: 100%;
+        padding:10%;
         background: none;
     }
 
-    .form_container h1{
-        font-size: 40px;
+    form h1{
+        font-size: 30px;
         font-family: 'Alfa Slab One';
         text-transform: uppercase;
         font-weight: lighter;
         color: white;
     }
 
-    .form_container p{
+    form p{
         font-size: 18px;
         font-family: 'Montserrat';
         margin-bottom: 4%;
@@ -200,13 +290,13 @@ body, html {
 
     form .container{
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .campo_form {
-        flex-basis: 33%;
+        flex-basis: 100%;
         padding: 5px;
     }
 
@@ -227,18 +317,14 @@ body, html {
         color: white;
     }
 
-    .campo_form_Messaggio {
-        padding: 5px;
-    }
-
-    .campo_form_Messaggio h2{
+    .campo_form h2{
         font-size: 18px;
         font-family: 'Alfa Slab One';
         font-weight: lighter;
         color: white;
     }
 
-    .campo_form_Messaggio textarea{
+    .campo_form textarea{
         width: 100%;
         padding:5px;
         height: 100px;
@@ -248,6 +334,31 @@ body, html {
         font-family: 'Montserrat';
         overflow-wrap: break-word;
         color:white;
+        resize: none;
+    }
+
+    .container_trattamento_dati{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        align-items: stretch;
+        justify-content: center;
+        gap:10px;
+    }
+
+    .container_trattamento_dati input{
+        flex-basis:3%;
+        height: 30px;
+        width: 30px;
+        margin-top: 3px;
+
+    }
+
+    .container_trattamento_dati p{
+        flex-basis:97%;
+        font-size: 16px;
+        font-family: 'Montserrat';
+        color: white;
     }
 
     .submit{
@@ -263,33 +374,51 @@ body, html {
         color: #770404;
     }
 
-    .container_trattamento_dati{
-        display: flex;
-        flex-wrap: nowrap;
-        width: 100%;
-        align-items: stretch;
-        justify-content: center;
-        gap:10px;
+    @media (min-width: 600px){
     }
 
-    #acconsento{
-        flex-basis:3%;
-        height: 30px;
-        width: 30px;
-        margin-top: 3px;
+    @media (min-width: 1024px){
+
+        .richiedi_preventivo{
+            background-color: #D9D9D9;
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .map_container{
+            flex-basis: 50%;
+        }
+
+        .form_container{
+            flex-basis: 50%;
+            padding:5%;
+            background: none;
+        }
 
     }
 
-    form p{
-        flex-basis:97%;
-        font-size: 16px;
-        font-family: 'Montserrat';
-        color: white;
+    @media (min-width: 1920px){
+
+        .richiedi_preventivo{
+            background-color: #D9D9D9;
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
     }
 
 
 
-}
 
 /* ... */
 
