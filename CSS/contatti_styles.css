@@ -290,6 +290,16 @@ body, html {
         color: white;
     }
 
+    #errore{
+        font-family: 'Montserrat';
+        font-size: 16px;
+        color: red;
+        padding: 5px;
+        display: block;
+        text-align: center;
+        display: none;
+    }
+
     form .container{
         display: flex;
         flex-wrap: wrap;

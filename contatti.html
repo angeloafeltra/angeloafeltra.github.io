@@ -59,7 +59,7 @@
             <h1>SEDE E RECAPITI</h1>
             <p>Via Teilliti, 55 - 80057 Sant'Antonio Abate (NA) - Sede Operativa</p>
             <p>Via Teilliti, 55 - 80057 Sant'Antonio Abate (NA) - ShowRoom</p>
-            <button class="btn_chiama">
+            <button class="btn_chiama" id="chiama">
                 <div>
                     <img src="/Immagini/SVG/phone.svg" alt="phone" width="100%" height="auto">
                 </div>
@@ -108,27 +108,28 @@
         </div>
         <div class="form_container">
 
-            <form style="width: 100%">
+            <form name="modulo" onsubmit="return sendMail();" style="width: 100%">
                 <h1>Richiedi un preventivo</h1>
                 <p>*Campi Obbligatori</p>
+                <p id="errore">Inserire un messaggio</p>
                 <div class="container">
                     <div class="campo_form" >
                         <h2>*Nome</h2>
-                        <input type="text">
+                        <input name="nome" type="text">
                     </div>
                     <div class="campo_form">
                         <h2>*Email</h2>
-                        <input type="text">
+                        <input name="mail" type="text">
                     </div>
                     <div class="campo_form">
                         <h2>*Telefono</h2>
-                        <input type="text">
+                        <input name="telefono" type="text">
                     </div>
                 </div>
 
                 <div class="campo_form">
                     <h2>*Messaggio</h2>
-                    <textarea rows="10"></textarea>
+                    <textarea name="messaggio" rows="10"></textarea>
                 </div>
 
                 <div class="container_trattamento_dati">
