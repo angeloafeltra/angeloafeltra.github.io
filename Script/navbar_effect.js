@@ -61,8 +61,10 @@ navlinks.addEventListener('touchend', (e)=>{
 
 
 function coloreNavBar() {
+    //console.log("Entro nella funzione")
     if (!hamburgerOn) {
         if (window.scrollY > 35) {
+            //console.log("Coloro navbar");
             navbar.style.backgroundColor = "rgba(255,255,255,1)";
             //navbar.style.paddingTop="10px";
             for (i = 0; i < linksNavBar.length; i++) {
@@ -71,6 +73,7 @@ function coloreNavBar() {
                 }
             }
         } else {
+            //console.log("Scoloro navbar");
             navbar.style.backgroundColor = "rgba(255,255,255,0)";
             //navbar.style.paddingTop="30px";
             for (i = 0; i < linksNavBar.length; i++) {
@@ -81,6 +84,11 @@ function coloreNavBar() {
         }
     }
 }
+
+window.addEventListener("scroll", (event) => {
+    //console.log("Scroll");
+    coloreNavBar();
+});
 
 
 
