@@ -3,7 +3,7 @@ const header_richiedi_preventivo=document.querySelector('.descrizione_sezione h1
 const body_richiedi_preventivo=document.getElementsByClassName('body')
 const info=document.querySelector('.info')
 const mappa=document.querySelector('.map_container')
-const form=document.querySelector('form')
+const formPreventivo=document.querySelector('form')
 
 function createIntersectionObserver(classToAdd,visibility) {
     const handleIntersection = (entries, observer) => {
@@ -47,8 +47,8 @@ window.addEventListener('load', function (){
     mappa.classList.add('entrate_left_animation_start');
     observer_entrataLeft.observe(mappa);
 
-    form.classList.add('comparsa_graduale_start');
-    observer_comparsaGraduale.observe(form);
+    formPreventivo.classList.add('comparsa_graduale_start');
+    observer_comparsaGraduale.observe(formPreventivo);
 
 });
 
