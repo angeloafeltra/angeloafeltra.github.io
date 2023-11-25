@@ -11,6 +11,7 @@ body, html {
     max-width: 100%;
     margin: 0;
     overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
 }
 
 /* || Main Image Element Style */

@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: sans-serif;
+    background-color: #EDEAEA;
+    height: 100%;
+    max-width: 100%;
+    margin: 0;
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
+}
+
+/* || Main Image Element Style */
+
+    .main_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_12.jpeg") no-repeat center center;
+        background-size: cover;
+        text-align: center;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .frase{
+        color: white;
+        font-family: 'Alfa Slab One';
+        font-size: 30px;
+        font-weight: lighter;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 600px) {
+
+        .frase{
+            font-size: 40px;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .main_img{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_12.jpeg") no-repeat center center fixed;
+            background-size: cover;
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .frase{
+            font-size: 64px;
+        }
+
+    }
+
+    @media (min-width: 1920px) {
+
+        .main_img{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_12.jpeg") no-repeat center center fixed;
+            background-size: cover;
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .frase{
+            font-size: 64px;
+        }
+
+    }
+
+/* ... */
+
+
+
+
+/* || Section1 Element Style */
+
+    .container_descrizione{
+        background: #D9D9D9;
+        padding: 10% 3% 10% 3%;
+    }
+
+    .container_descrizione h1{
+        font-family: 'Alfa Slab One';
+        font-size: 30px;
+        font-weight: lighter;
+        margin-bottom: 5%;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    .container_descrizione p{
+        font-family: 'Montserrat';
+        font-size: 18px;
+        font-weight: lighter;
+        color: black;
+    }
+
+    @media (min-width: 600px) {
+
+        .container_descrizione {
+            padding: 5% 5% 5% 5%;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .container_descrizione {
+            padding: 5% 10% 5% 10%;
+        }
+
+        .container_descrizione h1{
+            font-size: 40px;
+            margin-bottom: 2%;
+        }
+
+        .container_descrizione p{
+            font-size: 20px;
+        }
+
+    }
+
+    @media (min-width: 1920px) {
+
+        .container_descrizione {
+            padding: 5% 10% 5% 10%;
+        }
+
+    }
+
+/* ... */
+
+
+
+
+/* || Section1 Element Style */
+
+    .container_categorie{
+        background: white;
+        padding: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .item{
+        flex-basis: 50%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .item div{
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .item h2{
+        font-family: 'Alfa Slab One';
+        font-size: 18px;
+        font-weight: lighter;
+    }
+
+    .container_prodotto{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container_descrizione_prodotto{
+        flex-basis: 100%;
+        height: 500px;
+        background: #191A1A;
+    }
+
+    .container_immagini_prodotto{
+        flex-basis: 100%;
+        height: 500px;
+        position: relative;
+        display: block;
+    }
+
+    .container_main_img{
+        display:block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Prodotti/Porte/porta4.jpeg") no-repeat center center;
+        background-size: cover;
+        z-index: 1;
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+
+    .container_list_sub_img{
+        width: 70%;
+        height: 80px;
+
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+    }
+
+    .container_sub_img{
+        flex-basis: 20%;
+        height: 100%;
+        background: green;
+    }
+
+    .container_sub_img:hover{
+        cursor: pointer;
+        transform: translateY(-10px);
+    }
+
+
+    @media (min-width: 600px) {
+
+        .container_categorie{
+            padding: 2% 5% 2% 5%;
+            justify-content: flex-start;
+            column-gap: 20px;
+            row-gap: 5px;
+        }
+
+        .item{
+            flex-basis: 20%;
+            justify-content: start;
+            gap:5px;
+        }
+
+        .container_prodotto{
+            flex-wrap: nowrap;
+        }
+
+        .container_descrizione_prodotto{
+            flex-basis: 55%;
+        }
+
+        .container_immagini_prodotto{
+            flex-basis: 45%;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .container_descrizione_prodotto{
+            height: 700px;
+        }
+
+        .container_immagini_prodotto{
+            height: 700px;
+        }
+
+        .container_categorie{
+            padding: 1% 10% 1% 10%;
+            justify-content: center;
+            column-gap: 25px;
+            row-gap: 10px;
+        }
+
+        .item{
+            flex-basis: 10%;
+        }
+
+    }
+
+/* ... */
