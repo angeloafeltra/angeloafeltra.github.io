@@ -12,6 +12,9 @@ body, html {
     margin-bottom: 500px;
 }
 
+
+
+
 /* || Main Image Element Style */
     .main_img{
         display: flex;
@@ -376,7 +379,7 @@ body, html {
         flex-wrap: wrap;
         gap: 0px;
         padding: 0% 0% 0% 0%;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_4.jpg) no-repeat center center;
         background-size: cover;
     }
 
@@ -526,7 +529,7 @@ body, html {
         flex-wrap: wrap;
         gap: 10px;
         padding: 15% 7% 15% 7%;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_2.jpg) no-repeat center center;
         background-size: cover;
     }
 
