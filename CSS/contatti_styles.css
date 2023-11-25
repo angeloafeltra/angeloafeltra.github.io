@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: sans-serif;
+    background-color: #EDEAEA;
+    height: 100%;
+    margin: 0;
+    margin-bottom: 500px;
+}
+
+/* || Main Image Element Style */
+    .main_img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
+        background-size: cover;
+        text-align: center;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+
+    .frase{
+        color: white;
+        font-family: 'Alfa Slab One';
+        font-size: 20px;
+        font-weight: lighter;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 600px) {
+
+        .frase{
+            font-size: 24px;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .main_img{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
+            background-size: cover;
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .frase{
+            font-size: 28px;
+        }
+
+    }
+/* ... */
+
+
+
+
+/* || Section1 Element Style */
+
+@media (min-width: 1024px) {
+
+    .info_preventivo{
+        background-color: #D9D9D9;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        justify-content: center;
+        padding: 5% 10% 5% 10%;
+    }
+
+    .descrizione_sezione{
+        flex-basis: 50%;
+        padding: 10px;
+        /*border: black solid;*/
+    }
+
+    .descrizione_sezione h1{
+        font-family: 'Alfa Slab One';
+        font-size: 40px;
+        font-weight: lighter;
+        margin-bottom: 5%;
+        color: black;
+    }
+
+    .descrizione_sezione p{
+        font-family: 'Montserrat';
+        font-size: 20px;
+        font-weight: lighter;
+        margin-bottom: 5%;
+        color: black;
+    }
+
+    .info{
+        flex-basis: 40%;
+        padding: 4% 1% 4% 1%;
+        /*border: black solid;*/
+        background-color: #770404;
+    }
+
+    .info h1{
+        color: white;
+        padding: 7px;
+        font-size: 28px;
+        font-family: "Alfa Slab One";
+        font-weight: lighter;
+    }
+
+    .info h2{
+        color: white;
+        padding: 5px;
+        font-size: 20px;
+        font-family: "Alfa Slab One";
+        font-weight: lighter;
+    }
+
+    .info p{
+        font-family: Montserrat;
+        color: white;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .btn_chiama{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: white;
+        border: none;
+        padding: 2px 2px 2px 2px;
+        border-radius: 20px;
+        border: white solid;
+    }
+
+    .btn_chiama div{
+        width: 8%;
+        display: inline-block;
+    }
+
+    .btn_chiama p{
+        color: #770404;
+        font-family: Montserrat;
+        font-size: 14px;
+    }
+
+}
+
+/* ... */
+
+
+
+/* || Section2 Element Style */
+
+@media (min-width: 1024px) {
+
+    .richiedi_preventivo{
+        background-color: #D9D9D9;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map_container{
+        flex-basis: 50%;
+    }
+
+
+
+    .form_container{
+        flex-basis: 50%;
+        padding:3%;
+        background: none;
+    }
+
+    .form_container h1{
+        font-size: 40px;
+        font-family: 'Alfa Slab One';
+        text-transform: uppercase;
+        font-weight: lighter;
+        color: white;
+    }
+
+    .form_container p{
+        font-size: 18px;
+        font-family: 'Montserrat';
+        margin-bottom: 4%;
+        color: white;
+    }
+
+    form .container{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .campo_form {
+        flex-basis: 33%;
+        padding: 5px;
+    }
+
+    .campo_form h2{
+        font-size: 18px;
+        font-family: 'Alfa Slab One';
+        font-weight: lighter;
+        color: white;
+    }
+
+    .campo_form input{
+        width: 100%;
+        border: white solid;
+        background: none;
+        font-size: 16px;
+        font-family: 'Montserrat';
+        padding: 5px;
+        color: white;
+    }
+
+    .campo_form_Messaggio {
+        padding: 5px;
+    }
+
+    .campo_form_Messaggio h2{
+        font-size: 18px;
+        font-family: 'Alfa Slab One';
+        font-weight: lighter;
+        color: white;
+    }
+
+    .campo_form_Messaggio textarea{
+        width: 100%;
+        padding:5px;
+        height: 100px;
+        border: white solid;
+        background: none;
+        font-size: 16px;
+        font-family: 'Montserrat';
+        overflow-wrap: break-word;
+        color:white;
+    }
+
+    .submit{
+        display: block;
+        font-size: 16px;
+        font-family: 'Montserrat';
+        padding: 10px 60px 10px 60px;
+        margin: 10px auto 10px auto;
+        border-radius: 20px;
+        text-transform: uppercase;
+        border: none;
+        background: white;
+        color: #770404;
+    }
+
+    .container_trattamento_dati{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        align-items: stretch;
+        justify-content: center;
+        gap:10px;
+    }
+
+    #acconsento{
+        flex-basis:3%;
+        height: 30px;
+        width: 30px;
+        margin-top: 3px;
+
+    }
+
+    form p{
+        flex-basis:97%;
+        font-size: 16px;
+        font-family: 'Montserrat';
+        color: white;
+    }
+
+
+
+}
+
+/* ... */
+
+
+
+

@@ -58,6 +58,7 @@ window.addEventListener('load', function (){
     descrizione_prodotti.classList.add('comparsa_graduale_start')
     observer_comparsaGraduale.observe(descrizione_prodotti)
     img_prodotti.classList.add('swipe_up_animation_start')
+
     observer_swipeUp.observe(img_prodotti);
 
 });
