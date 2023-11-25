@@ -8,8 +8,10 @@ body, html {
     font-family: sans-serif;
     background-color: #EDEAEA;
     height: 100%;
+    max-width: 100%;
     margin: 0;
     overscroll-behavior-y: none;
+    overflow-x:hidden;
 }
 
 
