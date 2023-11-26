@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="stylesheet" href="CSS/showroom_style.css"/>
+    <link rel="stylesheet" href="CSS/navbar_style.css" />
+    <link rel="stylesheet" href="CSS/footer_style.css" />
+    <link rel="stylesheet" href="CSS/animation.css" />
+
+    <link rel="icon" href="./Immagini/logo.svg">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Kristi" />
+    <link href='https://fonts.googleapis.com/css?family=Alfa Slab One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>ShowRoom</title>
+</head>
+<body onresize="restoreDesktopMenu(); setSizeContainerShowRoom();" onload="setSizeContainerShowRoom();">
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo_navbar">
+                <img class="logo" src="./Immagini/logo.svg" style="width: 100%; height: 100%">
+            </a>
+
+            <!-- hamburger viene visualizzato solamente quando non si è in modalita desktop -->
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+
+            <div class="nav_links">
+                <a class="link_navbar" href="index.html" >Home</a>
+                <a class="link_navbar" href="chisiamo.html">Chi Siamo</a>
+                <a class="link_navbar" href="showroom.html" style="color: #F0B357; text-decoration: underline">ShowRoom</a>
+                <a class="link_navbar" href="prodotti.html">Prodotti</a>
+                <a class="link_navbar" href="contatti.html">Contatti</a>
+            </div>
+        </nav>
+    </header>
+
+    <div  class="main_img">
+        <h1 class="frase">SHOW ROOM</h1>
+    </div>
+
+    <div class="container_descrizione">
+        <h1>Un sogno, un progetto, una realtà</h1>
+        <p>Benvenuti nel Nostro Showroom: Dove i Sogni Si Trasformano in Realtà.
+            Nel cuore della nostra filosofia aziendale, c'è la convinzione che ogni progetto abbia il potenziale per trasformare un sogno in una tangibile e straordinaria realtà. Il nostro Showroom è il luogo dove questa trasformazione prende forma, dove le vostre visioni prendono vita sotto la luce e l'eleganza delle nostre porte e infissi.
+            <br><br>
+            Esplorate il Vostro Stile:
+            Entra nel mondo incantevole delle possibilità che offriamo. Ogni angolo del nostro showroom è progettato per ispirare e guidare la vostra creatività. Sperimentate la varietà di design, materiali e finiture che abbiamo accuratamente selezionato per soddisfare ogni stile e preferenza. Che siate alla ricerca di un'atmosfera classica o di soluzioni innovative e moderne, qui troverete l'eccellenza che definisce il nostro impegno.
+            <br><br>
+            Il Design Incontra la Funzionalità:
+            Non crediamo che il design debba sacrificare la funzionalità. Le nostre porte e infissi non sono solo esteticamente accattivanti, ma sono anche concepiti per offrire prestazioni affidabili e durature. Nel nostro showroom, avrete l'opportunità di toccare con mano la qualità dei materiali e la cura artigianale che caratterizzano ogni pezzo.
+            <br><br>
+            Assistenza Personalizzata:
+            Il nostro team esperto è qui per accompagnarvi in ogni fase, dalla scelta del prodotto più adatto alle vostre esigenze fino alla completa realizzazione del vostro progetto. Siamo qui per trasformare il vostro sogno in una realtà senza compromessi.
+            Entra nel nostro Showroom e inizia il viaggio per trasformare la tua visione in una casa che riflette veramente chi sei. Un sogno, un progetto, una realtà: tutto inizia qui</p>
+    </div>
+
+    <div class="container_vieni_a_trovarci">
+        <div class="container_appuntamento">
+
+            <form name="modulo_appuntamento" onsubmit="return sendMail();">
+                <h1>Prenota un appuntamento</h1>
+                <p>*Campi Obbligatori</p>
+                <p id="errore">Completa tutti i campi</p>
+
+                <div class="campo_form" >
+                    <h2>*Nome</h2>
+                    <input name="nome" type="text">
+                </div>
+                <div class="campo_form">
+                    <h2>*Email</h2>
+                    <input name="mail" type="text">
+                </div>
+                <div class="campo_form">
+                    <h2>*Telefono</h2>
+                    <input name="telefono" type="text">
+                </div>
+                <div class="campo_form" >
+                    <h2>*Giorno</h2>
+                    <input name="giorno" type="date">
+                </div>
+
+                <div class="container_trattamento_dati">
+                    <input type="checkbox" id="checkbox">
+                    <p>Ho letto l’Informativa e Autorizzo Il Trattamento Dei Miei Dati Personali Per le finalita Ivi indicate</p>
+                </div>
+
+                <input type="submit" class="submit">
+
+            </form>
+
+            <div class="allert_prenotazione">
+                Grazie per avere richesto un appuntamente, ti contatteremo nei prossimi giorni per confermare confermarlo.
+            </div>
+        </div>
+        <div class="container_map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.072694874342!2d14.536847476828235!3d40.71641617139306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bbdff414b9427%3A0xc51e07b32a571dae!2sINDA%20porte%20%26%20finestre!5e0!3m2!1sit!2sit!4v1700815965651!5m2!1sit!2sit"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <div class="info_container">
+            <h1 class="footer-header">Dove Siamo</h1>
+            <p class="footer-body">Show Room - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
+            <p class="footer-body">Sede Operativa - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
+            <div class="space"></div>
+            <h1 class="footer-header">Recapiti</h1>
+            <p class="footer-body">+39 3394487294</p>
+            <p class="footer-body">indainfissi@gmail.com</p>
+            <!--<button class="contattaci_footer">Contattaci</button>-->
+        </div>
+
+        <div class="end_container">
+            <div class="social_container">
+                <div class="social">
+                    <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%;">
+                </div>
+                <div class="social">
+                    <img src="Immagini/SVG/instagram.svg" alt="instagram_logo" style="width: 100%; height: 100%;">
+                </div>
+                <div class="social">
+                    <img src="Immagini/SVG/linkedin.svg" alt="linkedin_logo" style="width: 100%; height: 100%;">
+                </div>
+            </div>
+
+            <div class="end_footer_container">
+                <h1  style="font-family: Kristi;">Inda <span>spa</span></h1>
+                <p>P.Iva 02607220908</p>
+                <p>Privacy e Cookies Policy</p>
+                <p>Design Angelo Afeltra</p>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+</body>
+<script src="./Script/navbar_effect.js"></script>
+<script src="./Script/showroom_script.js"></script>
+</html>

@@ -39,7 +39,7 @@ body, html {
     @media (min-width: 600px) {
 
         .frase{
-            font-size: 40px;
+            font-size: 50px;
         }
 
     }
@@ -140,7 +140,7 @@ body, html {
 
 
 
-/* || Section1 Element Style */
+/* || Section2 Element Style */
 
     .container_categorie{
         background: white;

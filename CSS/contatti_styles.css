@@ -255,7 +255,6 @@ body, html {
 /* || Section2 Element Style */
 
     .richiedi_preventivo{
-        background-color: #D9D9D9;
         width: 100%;
         display: flex;
         flex-wrap: wrap-reverse;
@@ -329,12 +328,6 @@ body, html {
         color: white;
     }
 
-    .campo_form h2{
-        font-size: 18px;
-        font-family: 'Alfa Slab One';
-        font-weight: lighter;
-        color: white;
-    }
 
     .campo_form textarea{
         width: 100%;
