@@ -18,7 +18,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Contatti</title>
 </head>
-<body onresize="restoreDesktopMenu(); setSizeContainerShowRoom();" onload="setSizeContainerShowRoom();">
+<body onresize="restoreDesktopMenu(); setSizeContainer();" onload="setSizeContainer();">
 
     <header>
         <nav class="navbar">
@@ -115,21 +115,21 @@
                 <div class="container">
                     <div class="campo_form" >
                         <h2>*Nome</h2>
-                        <input name="nome" type="text">
+                        <input name="nome" type="text" placeholder="nome cognome">
                     </div>
                     <div class="campo_form">
                         <h2>*Email</h2>
-                        <input name="mail" type="text">
+                        <input name="mail" type="text" placeholder="exemple@exemple.it">
                     </div>
                     <div class="campo_form">
                         <h2>*Telefono</h2>
-                        <input name="telefono" type="text">
+                        <input name="telefono" type="text" placeholder="3384472395">
                     </div>
                 </div>
 
                 <div class="campo_form">
                     <h2>*Messaggio</h2>
-                    <textarea name="messaggio" rows="10"></textarea>
+                    <textarea name="messaggio" rows="10" placeholder="Richiesta preventivo porta blindata 200x70"></textarea>
                 </div>
 
                 <div class="container_trattamento_dati">

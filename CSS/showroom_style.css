@@ -215,6 +215,12 @@ body, html {
         color: white;
     }
 
+
+    ::placeholder{
+        color: white;
+        opacity: 0.7;
+    }
+
     .container_trattamento_dati{
         display: flex;
         flex-wrap: nowrap;

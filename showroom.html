@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,7 +18,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>ShowRoom</title>
 </head>
-<body onresize="restoreDesktopMenu(); setSizeContainerShowRoom();" onload="setSizeContainerShowRoom();">
+<body onresize="restoreDesktopMenu(); setSizeContainer();" onload="setSizeContainer();">
 
     <header>
         <nav class="navbar">
@@ -73,7 +73,7 @@
 
                 <div class="campo_form" >
                     <h2>*Nome</h2>
-                    <input name="nome" type="text" placeholder="nome">
+                    <input name="nome" type="text" placeholder="nome cognome">
                 </div>
                 <div class="campo_form">
                     <h2>*Email</h2>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="campo_form" >
                     <h2>*Giorno</h2>
-                    <input name="giorno" type="date" placeholder="01/01/2000">
+                    <input name="giorno" type="date">
                 </div>
 
                 <div class="container_trattamento_dati">

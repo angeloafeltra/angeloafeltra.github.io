@@ -328,6 +328,11 @@ body, html {
         color: white;
     }
 
+    ::placeholder{
+        color: white;
+        opacity: 0.7;
+    }
+
 
     .campo_form textarea{
         width: 100%;

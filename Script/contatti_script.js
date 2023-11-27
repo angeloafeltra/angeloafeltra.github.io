@@ -4,12 +4,14 @@ const btn_chiama=document.querySelector('#chiama')
 
 let check_click=false;
 
-function setSizeContainerShowRoom(){
+function setSizeContainer(){
     if(window.innerWidth>=600) {
         containerMap.style.height = containerPreventivo.offsetHeight + "px";
     }else{
         containerMap.style.height = "400px";
     }
+
+
 }
 
 btn_chiama.addEventListener('click', (e)=>{
@@ -21,6 +23,10 @@ btn_chiama.addEventListener('click', (e)=>{
         check_click = false;
     }
 })
+
+
+
+
 
 
 function Email() {
