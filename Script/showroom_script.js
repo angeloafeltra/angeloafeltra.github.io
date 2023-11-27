@@ -12,5 +12,5 @@ function setSizeContainer(){
         containerMap.style.height = "400px";
     }
 
-    input_date.style.height = input_nome.offsetHeight + "px";
+    //input_date.style.height = input_nome.offsetHeight + "px";
 }
