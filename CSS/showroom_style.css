@@ -216,6 +216,7 @@ body, html {
     }
 
     .campo_form input[type="date"]{
+        background-color: red;
         -webkit-appearance: none;
     }
 
