@@ -215,6 +215,11 @@ body, html {
         color: white;
     }
 
+    .campo_form input[type="date"]{
+        -webkit-appearance: none;
+    }
+
+
 
     ::placeholder{
         color: white;
