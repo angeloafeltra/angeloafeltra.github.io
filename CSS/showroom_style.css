@@ -274,6 +274,7 @@ body, html {
 
         .card:hover{
             transform: scale(1.1);
+            z-index: 3;
             box-shadow: 5px 5px 10px black;
         }
 

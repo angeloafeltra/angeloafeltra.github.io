@@ -149,10 +149,11 @@ body, html {
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        gap:10px
     }
 
     .item{
-        flex-basis: 50%;
+        flex-basis: 48%;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
@@ -168,6 +169,11 @@ body, html {
         height: 40px;
     }
 
+    .item:hover{
+        scale: 1.1;
+        cursor: pointer;
+    }
+
     .item h2{
         font-family: 'Alfa Slab One';
         font-size: 18px;
@@ -175,172 +181,57 @@ body, html {
     }
 
     .container_prodotto{
-        display: flex;
+        display: none;
         width: 100%;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        background-color: #191A1A;
+
     }
 
     .container_descrizione_prodotto{
+        background: none;
         flex-basis: 100%;
-        background: #191A1A;
-        padding: 10%;
-        position: relative;
-    }
-
-    .freccia_dietro{
-        display: block;
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top:50%;
-        transform: translateY(-50%);
-        left: 10px;
-        opacity: 0.5;
-    }
-
-    .freccia_avanti{
-        display: block;
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        top:50%;
-        transform: translateY(-50%);
-        right: 10px;
-        opacity: 0.5;
-    }
-
-    .freccia_dietro:hover{
-        opacity: 1;
-    }
-
-    .freccia_avanti:hover{
-        opacity: 1;
+        padding: 10% 3% 10% 3%;
     }
 
     .container_descrizione_prodotto h1{
         font-family: 'Alfa Slab One';
-        font-size: 35px;
+        font-size: 30px;
+        font-weight: lighter;
+        margin-bottom: 5%;
         color: white;
-        margin-bottom: 20px;
+        text-transform: uppercase;
     }
 
     .container_descrizione_prodotto p{
         font-family: 'Montserrat';
         font-size: 18px;
+        font-weight: lighter;
         color: white;
     }
 
-    .container_immagini_prodotto{
+    .container_immagini{
         flex-basis: 100%;
-        height: 500px;
-        position: relative;
-        display: block;
+        height: 450px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display:none;
     }
 
-    .container_main_img{
-        display:block;
+    .immagine_prodotto{
         width: 100%;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Prodotti/Porte/porta4.jpeg") no-repeat center center;
-        background-size: cover;
-        z-index: 1;
-        position: absolute;
-        top:0;
-        left: 0;
-    }
-
-    .container_list_sub_img{
-        width: 70%;
-        height: 80px;
-
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-
-    }
-
-    .container_sub_img{
-        flex-basis: 20%;
-        height: 100%;
-        background: green;
-    }
-
-    .container_sub_img:hover{
-        cursor: pointer;
-        transform: translateY(-10px);
+        object-fit:contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 
-    @media (min-width: 600px) {
 
-        .container_categorie{
-            padding: 2% 5% 2% 5%;
-            justify-content: flex-start;
-            column-gap: 20px;
-            row-gap: 5px;
-        }
 
-        .item{
-            flex-basis: 20%;
-            justify-content: start;
-            gap:5px;
-        }
-
-        .container_prodotto{
-            flex-wrap: nowrap;
-        }
-
-        .container_descrizione_prodotto{
-            flex-basis: 55%;
-            height: 500px;
-            padding: 5%;
-        }
-
-        .container_immagini_prodotto{
-            flex-basis: 45%;
-        }
-
-    }
-
-    @media (min-width: 1024px) {
-
-        .container_descrizione_prodotto{
-            height: 700px;
-        }
-
-        .container_descrizione_prodotto h1{
-            font-size: 40px;
-        }
-
-        .container_descrizione_prodotto p{
-            font-size: 20px;
-        }
-
-        .container_immagini_prodotto{
-            height: 700px;
-        }
-
-        .container_categorie{
-            padding: 1% 10% 1% 10%;
-            justify-content: center;
-            column-gap: 25px;
-            row-gap: 10px;
-        }
-
-        .item{
-            flex-basis: 10%;
-        }
-
-    }
 
 /* ... */
