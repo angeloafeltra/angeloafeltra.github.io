@@ -201,6 +201,8 @@ body, html {
             padding: 5% 5% 5% 5%;
         }
 
+
+
         .card{
             display: flex;
             justify-content: center;
@@ -217,7 +219,26 @@ body, html {
             padding: 0;
             margin: 0;
             /*border: black solid;*/
+
+            opacity: 0;
+            scale: 0;
+            animation: fadeIn 1.5s ease-out forwards;
         }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        .card:nth-child(1) { animation-delay: 0s; }
+        .card:nth-child(3) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.8s; }
+        .card:nth-child(2) { animation-delay: 1.2s; }
+        .card:nth-child(6) { animation-delay: 1.6s; }
+        .card:nth-child(4) { animation-delay: 2.0s; }
+        .card:nth-child(7) { animation-delay: 2.4s; }
 
         .card-tall{
             grid-row: span 2 /auto;
@@ -397,7 +418,17 @@ body, html {
         color: #770404;
         border: #770404 solid 2px;
         box-shadow: 5px 5px 10px black;
-        /*display: none;*/
+        display: none;
+
+        opacity: 0;
+        animation: fadeIn2 1s ease-out forwards;
+    }
+
+
+    @keyframes fadeIn2 {
+        to {
+            opacity: 1;
+        }
     }
 
 
