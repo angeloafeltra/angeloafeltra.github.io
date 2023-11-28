@@ -4,6 +4,20 @@ const mosaico=document.querySelector('.card-mosaic')
 const container_img=document.querySelector('.container_img')
 const btn_close=document.querySelector('.close')
 const immagine=document.querySelector('#immagine')
+const slider_img=document.querySelector('.container_img_mobile')
+const immagine_mobile=document.querySelector('.container_img_mobile img')
+
+const list_img=["Immagini/Prodotti/Porte/porta1.jpeg",
+        "Immagini/Prodotti/Porte/porta2.jpeg",
+        "Immagini/Prodotti/Porte/porta3.jpeg",
+        "Immagini/Prodotti/Porte/porta4.jpeg",
+        "Immagini/Prodotti/Porte/porta5.jpeg",
+        "Immagini/Background/background_2.jpg",
+        "Immagini/Background/background_3.jpg"
+]
+
+let startXslider;
+var index_current_img=0;
 
 
 function setSizeContainer(){
@@ -124,3 +138,26 @@ function sendMailAppuntamento(){
 var form = document.querySelector('form')
 function handleForm(event) { event.preventDefault(); }
 form.addEventListener('submit', handleForm);
+
+
+
+
+slider_img.addEventListener('touchstart', (e)=>{
+    startXslider=e.touches[0].clientX;
+})
+
+slider_img.addEventListener('touchend', (e)=>{
+    const endX=e.changedTouches[0].clientX;
+    const deltaX = endX - startXslider;
+    if (deltaX <-20) {
+        if(index_current_img==list_img.length-1)  index_current_img=0; else index_current_img=index_current_img+1;
+        immagine_mobile.src=list_img[index_current_img];
+        immagine_mobile.style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("+list_img[index_current_img]+")"
+    }else{
+        if (deltaX >20) {
+            if(index_current_img==0)  index_current_img=list_img.length-1; else index_current_img=index_current_img-1;
+            immagine_mobile.src=list_img[index_current_img];
+            immagine_mobile.style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("+list_img[index_current_img]+")"
+        }
+    }
+})
