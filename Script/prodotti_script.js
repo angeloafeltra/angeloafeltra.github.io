@@ -4,6 +4,8 @@
     const containerPreventivo=document.querySelector('.form_container')
     const container_immagini=document.querySelector('.container_immagini')
     const container_descrizione_prodotto=document.querySelector('.container_descrizione_prodotto')
+    const btn_next=document.querySelector('.btn_next')
+    const btn_back=document.querySelector('.btn_back')
     //Inserire qui nuovi prodotti, nuove immagini e modificare prodotti e immagini gia esistenti
     const categoriaProdotti=[
         {
@@ -433,6 +435,8 @@
         document.querySelector('.container_descrizione_prodotto h1').innerHTML = prodotto
         document.querySelector('.container_descrizione_prodotto p').innerHTML = descrizione
 
+
+
         while (document.querySelector('.circle_container_prodotti').firstChild) {
             document.querySelector('.circle_container_prodotti').removeChild(document.querySelector('.circle_container_prodotti').firstChild);
         }
@@ -445,6 +449,13 @@
                 if (i == index) circle.style.backgroundColor = '#D9D9D9';
                 document.querySelector('.circle_container_prodotti').appendChild(circle)
             }
+            if(window.innerWidth>=1024){
+                btn_next.style.display="block";
+                btn_back.style.display="block";
+            }
+        }else{
+            btn_next.style.display="none";
+            btn_back.style.display="none";
         }
 
         if(window.innerWidth<600){ //Immagine Completa
@@ -562,6 +573,23 @@
             }
         }
     })
+
+    btn_back.addEventListener('click', (e)=>{
+        if(list_sub_category.length>1) {
+            document.querySelector('.circle_container_prodotti').childNodes[index_sub_category].style.backgroundColor = "white"
+        }
+        if(index_sub_category==0)  index_sub_category=list_sub_category.length-1; else index_sub_category=index_sub_category-1;
+        showProdotto(index_sub_category)
+    });
+
+    btn_next.addEventListener('click', (e)=>{
+        if(list_sub_category.length>1) {
+            document.querySelector('.circle_container_prodotti').childNodes[index_sub_category].style.backgroundColor = "white"
+        }
+        if(index_sub_category==list_sub_category.length-1)  index_sub_category=0; else index_sub_category=index_sub_category+1;
+        showProdotto(index_sub_category)
+    });
+
 
 /* ... */
 
