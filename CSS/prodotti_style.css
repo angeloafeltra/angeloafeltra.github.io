@@ -219,6 +219,7 @@ body, html {
         background-size: cover;
         background-position: center;
         display:none;
+        position: relative;
     }
 
     .immagine_prodotto{
@@ -228,6 +229,22 @@ body, html {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .circle_container_img{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .circle{
+        background-color: white;
+        width: 15px;
+        height: 15px;
+        border-radius: 7.5px;
+        display: inline-block;
+        margin: 3px;
     }
 
 
