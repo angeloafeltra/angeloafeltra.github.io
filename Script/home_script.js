@@ -7,6 +7,7 @@
 
 
     let animazioneCopertinaEseguita=false;
+    let lastTouchY=0
 
 
 /* ... */
@@ -99,6 +100,19 @@
             console.log("Event Wheel Catturato")
             animationCopertina()
         }
+
+    })
+
+    main_img.addEventListener('touchmove', (event)=>{
+        console.log("Event TouchMove")
+        var touch = event.touches[0];
+
+        if(touch.clientY < lastTouchY-10 && !animazioneCopertinaEseguita) {
+            console.log("Event TouchMove")
+            animationCopertina()
+        }
+
+        lastTouchY=touch.clientY
 
     })
 
