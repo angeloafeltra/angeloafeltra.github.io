@@ -24,12 +24,10 @@
         let copertina=document.querySelector('.copertina_main_img')
 
         if(window.scrollY!=0 && copertina.style.display!="none"){
-            let scala=parseFloat(copertina.style.scale);
-            scala=scala+0.1
-            copertina.style.scale=scala.toString()
             window.scrollTo(0, 0);
 
-            console.log("Zoom-out:" + scala)
+            let scala=parseFloat(copertina.style.scale);
+            scala=scala+0.1
             if(parseFloat(copertina.style.scale)>6){
                 copertina.style.opacity=0;
                 document.querySelector('.over-text').style.opacity=1;
@@ -37,8 +35,8 @@
             if(parseFloat(copertina.style.scale)>8){
                 copertina.style.display="None"
             }
-
         }
+
     }
 
     function setCopertina(){
