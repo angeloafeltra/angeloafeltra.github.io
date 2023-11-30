@@ -72,55 +72,12 @@ window.addEventListener('load', function (){
 
     setAnimation(header_prodotti,'zoom_start','zoom_end',0.9,0) //Finisce a 1s
     setAnimation(descrizione_prodotti,'zoom_start','zoom_end',0.5,300) //Finisce a 1.3s
-    setAnimation(btn_prodotti,'btn_comparse1_start','btn_comparse1_end',0.5,1200) //Finisce a 2.6s
+    setAnimation(btn_prodotti,'btn_comparse1_start','btn_comparse1_end',0.5,900) //Finisce a 2.6s
     if(window.innerWidth<600)
         setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,100)
     else
-        setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,2000)
+        setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,1700)
 
-
-    /*
-   for (i = 0; i < list_icona_bussines_space.length; i++) {
-       list_icona_bussines_space[i].classList.add('move_up_start');
-       list_icona_bussines_space[i].classList.add('dissolvenza_graduale_start');
-       observer_moveUp.observe(list_icona_bussines_space[i]);
-       observer_dissolvenza.observe(list_icona_bussines_space[i]);
-   }
-   for (i = 0; i < list_descrizioneBussiness.length; i++) {
-       list_descrizioneBussiness[i].classList.add('move_up_start');
-       list_descrizioneBussiness[i].classList.add('dissolvenza_graduale_start');
-       observer_moveUp.observe(list_descrizioneBussiness[i]);
-       observer_dissolvenza.observe(list_descrizioneBussiness[i]);
-   }
-
-   //descrizione_chiSiamo.classList.add('move_right_start');
-   //observer_moveRight.observe(descrizione_chiSiamo)
-   descrizione_chiSiamo.classList.add('move_up_start');
-   observer_moveUp.observe(descrizione_chiSiamo)
-
-   img_chiSiamo.classList.add('zoom_start')
-   img_chiSiamo.classList.add('dissolvenza_graduale_start')
-   observer_zoom.observe(img_chiSiamo)
-   observer_dissolvenza.observe(img_chiSiamo);
-
-
-
-
-
-
-
-
-   descrizione_showRoom.classList.add('entrate_right_animation_start')
-   observer_entrataRight.observe(descrizione_showRoom)
-   img_showRoom.classList.add('entrate_left_animation_start')
-   observer_entrataLeft.observe(img_showRoom)
-
-   descrizione_prodotti.classList.add('comparsa_graduale_start')
-   observer_comparsaGraduale.observe(descrizione_prodotti)
-   img_prodotti.classList.add('swipe_up_animation_start')
-
-   observer_swipeUp.observe(img_prodotti);
-   */
 
 });
 
