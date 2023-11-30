@@ -28,6 +28,7 @@
 
             let scala=parseFloat(copertina.style.scale);
             scala=scala+0.1
+            copertina.style.scale=scala.toString()
             if(parseFloat(copertina.style.scale)>6){
                 copertina.style.opacity=0;
                 document.querySelector('.over-text').style.opacity=1;
@@ -36,7 +37,6 @@
                 copertina.style.display="None"
             }
         }
-
     }
 
     function setCopertina(){
