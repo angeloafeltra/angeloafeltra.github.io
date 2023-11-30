@@ -74,6 +74,30 @@
     transition: transform 1.5s ease, opacity 1.5s ease;
 }
 
+.entrate_right_animation_start{
+    opacity: 0;
+    transform: translateX(5%);
+}
+
+.entrate_right_animation_end{
+    transform: translateX(0%);
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+
+
+.entrate_left_animation_start{
+    opacity: 0;
+    transform: translateX(-5%);
+}
+
+.entrate_left_animation_end{
+    transform: translateX(0%);
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
 
 
 

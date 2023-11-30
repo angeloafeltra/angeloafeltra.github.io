@@ -284,6 +284,11 @@ body, html {
         cursor:pointer;
     }
 
+    #chiSiamo .descrizione_sezione .btn_chisiamo:hover{
+        color: rgba(119,4,4,1);
+        background-color: white;
+    }
+
 
     @media (min-width: 600px){
 
@@ -331,12 +336,6 @@ body, html {
             align-self: center;
             flex-basis: 50%;
         }
-
-        #chiSiamo .descrizione_sezione .btn_chisiamo:hover{
-            color: rgba(119,4,4,1);
-            background-color: white;
-        }
-
 
     }
 
@@ -405,6 +404,7 @@ body, html {
         padding: 0% 0% 0% 0%;
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_4.jpg) no-repeat center center;
         background-size: cover;
+        overflow: hidden;
     }
 
     #showroom .immagine_sezione{

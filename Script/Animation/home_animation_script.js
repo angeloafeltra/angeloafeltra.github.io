@@ -58,9 +58,12 @@ window.addEventListener('load', function (){
     setAnimation(paroleChiavi_chiSiamo,'move_diagona_right_up_start','move_diagona_right_up_end',0.5,600) //Finisce a 1.6s
     setAnimation(btn_chiSiamo,'btn_comparse1_start','btn_comparse1_end',0.5,1200) //Finisce a 2.6s
     if(window.innerWidth<600)
-        setAnimation(img_chiSiamo,'show_right_start','show_right_end',0.6,100)
+        setAnimation(img_chiSiamo,'show_right_start','show_right_end',0.9,100)
     else
         setAnimation(img_chiSiamo,'show_right_start','show_right_end',0.9,2000)
+
+    setAnimation(descrizione_showRoom,'entrate_right_animation_start','entrate_right_animation_end',0.7,0)
+    setAnimation(img_showRoom,'entrate_left_animation_start','entrate_left_animation_end',0.7,0)
 
     /*
    for (i = 0; i < list_icona_bussines_space.length; i++) {
