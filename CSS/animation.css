@@ -1,4 +1,73 @@
 
+.move_up_start{
+    transform: translateY(3.5vh);
+    opacity: 0;
+}
+
+.move_up_end{
+    transform: translateY(0vh);
+    opacity: 1;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.dissolvenza_graduale_start{
+    opacity: 0;
+}
+
+.dissolvenza_graduale_end{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.zoom_start{
+    opacity: 0;
+    scale: 0;
+}
+
+.zoom_end{
+    scale: 1;
+    opacity: 1;
+    transition: scale 1s ease, opacity 0.3s ease;
+}
+
+.move_right_start{
+    transform: translateX(-10%);
+    opacity:0
+}
+
+.move_right_end{
+    transform: translateX(0%);
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.move_diagona_right_up_start{
+    transform: translate(-10%,3.5vh);
+    opacity:0;
+}
+
+.move_diagona_right_up_end{
+    transform: translate(0%,0vh);
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.btn_comparse1_start{
+    transform: translateY(3.5vh);
+    scale: 0;
+}
+
+.btn_comparse1_end{
+    transform: translateY(0vh);
+    scale: 1;
+    transition: transform 1s ease, scale 0.5s ease;
+}
+
+
+
+
+
+/*
 .swipe_up_animation_start{
     opacity: 0;
     transform: translateY(3vh);
@@ -13,14 +82,16 @@
 
 
 
-.comparsa_graduale_start{
+.dissolvenza_graduale_start{
     opacity: 0;
 }
 
-.comparsa_graduale_end{
+.dissolvenza_graduale_end{
     opacity: 1;
     transition: opacity 2.4s ease;
 }
+
+
 
 
 
@@ -62,6 +133,6 @@
     opacity: 1;
     transition: transform 2s ease, opacity 2s ease;
 }
-
+*/
 
 

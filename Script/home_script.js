@@ -32,8 +32,8 @@
             scala=scala+0.2 //TouchPad
         else
             scala=scala+0.6//Mouse
-        copertina.style.scale=scala.toString()
 
+        copertina.style.scale=scala.toString()
         if(parseFloat(copertina.style.scale)>5){
             copertina.style.display="None"
             document.querySelector('.over-text').style.opacity=1;
@@ -84,13 +84,9 @@
 
     window.addEventListener('scroll',()=>{
         setSizeContainerShowRoom()
-        scrollIn=scrollY;
     });
 
-
-
-
-    copertina.addEventListener('wheel', ()=>{
+    copertina.addEventListener('wheel', (event)=>{
 
         if(event.deltaY>0 && !animazioneCopertinaEseguita) {
             animationCopertina(event)
@@ -122,7 +118,6 @@
     })
 
     main_img.addEventListener('touchend', (e)=>{
-        console.log("Smetto di toccare lo schermo")
         if(!animazioneCopertinaEseguita){
             let copertina=document.querySelector('.copertina_main_img')
             if(parseFloat(copertina.style.scale)>6){
