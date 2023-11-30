@@ -63,6 +63,17 @@
     transition: transform 1s ease, scale 0.5s ease;
 }
 
+.show_right_start{
+    opacity: 0;
+    transform: translateX(10%);
+}
+
+.show_right_end{
+    transform: translateX(0%);
+    opacity: 1;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
 
 
 

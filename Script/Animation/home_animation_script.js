@@ -54,10 +54,13 @@ window.addEventListener('load', function (){
     }
 
     setAnimation(header_chiSiamo,'move_diagona_right_up_start','move_diagona_right_up_end',0.9,0) //Finisce a 1s
-    setAnimation(descrizione_chiSiamo,'move_diagona_right_up_start','move_diagona_right_up_end',0.9,300) //Finisce a 1.3s
-    setAnimation(paroleChiavi_chiSiamo,'move_diagona_right_up_start','move_diagona_right_up_end',0.9,600) //Finisce a 1.6s
-    setAnimation(btn_chiSiamo,'btn_comparse1_start','btn_comparse1_end',0.9,1600) //Finisce a 2.6s
-    setAnimation(img_chiSiamo,'zoom_start','zoom_end',0.9,1000)
+    setAnimation(descrizione_chiSiamo,'move_diagona_right_up_start','move_diagona_right_up_end',0.5,300) //Finisce a 1.3s
+    setAnimation(paroleChiavi_chiSiamo,'move_diagona_right_up_start','move_diagona_right_up_end',0.5,600) //Finisce a 1.6s
+    setAnimation(btn_chiSiamo,'btn_comparse1_start','btn_comparse1_end',0.5,1600) //Finisce a 2.6s
+    if(window.innerWidth<600)
+        setAnimation(img_chiSiamo,'show_right_start','show_right_end',0.9,100)
+    else
+        setAnimation(img_chiSiamo,'show_right_start','show_right_end',0.9,2400)
 
     /*
    for (i = 0; i < list_icona_bussines_space.length; i++) {
