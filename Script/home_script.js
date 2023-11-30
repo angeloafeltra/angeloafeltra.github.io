@@ -31,7 +31,7 @@
         if(event.deltaY<20)
             scala=scala+0.2 //TouchPad
         else
-            scala=scala+0.4 //Mouse
+            scala=scala+0.6//Mouse
         copertina.style.scale=scala.toString()
 
         if(parseFloat(copertina.style.scale)>5){
@@ -109,16 +109,13 @@
             let copertina=document.querySelector('.copertina_main_img')
             let scala=parseFloat(copertina.style.scale);
             if(window.innerWidth<600)
-                scala=scala+0.2
+                scala=scala+0.4
             else
-                scala=scala+0.1
+                scala=scala+0.2
             copertina.style.scale=scala.toString()
             if(parseFloat(copertina.style.scale)>5){
-                copertina.style.opacity=0;
-                document.querySelector('.over-text').style.opacity=1;
-            }
-            if(parseFloat(copertina.style.scale)>7){
                 copertina.style.display="None"
+                document.querySelector('.over-text').style.opacity=1;
             }
         }
 
