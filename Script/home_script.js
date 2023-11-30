@@ -55,6 +55,7 @@
         if(parseFloat(copertina.style.scale)>7){
             document.querySelector('.main_img').style.position="static";
             copertina.style.display="None"
+            document.body.style.overflow = 'auto';
             document.querySelector("main").style.display="block"
             animazioneCopertinaEseguita=true;
         }
@@ -87,6 +88,7 @@
 
     window.addEventListener('load',()=>{
         setSizeContainerShowRoom()
+        document.body.style.overflow = 'hidden';
         let links=document.getElementsByClassName('link_navbar');
         for (let i = 0; i < links.length; i++) {
             if (links[i].style.color != "rgb(240, 179, 87)") {
@@ -145,6 +147,7 @@
                 document.querySelector('.main_img').style.position="static";
                 copertina.style.display="None"
                 document.querySelector("main").style.display="block"
+                document.body.style.overflow = 'auto';
                 animazioneCopertinaEseguita=true;
                 window.scrollTo(0,0)
             }
