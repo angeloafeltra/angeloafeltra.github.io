@@ -94,8 +94,9 @@
     });
 
     main_img.addEventListener('wheel', (event)=>{
-
+        console.log("Event Wheel")
         if(event.deltaY>0 && !animazioneCopertinaEseguita) {
+            console.log("Event Wheel Catturato")
             animationCopertina()
         }
 
