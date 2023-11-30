@@ -144,7 +144,6 @@
                 document.querySelector("main").style.display="block"
                 animazioneCopertinaEseguita=true;
                 window.scrollTo(0,0)
-                alert("Sono al top!");
             }
         }
 
