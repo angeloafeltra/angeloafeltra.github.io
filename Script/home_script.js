@@ -47,10 +47,10 @@
                         links[i].style.color = "#ffffff";
                     }
                 }
+                window.scrollTo(0,0);
             }
             if(parseFloat(copertina.style.scale)>8){
                 document.querySelector('.main_img').style.position="static";
-                window.scrollTo(0,0);
                 copertina.style.display="None"
                 animazioneCopertinaEseguita=true;
             }
