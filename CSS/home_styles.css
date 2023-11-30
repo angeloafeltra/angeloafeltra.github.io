@@ -2,6 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    /* Altri prefissi WebKit che potresti voler disabilitare */
 }
 
 body, html {
@@ -12,7 +17,6 @@ body, html {
     margin: 0;
     overscroll-behavior-y: none;
     overscroll-behavior-x: none;
-    -webkit-overflow-scrolling: unset;
 }
 
 
