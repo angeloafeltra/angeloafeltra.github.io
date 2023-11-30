@@ -1,9 +1,11 @@
+
 /* || Constanti e Variabili Globali */
 
     const hamburger=document.querySelector('.hamburger')
     const navlinks=document.querySelector('.nav_links')
     const navbar=document.querySelector('.navbar')
-    const linksNavBar=document.getElementsByClassName('link_navbar')
+    const links=document.getElementsByClassName('link_navbar')
+
     let startX;
     let hamburgerOn=false;
 
@@ -17,55 +19,40 @@
     function showLateralMenu(){
         navbar.style.backgroundColor="rgba(255,255,255,1)";
         navlinks.style.display="block";
-        for (i = 0; i < linksNavBar.length; i++) {
-            if (linksNavBar[i].style.color != "rgb(240, 179, 87)") {
-                linksNavBar[i].style.color = "#000000";
+        for (let i = 0; i < links.length; i++) {
+            if (links[i].style.color != "rgb(240, 179, 87)") {
+                links[i].style.color = "#000000";
             }
         }
+        document.body.style.overflowY = "hidden";
     }
 
     function hideLateralMenu(){
         navlinks.style.display="none";
-        coloreNavBar()
+        document.body.style.overflowY = "auto";
+        dynamicStyleNavBar()
     }
 
-    function restoreDesktopMenu(){
-        console.log("Resize")
-        if(window.innerWidth>1024) {
-            console.log("Mostro menu desktop");
-            navlinks.style.display = "block";
-        }else {
-            console.log("Nascondo menu desktop");
-            navlinks.style.display = "none";
-        }
+    function dynamicStyleNavBar() {
 
-        hamburgerOn=false;
-    }
-
-    function coloreNavBar() {
-        //console.log("Entro nella funzione")
-        if (!hamburgerOn) {
-            if (window.scrollY > 35) {
-                //console.log("Coloro navbar");
+            if (window.scrollY > 35) { //Non sono al Top della pagina, sfondo navbar bianco
                 navbar.style.backgroundColor = "rgba(255,255,255,1)";
-                //navbar.style.paddingTop="10px";
-                for (i = 0; i < linksNavBar.length; i++) {
-                    if (linksNavBar[i].style.color != "rgb(240, 179, 87)") {
-                        linksNavBar[i].style.color = "#000000";
+                for (let i = 0; i < links.length; i++) {
+                    if (links[i].style.color != "rgb(240, 179, 87)") {
+                        links[i].style.color = "#000000";
                     }
                 }
             } else {
-                //console.log("Scoloro navbar");
                 navbar.style.backgroundColor = "rgba(255,255,255,0)";
-                //navbar.style.paddingTop="30px";
-                for (i = 0; i < linksNavBar.length; i++) {
-                    if (linksNavBar[i].style.color != "rgb(240, 179, 87)") {
-                        linksNavBar[i].style.color = "#ffffff";
+                for (let i = 0; i < links.length; i++) {
+                    if (links[i].style.color != "rgb(240, 179, 87)") {
+                        links[i].style.color = "#ffffff";
                     }
                 }
             }
-        }
+
     }
+
 
 /* ... */
 
@@ -98,14 +85,25 @@
     })
 
     window.addEventListener("scroll", (event) => {
-        //console.log("Scroll");
-        coloreNavBar();
+       dynamicStyleNavBar();
     });
 
+
     window.addEventListener('resize', ()=>{
-        console.log("Resize")
-        restoreDesktopMenu();
+        if(window.innerWidth>1024){
+            dynamicStyleNavBar();
+            document.body.style.overflowY = "auto";
+            navlinks.style.display="block";
+            hamburgerOn=false;
+        }else{
+            if(!hamburgerOn){
+                hideLateralMenu();
+            }
+        }
+
     });
+
+
 
 /* ... */
 

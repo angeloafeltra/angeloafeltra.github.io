@@ -18,6 +18,15 @@
             "Immagini/Background/background_3.jpg"
     ]
 
+    const list_card_type=["card card-tall card-wide",
+        "card card-tall",
+        "card",
+        "card",
+        "card",
+        "card",
+        "card card-wide"
+    ]
+
     var form = document.querySelector('form')
     let startXslider;
     var index_current_img=0;
@@ -45,7 +54,9 @@
 
         mosaico.style.opacity=0.5;
         container_img.style.display='block';
-        immagine.src=img.slice(6, -2);
+        for(let i=0;i<list_img.length;i++)
+            if(img.includes(list_img[i]))
+                immagine.src=list_img[i];
     }
 
     function showAllart(){
@@ -140,6 +151,19 @@
 
     function handleForm(event) { event.preventDefault(); }
 
+    function addImgMosaico(){
+        let mosaico=document.querySelector('.card-mosaic')
+        for (let i=0;i<list_img.length;i++){
+            let div=document.createElement('div');
+            div.className=list_card_type[i]
+            div.style.backgroundImage="url("+list_img[i]+")"
+            div.addEventListener('click', function(event) { //Assegno un eventListener all'item
+                showImage(event);
+            });
+            mosaico.appendChild(div);
+        }
+    }
+
 /* ... */
 
 
@@ -175,13 +199,15 @@
         }
     })
 
-    window.onresize = function() {
+    window.addEventListener("resize", (event) => {
         setSizeContainer();
-    };
+    });
 
-    window.onload = function() {
+    window.addEventListener("load", (event) => {
         setSizeContainer();
-    };
+        addImgMosaico();
+        document.querySelector('.img_mobile').src=list_img[0]
+    });
 
 /* ... */
 
