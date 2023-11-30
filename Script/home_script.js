@@ -105,14 +105,12 @@
 
     main_img.addEventListener('touchmove', (event)=>{
         console.log("Event TouchMove")
-        var touch = event.touches[0];
 
-        if(touch.clientY < lastTouchY-10 && !animazioneCopertinaEseguita) {
+        if(!animazioneCopertinaEseguita) {
             console.log("Event TouchMove")
             animationCopertina()
         }
 
-        lastTouchY=touch.clientY
 
     })
 
