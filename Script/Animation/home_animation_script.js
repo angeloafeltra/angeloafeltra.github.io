@@ -78,7 +78,6 @@ window.addEventListener('load', function (){
     else
         setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,1700)
 
-
 });
 
 
