@@ -4,6 +4,9 @@
     const containerDescrizioneShowRoom=document.querySelector('#showroom .descrizione_sezione')
     const copertina=document.querySelector('.copertina')
 
+    let animazioneCopertinaEseguita=false;
+
+
 /* ... */
 
 
@@ -35,6 +38,7 @@
             }
             if(parseFloat(copertina.style.scale)>8){
                 copertina.style.display="None"
+                animazioneCopertinaEseguita=true;
             }
         }
     }
