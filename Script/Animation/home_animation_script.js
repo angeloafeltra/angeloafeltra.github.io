@@ -72,11 +72,11 @@ window.addEventListener('load', function (){
 
     setAnimation(header_prodotti,'zoom_start','zoom_end',0.9,0) //Finisce a 1s
     setAnimation(descrizione_prodotti,'zoom_start','zoom_end',0.5,300) //Finisce a 1.3s
-    setAnimation(btn_prodotti,'btn_comparse1_start','btn_comparse1_end',0.5,900) //Finisce a 2.6s
+    setAnimation(btn_prodotti,'btn_comparse1_start','btn_comparse1_end',0.5,600) //Finisce a 2.6s
     if(window.innerWidth<600)
         setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,100)
     else
-        setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,1700)
+        setAnimation(img_prodotti,'show_right_start','show_right_end',0.9,1400)
 
 });
 
