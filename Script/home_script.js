@@ -120,7 +120,7 @@
             console.log("Zoom logo")
             let copertina=document.querySelector('.copertina_main_img')
             let scala=parseFloat(copertina.style.scale);
-            scala=scala+0.05
+            scala=scala+0.01
             copertina.style.scale=scala.toString()
             if(parseFloat(copertina.style.scale)>5){
                 copertina.style.opacity=0;
