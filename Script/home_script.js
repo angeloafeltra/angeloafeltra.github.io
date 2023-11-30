@@ -110,7 +110,7 @@
                 scala=scala+0.2
             copertina.style.scale=scala.toString()
             if(parseFloat(copertina.style.scale)>5){
-                copertina.style.display="None"
+                copertina.style.opacity=0;
                 document.querySelector('.over-text').style.opacity=1;
             }
         }
