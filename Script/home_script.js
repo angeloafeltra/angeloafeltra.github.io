@@ -2,14 +2,12 @@
 
     const containerImgShowRoom=document.querySelector('#showroom .immagine_sezione')
     const containerDescrizioneShowRoom=document.querySelector('#showroom .descrizione_sezione')
-    const copertina=document.querySelector('.copertina')
+    const copertina=document.querySelector('.copertina_main_img')
     const main_img=document.querySelector('.main_img')
 
 
     let animazioneCopertinaEseguita=false;
     let startPositionY=0
-
-
 /* ... */
 
 
@@ -18,7 +16,6 @@
 /* || Funzioni */
 
     function setSizeContainerShowRoom(){
-        console.log("Setto size")
         if(window.innerWidth>=600) {
             containerImgShowRoom.style.height = containerDescrizioneShowRoom.offsetHeight + "px";
         }else{
@@ -28,56 +25,36 @@
 
     function animationCopertina(event) {
 
-
-        document.querySelector('.navbar').style.backgroundColor="rgba(255,255,255,0)";
-        let links=document.getElementsByClassName('link_navbar');
-        for (let i = 0; i < links.length; i++) {
-            if (links[i].style.color != "rgb(240, 179, 87)") {
-                links[i].style.color = "#000000";
-            }
-        }
-
         let copertina=document.querySelector('.copertina_main_img')
         let scala=parseFloat(copertina.style.scale);
         //Gestire scroll touch e mouse
         if(event.deltaY<20)
-            scala=scala+0.3
+            scala=scala+0.2 //TouchPad
         else
-            scala=scala+1
+            scala=scala+0.4 //Mouse
         copertina.style.scale=scala.toString()
 
         if(parseFloat(copertina.style.scale)>5){
-            copertina.style.opacity=0;
+            copertina.style.display="None"
             document.querySelector('.over-text').style.opacity=1;
             for (let i = 0; i < links.length; i++) {
                 if (links[i].style.color != "rgb(240, 179, 87)") {
                     links[i].style.color = "#ffffff";
                 }
             }
-            window.scrollTo(0,0);
-        }
-        if(parseFloat(copertina.style.scale)>7){
-            document.querySelector('.main_img').style.position="static";
-            copertina.style.display="None"
-            document.body.style.overflow = 'auto';
-            document.querySelector("main").style.display="block"
-            animazioneCopertinaEseguita=true;
+
+            setTimeout(function() {
+                document.querySelector('.main_img').style.position="static";
+                document.body.style.overflow = 'auto';
+                document.querySelector("main").style.display="block"
+                animazioneCopertinaEseguita=true;
+            }, 400);
+
+
         }
 
     }
 
-    function setCopertina(){
-        let pathCopertina=[
-            "Immagini/Copertina/LogoCopertina-Mobile.svg",
-            "Immagini/Copertina/LogoCopertina-Tablet.svg",
-            "Immagini/Copertina/LogoCopertina-Desktop.svg"
-        ]
-        let copertina=document.querySelector('.copertina_main_img')
-        if(window.innerWidth<600 && !copertina.src.includes(pathCopertina[0])) copertina.src=pathCopertina[0]
-        if((window.innerWidth>600 && window.innerWidth<1024) && !copertina.src.includes(pathCopertina[1])) copertina.src=pathCopertina[1]
-        if(window.innerWidth>1024 && !copertina.src.includes(pathCopertina[2])) copertina.src=pathCopertina[2]
-
-    }
 
 /* ... */
 
@@ -91,8 +68,12 @@
     });
 
     window.addEventListener('load',()=>{
+        window.scrollTo(0,0);
         setSizeContainerShowRoom()
+
         document.body.style.overflow = 'hidden';
+
+        document.querySelector('.navbar').style.backgroundColor="rgba(255,255,255,0)";
         let links=document.getElementsByClassName('link_navbar');
         for (let i = 0; i < links.length; i++) {
             if (links[i].style.color != "rgb(240, 179, 87)") {
@@ -103,10 +84,14 @@
 
     window.addEventListener('scroll',()=>{
         setSizeContainerShowRoom()
+        scrollIn=scrollY;
     });
 
-    main_img.addEventListener('wheel', (event)=>{
-        console.log(event.deltaY)
+
+
+
+    copertina.addEventListener('wheel', ()=>{
+
         if(event.deltaY>0 && !animazioneCopertinaEseguita) {
             animationCopertina(event)
         }
