@@ -284,10 +284,6 @@ body, html {
         cursor:pointer;
     }
 
-    #chiSiamo .descrizione_sezione .btn_chisiamo:hover{
-        color: rgba(119,4,4,1);
-        background-color: white;
-    }
 
     @media (min-width: 600px){
 
@@ -334,6 +330,11 @@ body, html {
             display: inline-block;
             align-self: center;
             flex-basis: 50%;
+        }
+
+        #chiSiamo .descrizione_sezione .btn_chisiamo:hover{
+            color: rgba(119,4,4,1);
+            background-color: white;
         }
 
 
