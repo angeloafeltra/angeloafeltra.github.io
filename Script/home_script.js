@@ -143,6 +143,7 @@
                 copertina.style.display="None"
                 document.querySelector("main").style.display="block"
                 animazioneCopertinaEseguita=true;
+                window.scrollTo(0,0)
             }
         }
 
