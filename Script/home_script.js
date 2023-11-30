@@ -38,7 +38,10 @@
 
         let copertina=document.querySelector('.copertina_main_img')
         let scala=parseFloat(copertina.style.scale);
-        scala=scala+0.1
+        if(window.innerWidth<1024)
+            scala=scala+0.5
+        else
+            scala=scala+0.1
         copertina.style.scale=scala.toString()
 
         if(parseFloat(copertina.style.scale)>5){
