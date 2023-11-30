@@ -7,7 +7,7 @@
 
 
     let animazioneCopertinaEseguita=false;
-    let lastTouchY=0
+    let startPositionY=0
 
 
 /* ... */
@@ -18,6 +18,7 @@
 /* || Funzioni */
 
     function setSizeContainerShowRoom(){
+        console.log("Setto size")
         if(window.innerWidth>=600) {
             containerImgShowRoom.style.height = containerDescrizioneShowRoom.offsetHeight + "px";
         }else{
@@ -38,10 +39,7 @@
 
         let copertina=document.querySelector('.copertina_main_img')
         let scala=parseFloat(copertina.style.scale);
-        if(window.innerWidth<1024)
-            scala=scala+0.5
-        else
-            scala=scala+0.1
+        scala=scala+0.1
         copertina.style.scale=scala.toString()
 
         if(parseFloat(copertina.style.scale)>5){
@@ -97,6 +95,10 @@
         }
     });
 
+    window.addEventListener('scroll',()=>{
+        setSizeContainerShowRoom()
+    });
+
     main_img.addEventListener('wheel', (event)=>{
         console.log("Event Wheel")
         if(event.deltaY>0 && !animazioneCopertinaEseguita) {
@@ -106,14 +108,43 @@
 
     })
 
-    main_img.addEventListener('touchmove', (event)=>{
-        console.log("Event TouchMove")
+    main_img.addEventListener('touchstart', (e)=>{
+        console.log("Tocco lo schermo")
+        startPositionY=e.touches[0].clientY
+    })
 
-        if(!animazioneCopertinaEseguita) {
-            console.log("Event TouchMove")
-            animationCopertina()
+    main_img.addEventListener('touchmove', (e)=>{
+
+        let positionY=e.touches[0].clientY
+        if(positionY<startPositionY && !animazioneCopertinaEseguita) {
+            console.log("Zoom logo")
+            let copertina=document.querySelector('.copertina_main_img')
+            let scala=parseFloat(copertina.style.scale);
+            scala=scala+0.2
+            copertina.style.scale=scala.toString()
+            if(parseFloat(copertina.style.scale)>5){
+                copertina.style.opacity=0;
+                document.querySelector('.over-text').style.opacity=1;
+            }
+            if(parseFloat(copertina.style.scale)>7){
+                copertina.style.display="None"
+            }
         }
 
+    })
+
+    main_img.addEventListener('touchend', (e)=>{
+        console.log("Smetto di toccare lo schermo")
+        if(!animazioneCopertinaEseguita){
+            let copertina=document.querySelector('.copertina_main_img')
+            if(parseFloat(copertina.style.scale)>6){
+                console.log("Ripristino tutto il contenuto")
+                document.querySelector('.main_img').style.position="static";
+                copertina.style.display="None"
+                document.querySelector("main").style.display="block"
+                animazioneCopertinaEseguita=true;
+            }
+        }
 
     })
 
