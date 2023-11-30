@@ -26,7 +26,7 @@
         }
     }
 
-    function animationCopertina() {
+    function animationCopertina(event) {
 
 
         document.querySelector('.navbar').style.backgroundColor="rgba(255,255,255,0)";
@@ -39,7 +39,11 @@
 
         let copertina=document.querySelector('.copertina_main_img')
         let scala=parseFloat(copertina.style.scale);
-        scala=scala+0.1
+        //Gestire scroll touch e mouse
+        if(event.deltaY<20)
+            scala=scala+0.3
+        else
+            scala=scala+1
         copertina.style.scale=scala.toString()
 
         if(parseFloat(copertina.style.scale)>5){
@@ -102,16 +106,14 @@
     });
 
     main_img.addEventListener('wheel', (event)=>{
-        console.log("Event Wheel")
+        console.log(event.deltaY)
         if(event.deltaY>0 && !animazioneCopertinaEseguita) {
-            console.log("Event Wheel Catturato")
-            animationCopertina()
+            animationCopertina(event)
         }
 
     })
 
     main_img.addEventListener('touchstart', (e)=>{
-        console.log("Tocco lo schermo")
         startPositionY=e.touches[0].clientY
     })
 
@@ -119,7 +121,6 @@
 
         let positionY=e.touches[0].clientY
         if(positionY<startPositionY && !animazioneCopertinaEseguita) {
-            console.log("Zoom logo")
             let copertina=document.querySelector('.copertina_main_img')
             let scala=parseFloat(copertina.style.scale);
             if(window.innerWidth<600)
