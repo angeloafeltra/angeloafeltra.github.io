@@ -7,6 +7,17 @@
 .move_up_end{
     transform: translateY(0vh);
     opacity: 1;
+    /*transition: transform 2s ease, opacity 2s ease;*/
+}
+
+.move_down_start{
+    transform: translateY(-3.5vh);
+    opacity: 0;
+}
+
+.move_down_end{
+    transform: translateY(0vh);
+    opacity: 1;
     transition: transform 2s ease, opacity 2s ease;
 }
 
@@ -96,76 +107,16 @@
     transition: transform 2s ease, opacity 2s ease;
 }
 
-
-
-
-
-/*
-.swipe_up_animation_start{
-    opacity: 0;
-    transform: translateY(3vh);
+.comparsa_verticale_start{
+    height:0%;
 }
 
-.swipe_up_animation_end{
-    transform: translateY(0vh);
-    opacity: 1;
-    transition: transform 1.5s ease, opacity 2s ease;
+.comparsa_verticale_end{
+    height:100%;
+    transition: height 2s ease;
 }
 
 
 
-
-.dissolvenza_graduale_start{
-    opacity: 0;
-}
-
-.dissolvenza_graduale_end{
-    opacity: 1;
-    transition: opacity 2.4s ease;
-}
-
-
-
-
-
-
-.swipe_right_animation_start{
-    opacity: 0;
-    transform: translateX(10%);
-}
-
-.swipe_right_animation_end{
-    transform: translateX(0%);
-    opacity: 1;
-    transition: transform 1.5s ease, opacity 2s ease;
-}
-
-
-
-.entrate_right_animation_start{
-    opacity: 0;
-    transform: translateX(5%);
-}
-
-.entrate_right_animation_end{
-    transform: translateX(0%);
-    opacity: 1;
-    transition: transform 2s ease, opacity 2s ease;
-}
-
-
-
-
-.entrate_left_animation_start{
-    opacity: 0;
-    transform: translateX(-5%);
-}
-
-.entrate_left_animation_end{
-    transform: translateX(0%);
-    opacity: 1;
-    transition: transform 2s ease, opacity 2s ease;
-}
-*/
 
 

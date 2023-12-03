@@ -36,7 +36,7 @@
     function dynamicStyleNavBar() {
 
             if (window.scrollY > 35) { //Non sono al Top della pagina, sfondo navbar bianco
-                navbar.style.backgroundColor = "rgba(255,255,255,1)";
+                navbar.style.backgroundColor = "rgba(255,255,255,0.9)";
                 for (let i = 0; i < links.length; i++) {
                     if (links[i].style.color != "rgb(240, 179, 87)") {
                         links[i].style.color = "#000000";

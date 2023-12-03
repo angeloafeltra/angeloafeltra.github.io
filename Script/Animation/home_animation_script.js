@@ -67,8 +67,8 @@ window.addEventListener('load', function (){
     else
         setAnimation(img_chiSiamo,'show_right_start','show_right_end',0.9,2000)
 
-    setAnimation(descrizione_showRoom,'entrate_right_start','entrate_right_end',0.7,0)
-    setAnimation(img_showRoom,'entrate_left_start','entrate_left_end',0.7,0)
+    setAnimation(descrizione_showRoom,'entrate_right_start','entrate_right_end',0.5,0)
+    setAnimation(img_showRoom,'entrate_left_start','entrate_left_end',0.5,0)
 
     setAnimation(header_prodotti,'zoom_start','zoom_end',0.9,0) //Finisce a 1s
     setAnimation(descrizione_prodotti,'zoom_start','zoom_end',0.5,300) //Finisce a 1.3s

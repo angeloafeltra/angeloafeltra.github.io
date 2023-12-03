@@ -6,7 +6,8 @@
 
 body, html {
     font-family: sans-serif;
-    background-color: #EDEAEA;
+    /*background-color: #EDEAEA;*/
+    background-color: white;
     height: 100%;
     max-width: 100%;
     margin: 0;
@@ -34,6 +35,14 @@ body, html {
         font-size: 30px;
         font-weight: lighter;
         text-transform: uppercase;
+        opacity: 0;
+        animation: fadeInFrase 1s ease-out forwards;
+    }
+
+    @keyframes fadeInFrase {
+        to {
+            opacity: 1;
+        }
     }
 
     @media (min-width: 600px) {
@@ -81,417 +90,250 @@ body, html {
 
 /* || Section1 Element Style */
 
-    .container_descrizione{
-        background: #D9D9D9;
-        padding: 10% 3% 10% 3%;
-    }
-
-    .container_descrizione h1{
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
-        font-weight: lighter;
-        margin-bottom: 5%;
-        color: black;
-        text-transform: uppercase;
-    }
-
-    .container_descrizione p{
-        font-family: 'Montserrat';
-        font-size: 18px;
-        font-weight: lighter;
-        color: black;
-    }
-
-    @media (min-width: 600px) {
-
-        .container_descrizione {
-            padding: 5% 5% 5% 5%;
-        }
-
-    }
-
-    @media (min-width: 1024px) {
-
-        .container_descrizione {
-            padding: 5% 10% 5% 10%;
-        }
-
-        .container_descrizione h1{
-            font-size: 40px;
-            margin-bottom: 2%;
-        }
-
-        .container_descrizione p{
-            font-size: 20px;
-        }
-
-    }
-
-    @media (min-width: 1920px) {
-
-        .container_descrizione {
-            padding: 5% 10% 5% 10%;
-        }
-
-    }
-
-/* ... */
-
-
-
-/* || Section2 Element Style */
-
-    .section_img{
-        width: 100%;
-        position: relative;
-    }
-
-    .card-mosaic {
-        display: none;
-    }
-
-    .container_img{
-        display: none;
-    }
-
-    .close{
-        display: none;
-    }
-
-    .container_img_mobile{
-        width: 100%;
-        height: 500px;
-    }
-
-    .img_mobile {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-
-        width: 100%;
-        height: 100%;
-        object-fit:contain;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Immagini/Prodotti/Porte/porta1.jpeg)
-    }
-
-
-    @media (min-width: 600px) {
-
-        .container_img_mobile{
-            display: none;
-        }
-
-        .container_img{
-            position: absolute;
-            height: 400px;
-            top: 50%;
-            left:50%;
-            transform: translate(-50%, -50%);
-            background: #D9D9D9;
-            z-index: 3;
-            position: absolute;
-            box-shadow: 5px 5px 10px black;
-            border-radius: 5px;
-            display: none;
-            transition: opacity 1s ease;
-        }
-
-        .close{
-            width: 5%;
-            height: 5%;
-            background: none;
-            color: white;
-            position: absolute;
-            right: 10px;
-            top:10px;
-            border: none;
-            border-radius: 5px;
-            font-family: "Montserrat";
-            font-size: 20px;
-            cursor: pointer;
-            display: block;
-        }
-
-        .card-mosaic{
-            display: grid;
-            width: 100%;
-            gap:10px;
-            grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
-            grid-auto-rows: 150px;
-            background: white;
-            padding: 5% 5% 5% 5%;
-        }
-
-
-
-        .card{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            height: 100%;
-            width: 100%;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: all 500ms;
-            padding: 0;
-            margin: 0;
-            /*border: black solid;*/
-
-            opacity: 0;
-            scale: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                scale: 1;
-            }
-        }
-
-        .card:nth-child(1) { animation-delay: 0s; }
-        .card:nth-child(3) { animation-delay: 0.4s; }
-        .card:nth-child(5) { animation-delay: 0.8s; }
-        .card:nth-child(2) { animation-delay: 1.2s; }
-        .card:nth-child(6) { animation-delay: 1.6s; }
-        .card:nth-child(4) { animation-delay: 2.0s; }
-        .card:nth-child(7) { animation-delay: 2.4s; }
-
-        .card-tall{
-            grid-row: span 2 /auto;
-        }
-
-        .card-wide{
-            grid-column: span 2 /auto;
-        }
-
-        .card:hover{
-            transform: scale(1.1);
-            z-index: 3;
-            box-shadow: 5px 5px 10px black;
-        }
-
-    }
-
-    @media (min-width: 1024px) {
-
-        .container_img{
-            height: 600px;
-        }
-
-        .close{
-            font-size: 30px;
-        }
-
-
-        .card-mosaic{
-            gap:20px;
-            grid-auto-rows: 230px;
-            padding: 5% 10% 5% 10%;
-        }
-
-    }
-
-/* ... */
-
-
-
-
-/* || Section3 Element Style */
-
-
-    .container_vieni_a_trovarci{
+    .container_section1{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         width: 100%;
-
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_2.jpg") no-repeat center center;
-        background-size: cover;
+        gap: 10px;
+        padding: 10% 7% 10% 7%;
     }
 
-    .container_appuntamento{
+    .container_slogan{
         flex-basis: 100%;
-        padding: 10%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container_slogan h1{
+        font-family: 'Helvetica Neue';
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px;
+    }
+
+    .container_slogan p{
+        font-family: 'Montserrat';
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .container_paroleChiavi{
+        flex-basis: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        padding: 50px 0px 50px 0px;
+    }
+
+    .container_parolaChiave{
+        flex-basis:100%;
+        text-align: center;
+
+        height: 350px;
+        display: flex;
+        flex-direction: column;
         position: relative;
     }
 
-    .container_map{
-        flex-basis: 100%;
-        height: 400px;
-    }
-
-    form{
+    .img_space{
         width: 100%;
+        height: 100%;
+        box-shadow: 5px 0px 10px black;
+        opacity: 1;
+        z-index: 2;
+        cursor: pointer;
     }
 
-    form h1{
-        font-size: 30px;
-        font-family: 'Alfa Slab One';
-        text-transform: uppercase;
-        font-weight: lighter;
-        color: white;
-    }
-
-    form p {
-        font-size: 18px;
-        font-family: 'Montserrat';
-        margin-bottom: 4%;
-        color: white;
-    }
-
-    #errore{
-        font-family: 'Montserrat';
-        font-size: 16px;
-        color: red;
-        padding: 5px;
-        display: block;
-        text-align: center;
+    .container_parolaChiave .descrizione{
         display: none;
-    }
-
-    .campo_form {
-        flex-basis: 100%;
-        padding: 5px;
-    }
-
-    .campo_form h2{
-        font-size: 18px;
-        font-family: 'Alfa Slab One';
-        font-weight: lighter;
-        color: white;
-    }
-
-    .campo_form input{
         width: 100%;
-        border: white solid;
-        background: none;
-        font-size: 16px;
-        font-family: 'Montserrat';
-        padding: 5px;
-        color: white;
-    }
-
-    .campo_form input[type="date"]{
-        -webkit-appearance: none;
-    }
-
-    ::placeholder{
-        color: white;
-        opacity: 0.7;
-    }
-
-    .container_trattamento_dati{
-        display: flex;
-        flex-wrap: nowrap;
-        width: 100%;
-        align-items: stretch;
-        justify-content: center;
-        gap:10px;
-    }
-
-    .container_trattamento_dati input{
-        flex-basis:3%;
-        height: 30px;
-        width: 30px;
-        margin-top: 3px;
-
-    }
-
-    .container_trattamento_dati p{
-        flex-basis:97%;
-        font-size: 16px;
-        font-family: 'Montserrat';
-        color: white;
-    }
-
-    .submit{
-        display: block;
-        font-size: 16px;
-        font-family: 'Montserrat';
-        padding: 10px 60px 10px 60px;
-        margin: 10px auto 10px auto;
-        border-radius: 20px;
-        text-transform: uppercase;
-        border: none;
-        background: white;
-        color: #770404;
-    }
-
-    .allert_prenotazione{
-        width: 80%;
-        padding: 5%;
-        background: white;
         position: absolute;
-        top:50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .container_parolaChiave .descrizione h1{
+        font-family: 'Helvetica Neue';
+        font-size: 28px;
+        padding: 5px;
+    }
+
+    .container_parolaChiave .descrizione p{
         font-family: 'Montserrat';
         font-size: 18px;
-        border-radius: 15px;
-        color: #770404;
-        border: #770404 solid 2px;
-        box-shadow: 5px 5px 10px black;
-        display: none;
-
-        opacity: 0;
-        animation: fadeIn2 1s ease-out forwards;
+        padding: 5px;
     }
 
-    @keyframes fadeIn2 {
-        to {
-            opacity: 1;
+    .touch-btn{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #770404;
+        display: block;
+        bottom: 20px;
+        border-radius: 20px;
+        padding: 7px;
+        box-shadow: 3px 3px 8px black;
+        z-index: 5;
+    }
+
+    .btn1{
+        left: 85%;
+    }
+
+    .btn2{
+        left: 5%;
+    }
+
+    .btn3{
+        left: 85%;
+    }
+
+    .btn1 img{
+        width: 100%;
+        height: 100%;
+        rotate: -45deg
+    }
+
+    .btn2 img{
+        width: 100%;
+        height: 100%;
+        rotate: 45deg;
+    }
+
+    .btn3 img{
+        width: 100%;
+        height: 100%;
+        rotate: -45deg
+    }
+
+
+    @media (min-width: 600px){
+
+        .container_section1{
+            padding: 5% 5% 5% 5%;
         }
-    }
 
-    @media (min-width: 600px) {
-
-        .container_vieni_a_trovarci{
+        .container_paroleChiavi{
             flex-wrap: nowrap;
-            justify-content: stretch;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_2.jpg") no-repeat center center;
-            background-size: cover;
+            align-items: start;
         }
 
-        .container_appuntamento{
-            flex-basis: 50%;
-            padding: 5%;
+        .container_parolaChiave{
+            flex-basis:33%;
+            height: 370px;
         }
 
-        .container_map{
-            flex-basis: 50%;
-            height: 100%;
+        .container_parolaChiave .descrizione h1{
+            font-size: 28px;
         }
+
+        .container_parolaChiave .descrizione p{
+            font-size: 16px;
+        }
+
+        .block1{
+            margin-top: 0;
+        }
+
+        .block2{
+            margin-top: 70px;
+        }
+
+        .block3{
+            margin-top: 120px;
+        }
+
+        .btn2 img{
+            rotate: -45deg;
+        }
+
+        .btn1{
+            left: 78%;
+        }
+
+        .btn2{
+            left: 78%;
+        }
+
+        .btn3{
+            left: 78%;
+        }
+
+
 
     }
+
 
     @media (min-width: 1024px) {
 
-        .container_vieni_a_trovarci{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_2.jpg") no-repeat center center fixed;
-            background-size: cover;
-        }
-
+    .container_section1{
+        padding: 5% 10% 5% 10%;
     }
+
+
+    .container_slogan h1{
+        font-size: 45px;
+    }
+
+    .container_slogan p{
+        font-size: 25px;
+    }
+
+    .container_parolaChiave{
+        height: 400px;
+        transform: translateY(0px);
+        transition: transform 0.5s ease;
+        position: relative;
+    }
+
+    .container_parolaChiave:hover{
+        transform: translateY(-30px);
+        transition: transform 1s ease;
+    }
+
+    .container_parolaChiave .descrizione h1{
+        font-size: 40px;
+    }
+
+    .container_parolaChiave .descrizione p{
+        font-size: 20px;
+    }
+
+    .touch-btn{
+        display: none;
+    }
+
+
+}
 
     @media (min-width: 1920px) {
 
-        .container_vieni_a_trovarci{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_2.jpg") no-repeat center center fixed;
-            background-size: cover;
+        .container_slogan h1{
+            font-size: 55px;
+        }
+
+        .block1{
+            margin-top: 0;
+        }
+
+        .block2{
+            margin-top: 100px;
+        }
+
+        .block3{
+            margin-top: 200px;
         }
 
     }
 
-
-/* ... */
