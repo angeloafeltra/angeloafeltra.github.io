@@ -31,7 +31,7 @@ body, html {
         width: 100%;
         max-width: 100%;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_9.jpg") no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Home/MainImg.png") no-repeat center center;
         background-size: cover;
         overflow: hidden;
     }
@@ -85,7 +85,7 @@ body, html {
     @media (min-width: 1024px) {
 
         .main_img{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_9.jpg") no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Home/MainImg.png") no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -200,7 +200,7 @@ body, html {
         flex-wrap: wrap;
         gap: 10px;
         padding: 15% 7% 15% 7%;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center;
         background-size: cover;
     }
 
@@ -323,7 +323,7 @@ body, html {
             justify-content: center;
             gap: 10px;
             padding: 5% 10% 5% 10%;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -347,7 +347,7 @@ body, html {
             justify-content: center;
             gap: 10px;
             padding: 5% 12% 5% 12%;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -403,7 +403,7 @@ body, html {
         max-width: 100%;
         gap: 0px;
         padding: 0% 0% 0% 0%;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_4.jpg) no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background2.jpg) no-repeat center center;
         background-size: cover;
         overflow: hidden;
     }
@@ -482,7 +482,7 @@ body, html {
     @media (min-width: 1024px){
 
        #showroom{
-           background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+           background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
            background-size: cover;
        }
 
@@ -511,7 +511,7 @@ body, html {
     @media (min-width: 1920px){
 
         #showroom{
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -557,7 +557,7 @@ body, html {
         max-width: 100%;
         gap: 10px;
         padding: 15% 7% 15% 7%;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_2.jpg) no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background3.jpg) no-repeat center center;
         background-size: cover;
     }
 
@@ -671,7 +671,7 @@ body, html {
             justify-content: center;
             gap: 10px;
             padding: 5% 10% 5% 10%;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -695,7 +695,7 @@ body, html {
             justify-content: center;
             gap: 10px;
             padding: 5% 12% 5% 12%;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_3.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
