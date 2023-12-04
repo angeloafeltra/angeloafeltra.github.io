@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.1 62.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        stroke: #1d1d1b;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="Livello_1-2" data-name="Livello 1">
+    <g id="Obiettivo">
+      <rect id="Contenitore" class="cls-1" x="1" y="1" width="60.1" height="60.1"/>
+      <g id="Icona">
+        <line class="cls-2" x1="31.73" y1="32.34" x2="39.42" y2="24.65"/>
+        <polygon class="cls-2" points="49.67 19.53 44.54 19.53 44.54 14.4 39.42 19.53 39.42 24.65 44.54 24.65 49.67 19.53"/>
+        <circle class="cls-2" cx="31.73" cy="32.34" r="7.69"/>
+        <path class="cls-2" d="M45.82,23.37c1.67,2.56,2.56,5.64,2.56,8.97,0,9.22-7.43,16.65-16.65,16.65s-16.65-7.43-16.65-16.65S22.51,15.68,31.73,15.68c3.33,0,6.4,.9,8.97,2.56"/>
+      </g>
+    </g>
+  </g>
+</svg>

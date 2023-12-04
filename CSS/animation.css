@@ -7,7 +7,7 @@
 .move_up_end{
     transform: translateY(0vh);
     opacity: 1;
-    /*transition: transform 2s ease, opacity 2s ease;*/
+    transition: transform 2s ease, opacity 2s ease;
 }
 
 .move_down_start{
@@ -58,6 +58,17 @@
 }
 
 .move_diagona_right_up_end{
+    transform: translate(0%,0vh);
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.move_diagona_left_up_start{
+    transform: translate(-10%,3.5vh);
+    opacity:0;
+}
+
+.move_diagona_left_up_end{
     transform: translate(0%,0vh);
     opacity: 1;
     transition: transform 1s ease, opacity 1s ease;
