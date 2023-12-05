@@ -64,7 +64,7 @@
 }
 
 .move_diagona_left_up_start{
-    transform: translate(-10%,3.5vh);
+    transform: translate(+10%,3.5vh);
     opacity:0;
 }
 

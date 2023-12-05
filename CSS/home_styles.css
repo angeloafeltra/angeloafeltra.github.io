@@ -6,7 +6,6 @@
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
     appearance: none !important;
-    /* Altri prefissi WebKit che potresti voler disabilitare */
 }
 
 body, html {
