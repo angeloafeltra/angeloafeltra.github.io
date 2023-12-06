@@ -35,12 +35,14 @@ class ParolaChiave {
 
     restoreNoMobileStyle(){
         this.#descrizione.style.display="block"
-        this.#active=true
     }
 
     restoreMobileStyle(){
-        this.#descrizione.style.display="none"
-        this.#active=false
+        if(this.#active){
+            this.#descrizione.style.display="block"
+        }else{
+            this.#descrizione.style.display="none"
+        }
     }
 
 }
