@@ -34,7 +34,16 @@ body, html {
         font-size: 30px;
         font-weight: lighter;
         text-transform: uppercase;
+        opacity: 0;
+        animation: fadeInFrase 1s ease-out forwards;
     }
+
+    @keyframes fadeInFrase {
+        to {
+            opacity: 1;
+        }
+    }
+
 
     @media (min-width: 600px) {
 
@@ -288,6 +297,7 @@ body, html {
 
         background: url("../Immagini/Prodotti/ImgSostenibilita.webp") no-repeat center center;
         background-size: cover;
+        margin: 50px 0;
     }
 
 
@@ -302,6 +312,10 @@ body, html {
     }
 
     @media (min-width: 600px) {
+
+        .sezione_sostenibilità{
+            margin: 80px 0 50px 0;
+        }
 
     }
 
@@ -384,12 +398,14 @@ body, html {
             gap: 50px;
         }
 
-        .container_descrizione  h1{
-            font-size: 30px;
-        }
 
         .container_descrizione_prodotto{
             flex-basis: 100%;
+            font-size: 100px;
+        }
+
+        .container_descrizione_prodotto h1{
+            font-size: 35px;
         }
 
         .container_tavola_elementi{
@@ -397,6 +413,7 @@ body, html {
         }
 
     }
+
 
     @media (min-width: 1024px){
 
@@ -522,7 +539,7 @@ body, html {
     @media (min-width: 1024px) {
 
         .container_catalogo{
-            padding: 5% 10% 5% 10%;
+            padding: 0% 10% 5% 10%;
             justify-content: left;
         }
 
@@ -541,7 +558,7 @@ body, html {
 
 
         .container_catalogo{
-            padding: 3% 10% 3% 10%;
+            padding: 0% 10% 3% 10%;
             gap: 20px;
             justify-content: left;
         }

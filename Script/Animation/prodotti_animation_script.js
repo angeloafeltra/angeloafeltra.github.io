@@ -49,6 +49,10 @@ function setAnimation(element,animation_start,animation_end,visibility,delay){
 
 window.addEventListener('load', function (){
 
+    btn_touch1.style.opacity=0
+    btn_touch2.style.opacity=0
+    btn_touch3.style.opacity=0
+
     setAnimation(sloganHeader,'move_up_start','move_up_end',1,0)
     setAnimation(sloganSubHeader,'move_down_start','move_down_end',1,500)
 
@@ -56,15 +60,6 @@ window.addEventListener('load', function (){
     setAnimation(parola_Chiave2, 'comparsa_verticale_start', 'comparsa_verticale_end', 1, 1300)
     setAnimation(parola_Chiave3, 'comparsa_verticale_start', 'comparsa_verticale_end', 1, 1900)
 
-    if(window.innerWidth>600) {
-        setAnimation(btn_touch1, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2000)
-        setAnimation(btn_touch2, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2500)
-        setAnimation(btn_touch3, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 3200)
-    }else{
-        setAnimation(btn_touch1, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2000)
-        setAnimation(btn_touch2, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 1000)
-        setAnimation(btn_touch3, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2000)
-    }
 
     setAnimation(sostenibilita,'dissolvenza_graduale_start','dissolvenza_graduale_end',0.8,0)
 
@@ -77,7 +72,20 @@ window.addEventListener('load', function (){
     setAnimation(container_contattaci,'entrate_left_start','entrate_left_end',0.7,0)
     setAnimation(container_contattaci_header,'move_diagona_right_up_start','move_diagona_right_up_end',0.7,1000)
     setAnimation(container_contattaci_body,'move_diagona_right_up_start','move_diagona_right_up_end',0.7,1500)
-    setAnimation(container_contattaci_btn,'entrate_right_start','entrate_right_end',0.7,2000)
+    setAnimation(container_contattaci_btn,'btn_comparse1_start','btn_comparse1_end',0.7,2000)
+
+});
+
+window.addEventListener('scroll', function (){
+
+    if(window.innerWidth<1024){
+        if(parola_Chiave1.offsetHeight==parola_Chiave1.parentNode.offsetHeight)
+            btn_touch1.style.opacity=1
+        if(parola_Chiave2.offsetHeight==parola_Chiave2.parentNode.offsetHeight)
+            btn_touch2.style.opacity=1
+        if(parola_Chiave3.offsetHeight==parola_Chiave3.parentNode.offsetHeight)
+            btn_touch3.style.opacity=1
+    }
 
 });
 

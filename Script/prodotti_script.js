@@ -39,7 +39,7 @@
 
         hiddenDescrizione(){
             if(!this.#mobileMode) {
-                if(this.#immagine.innerHeight==this.#container.innerHeight) {
+                if(this.#immagine.offsetHeight==this.#container.offsetHeight) {
                     this.#immagine.style.opacity = 1;
                     this.#descrizione.style.display = "none";
                     this.#btn_touch.style.opacity = 1;
