@@ -53,11 +53,18 @@ window.addEventListener('load', function (){
     setAnimation(sloganSubHeader,'move_down_start','move_down_end',1,500)
 
     setAnimation(parola_Chiave1, 'comparsa_verticale_start', 'comparsa_verticale_end', 1, 500)
-    setAnimation(btn_touch1,'dissolvenza_graduale_start','dissolvenza_graduale_end',1,2000)
     setAnimation(parola_Chiave2, 'comparsa_verticale_start', 'comparsa_verticale_end', 1, 1300)
-    setAnimation(btn_touch2,'dissolvenza_graduale_start','dissolvenza_graduale_end',1,2500)
     setAnimation(parola_Chiave3, 'comparsa_verticale_start', 'comparsa_verticale_end', 1, 1900)
-    setAnimation(btn_touch3,'dissolvenza_graduale_start','dissolvenza_graduale_end',1,3200)
+
+    if(window.innerWidth>600) {
+        setAnimation(btn_touch1, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2000)
+        setAnimation(btn_touch2, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2500)
+        setAnimation(btn_touch3, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 3200)
+    }else{
+        setAnimation(btn_touch1, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2000)
+        setAnimation(btn_touch2, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 1000)
+        setAnimation(btn_touch3, 'dissolvenza_graduale_start', 'dissolvenza_graduale_end', 1, 2000)
+    }
 
     setAnimation(sostenibilita,'dissolvenza_graduale_start','dissolvenza_graduale_end',0.8,0)
 
