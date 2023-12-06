@@ -253,7 +253,7 @@ body, html {
         height: 300px;
         background: url(../Immagini/ChiSiamo/img2.jpg) no-repeat center center;
         background-size: cover;
-
+        margin: 50px 0;
     }
 
 
@@ -271,7 +271,7 @@ body, html {
             height: 500px;
             background: url(../Immagini/ChiSiamo/img2.jpg) no-repeat center center fixed;
             background-size: cover;
-            margin: 50px 0;
+            margin: 100px 0;
         }
 
     }
@@ -414,47 +414,43 @@ body, html {
         display: block;
         width: 100%;
         height: 300px;
-        position: relative;
+        background: url("../Immagini/ChiSiamo/img3.jpg") no-repeat center center;
+        background-size: cover;
+        margin: 50px 0;
     }
-
-    .container_section3_img{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .container_section3_copertina{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        scale: 0.5;
-    }
-
 
     @media (min-width: 600px) {
 
         .container_section3{
-            height: 400px;
-            scale: 1;
+            height: 300px;
+            background: url("../Immagini/ChiSiamo/img3.jpg") no-repeat center center fixed;
+            background-size: cover;
         }
+
+
 
     }
 
     @media (min-width: 1024px) {
 
         .container_section3{
-            height: 600px;
-            scale: 1;
+            height: 400px;
+            background: url("../Immagini/ChiSiamo/img3.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 100px 0;
         }
+
 
     }
 
     @media (min-width: 1920px) {
 
         .container_section3{
-            height: 700px;
-            scale: 1;
+            height: 500px;
+            background: url(../Immagini/ChiSiamo/img3.jpg) no-repeat center center fixed;
+            background-size: cover;
         }
+
 
     }
 
@@ -464,7 +460,7 @@ body, html {
 
 
 
-/* || Section1 Element */
+/* || Section4 Element */
 
 .container_section4{
     display: flex;
@@ -522,6 +518,7 @@ body, html {
 
 @media (min-width: 600px) {
 
+
     .container_section4 .container_img_team{
         height: 400px;
     }
@@ -542,7 +539,7 @@ body, html {
         flex-wrap: nowrap;
         align-items: stretch;
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 100px;
     }
 
     .container_section4 .container_img_team{
@@ -556,6 +553,10 @@ body, html {
 }
 
 @media (min-width: 1920px) {
+
+    .container_section4{
+        margin-bottom: 150px;
+    }
 
     .container_descrizione_team  h1{
         font-size: 50px;

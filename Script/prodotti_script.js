@@ -143,10 +143,6 @@
         container.appendChild(container_img)
         container_img.className='container_img_item';
         container_img.style.backgroundImage="url("+img_path+")";
-        /*
-        container_img.style.backgroundPosition="center center"
-        container_img.style.backgroundRepeat="no-repeat";
-        container_img.style.backgroundSize='cover';*/
 
         let overlay=document.createElement('div')
         container.appendChild(overlay)

@@ -44,41 +44,6 @@ class ParolaChiave {
     }
 
 }
-class ImmagineZoomOut{
-
-    #copertina=null
-
-
-    constructor(rif_copertina) {
-        this.#copertina=rif_copertina
-
-        this.#copertina.addEventListener('touchmove',this.animationCopertina.bind(this))
-        this.#copertina.addEventListener('wheel',this.animationCopertina.bind(this))
-    }
-
-
-    animationCopertina(event) {
-        console.log("entra")
-        document.body.style.overflow="hidden"
-
-        let scala=parseFloat(this.#copertina.style.scale);
-        //Gestire scroll touch e mouse
-        if(window.innerWidth<600) {
-            scala = scala + 0.4
-        }else {
-            scala = scala + 0.2
-            if (event.deltaY < 20)
-                scala = scala + 0.2 //TouchPad
-            else
-                scala = scala + 0.6//Mouse
-        }
-        this.#copertina.style.scale=scala.toString()
-        if(parseFloat(this.#copertina.style.scale)>5){
-            this.#copertina.style.display="none"
-            document.body.style.overflow="auto"
-        }
-    }
-}
 
 /* ... */
 
@@ -98,7 +63,6 @@ class ImmagineZoomOut{
     let parolaChiave4=new ParolaChiave(lista_parole_chiavi[3].childNodes[1],lista_parole_chiavi[3].childNodes[3])
     let parolaChiave5=new ParolaChiave(lista_parole_chiavi[4].childNodes[1],lista_parole_chiavi[4].childNodes[3])
 
-    const immagineZoomOut=new ImmagineZoomOut(document.querySelector('.container_section3_copertina'))
 
 
 /* ... */

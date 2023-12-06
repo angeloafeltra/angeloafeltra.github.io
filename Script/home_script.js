@@ -6,7 +6,6 @@
     const main_img=document.querySelector('.main_img')
 
 
-    let animazioneCopertinaEseguita=false;
     let startPositionY=0
 /* ... */
 
@@ -47,7 +46,6 @@
                 document.querySelector('.main_img').style.position="static";
                 document.body.style.overflow = 'auto';
                 document.querySelector("main").style.display="block"
-                animazioneCopertinaEseguita=true;
             }, 400);
 
 
@@ -63,6 +61,9 @@
 
 /* || ActionEvent */
 
+    window.addEventListener('scroll',()=>{
+        setSizeContainerShowRoom()
+    });
     window.addEventListener('resize',()=>{
         setSizeContainerShowRoom()
     });
@@ -72,7 +73,6 @@
         setSizeContainerShowRoom()
 
         document.body.style.overflow = 'hidden';
-
         document.querySelector('.navbar').style.backgroundColor="rgba(255,255,255,0)";
         let links=document.getElementsByClassName('link_navbar');
         for (let i = 0; i < links.length; i++) {
@@ -82,13 +82,10 @@
         }
     });
 
-    window.addEventListener('scroll',()=>{
-        setSizeContainerShowRoom()
-    });
 
     copertina.addEventListener('wheel', (event)=>{
 
-        if(event.deltaY>0 && !animazioneCopertinaEseguita) {
+        if(event.deltaY>0) {
             animationCopertina(event)
         }
 
@@ -101,7 +98,7 @@
     main_img.addEventListener('touchmove', (e)=>{
 
         let positionY=e.touches[0].clientY
-        if(positionY<startPositionY && !animazioneCopertinaEseguita) {
+        if(positionY<startPositionY) {
             let copertina=document.querySelector('.copertina_main_img')
             let scala=parseFloat(copertina.style.scale);
             if(window.innerWidth<600)
@@ -110,7 +107,7 @@
                 scala=scala+0.2
             copertina.style.scale=scala.toString()
             if(parseFloat(copertina.style.scale)>5){
-                copertina.style.opacity=0;
+                copertina.style.display="None"
                 document.querySelector('.over-text').style.opacity=1;
             }
         }
@@ -118,17 +115,11 @@
     })
 
     main_img.addEventListener('touchend', (e)=>{
-        if(!animazioneCopertinaEseguita){
-            let copertina=document.querySelector('.copertina_main_img')
-            if(parseFloat(copertina.style.scale)>6){
-                console.log("Ripristino tutto il contenuto")
+        let copertina=document.querySelector('.copertina_main_img')
+        if(copertina.style.display=="none"){
                 document.querySelector('.main_img').style.position="static";
-                copertina.style.display="None"
                 document.querySelector("main").style.display="block"
                 document.body.style.overflow = 'auto';
-                animazioneCopertinaEseguita=true;
-                window.scrollTo(0,0)
-            }
         }
 
     })
