@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1076 594">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .02em;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12 {
+        font-family: Arial-Black, 'Arial Black';
+        font-weight: 800;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-13, .cls-9, .cls-11, .cls-12 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-7 {
+        font-size: 24px;
+      }
+
+      .cls-3, .cls-8 {
+        font-size: 19px;
+      }
+
+      .cls-14 {
+        letter-spacing: .05em;
+      }
+
+      .cls-15 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-16 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-17 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4, .cls-10 {
+        font-size: 80px;
+      }
+
+      .cls-5, .cls-12 {
+        font-size: 50px;
+      }
+
+      .cls-6, .cls-11 {
+        font-size: 13px;
+      }
+
+      .cls-18 {
+        letter-spacing: .04em;
+      }
+
+      .cls-19 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-13, .cls-20 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 8px;
+      }
+
+      .cls-21 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-22 {
+        letter-spacing: .02em;
+      }
+
+      .cls-9 {
+        font-size: 47px;
+      }
+
+      .cls-23 {
+        letter-spacing: 0em;
+      }
+
+      .cls-24 {
+        letter-spacing: .02em;
+      }
+    </style>
+  </defs>
+  <g id="Livello_1-2" data-name="Livello 1">
+    <g id="Fi">
+      <rect class="cls-13" x="4" y="4" width="124" height="123"/>
+      <g id="key">
+        <text class="cls-5" transform="translate(41.19 76.97)"><tspan x="0" y="0">Fi</tspan></text>
+        <text class="cls-8" transform="translate(23.09 101.61)"><tspan x="0" y="0">Finest</tspan><tspan class="cls-22" x="64.38" y="0">r</tspan><tspan x="73.14" y="0">a</tspan></text>
+      </g>
+    </g>
+    <g id="Pr">
+      <rect class="cls-13" x="4" y="236" width="124" height="123"/>
+      <g id="key-2" data-name="key">
+        <text class="cls-5" transform="translate(37.3 305.17)"><tspan x="0" y="0">Pr</tspan></text>
+        <text class="cls-8" transform="translate(38.07 329.81)"><tspan class="cls-21" x="0" y="0">P</tspan><tspan x="13.23" y="0">o</tspan><tspan class="cls-14" x="25.9" y="0">r</tspan><tspan x="35.28" y="0">ta</tspan></text>
+      </g>
+    </g>
+    <g id="Ba">
+      <rect class="cls-13" x="252" y="235" width="124" height="123"/>
+      <g id="key-3" data-name="key">
+        <text class="cls-5" transform="translate(278.26 305.48)"><tspan x="0" y="0">Ba</tspan></text>
+        <text class="cls-8" transform="translate(272.13 330.12)"><tspan x="0" y="0">B</tspan><tspan class="cls-16" x="14.78" y="0">a</tspan><tspan x="27.13" y="0">ttenti</tspan></text>
+      </g>
+    </g>
+    <g id="La">
+      <rect class="cls-13" x="252" y="358" width="124" height="123"/>
+      <g id="key-4" data-name="key">
+        <text class="cls-5" transform="translate(280.45 426.18)"><tspan x="0" y="0">La</tspan></text>
+        <text class="cls-6" transform="translate(260.72 446.53)"><tspan x="0" y="0">L</tspan><tspan class="cls-1" x="8.67" y="0">e</tspan><tspan x="17.67" y="0">go-Alluminio</tspan></text>
+      </g>
+    </g>
+    <g id="Bl">
+      <rect class="cls-13" x="557" y="467" width="124" height="123"/>
+      <g id="key-5" data-name="key">
+        <text class="cls-5" transform="translate(591.87 534.84)"><tspan x="0" y="0">Bl</tspan></text>
+        <text class="cls-8" transform="translate(569.16 559.48)"><tspan x="0" y="0">Balaust</tspan><tspan class="cls-24" x="79.16" y="0">r</tspan><tspan x="87.9" y="0">e</tspan></text>
+      </g>
+    </g>
+    <g id="Pa">
+      <rect class="cls-13" x="767" y="344" width="124" height="123"/>
+      <g id="key-6" data-name="key">
+        <text class="cls-5" transform="translate(795.15 411.37)"><tspan class="cls-16" x="0" y="0">P</tspan><tspan x="35.25" y="0">a</tspan></text>
+        <text class="cls-8" transform="translate(783.88 436.01)"><tspan class="cls-21" x="0" y="0">P</tspan><tspan x="13.23" y="0">e</tspan><tspan class="cls-1" x="25.9" y="0">r</tspan><tspan x="34.81" y="0">siane</tspan></text>
+      </g>
+    </g>
+    <g id="Te">
+      <rect class="cls-13" x="767" y="460" width="124" height="123"/>
+      <g id="key-7" data-name="key">
+        <text class="cls-5" transform="translate(799.49 528.16)"><tspan class="cls-17" x="0" y="0">T</tspan><tspan x="33.11" y="0">e</tspan></text>
+        <text class="cls-8" transform="translate(800.89 552.81)"><tspan class="cls-17" x="0" y="0">T</tspan><tspan x="12.58" y="0">ende</tspan></text>
+      </g>
+    </g>
+    <g id="Tt">
+      <rect class="cls-13" x="534" y="112" width="124" height="123"/>
+      <g id="key-8" data-name="key">
+        <text class="cls-5" transform="translate(567.48 180.44)"><tspan x="0" y="0">Tt</tspan></text>
+        <text class="cls-6" transform="translate(543.23 200.79)"><tspan class="cls-19" x="0" y="0">T</tspan><tspan class="cls-24" x="8.73" y="0">a</tspan><tspan class="cls-23" x="17.61" y="0">g</tspan><tspan x="26.41" y="0">lio-</tspan><tspan class="cls-17" x="48.06" y="0">T</tspan><tspan x="56.67" y="0">e</tspan><tspan class="cls-14" x="65.34" y="0">r</tspan><tspan x="71.76" y="0">mico</tspan></text>
+      </g>
+    </g>
+    <g id="Al">
+      <rect class="cls-20" x="643" y="235" width="124" height="123"/>
+      <g id="key-9" data-name="key">
+        <text class="cls-12" transform="translate(677.81 302.49)"><tspan x="0" y="0">Al</tspan></text>
+        <text class="cls-11" transform="translate(648.17 322.83)"><tspan x="0" y="0">Alluminio-L</tspan><tspan class="cls-1" x="79.44" y="0">e</tspan><tspan x="88.44" y="0">gno</tspan></text>
+      </g>
+    </g>
+    <g id="PVC">
+      <rect class="cls-20" x="128" y="127" width="124" height="123"/>
+      <g id="key-10" data-name="key">
+        <text class="cls-9" transform="translate(137.86 198.02)"><tspan x="0" y="0">P</tspan><tspan class="cls-15" x="33.94" y="0">V</tspan><tspan x="68.89" y="0">C</tspan></text>
+        <text class="cls-3" transform="translate(169.27 224.82)"><tspan x="0" y="0">p</tspan><tspan class="cls-21" x="12.67" y="0">v</tspan><tspan x="23.79" y="0">c</tspan></text>
+      </g>
+    </g>
+    <g id="Si">
+      <rect class="cls-20" x="128" y="467" width="124" height="123"/>
+      <g id="key-11" data-name="key">
+        <text class="cls-12" transform="translate(160.31 531.17)"><tspan x="0" y="0">Sl</tspan></text>
+        <text class="cls-3" transform="translate(132.66 555.82)"><tspan x="0" y="0">Saliscendi</tspan></text>
+      </g>
+    </g>
+    <g id="Za">
+      <rect class="cls-13" x="353" y="54" width="181" height="181"/>
+      <g id="key-12" data-name="key">
+        <text class="cls-10" transform="translate(391.61 156.26) rotate(.01)"><tspan x="0" y="0">Za</tspan></text>
+        <text class="cls-7" transform="translate(376.8 183.27)"><tspan x="0" y="0">Zanzarie</tspan><tspan class="cls-24" x="113.36" y="0">r</tspan><tspan x="124.39" y="0">e</tspan></text>
+      </g>
+    </g>
+    <g id="Ta">
+      <rect class="cls-13" x="833" y="105" width="181" height="181"/>
+      <g id="key-13" data-name="key">
+        <text class="cls-10" transform="translate(867.05 214.78) rotate(.01)"><tspan class="cls-19" x="0" y="0">T</tspan><tspan x="53.71" y="0">a</tspan></text>
+        <text class="cls-7" transform="translate(850.7 241.79)"><tspan class="cls-19" x="0" y="0">T</tspan><tspan class="cls-23" x="16.11" y="0">a</tspan><tspan x="32.36" y="0">ppa</tspan><tspan class="cls-24" x="80.38" y="0">r</tspan><tspan x="91.42" y="0">elle</tspan></text>
+      </g>
+    </g>
+    <g id="Ca">
+      <rect class="cls-20" x="891" y="286" width="181" height="181"/>
+      <g id="key-14" data-name="key">
+        <text class="cls-4" transform="translate(926.39 390.58) rotate(.01)"><tspan x="0" y="0">Ca</tspan></text>
+        <text class="cls-2" transform="translate(913.36 417.59)"><tspan x="0" y="0">Cassonetti</tspan></text>
+      </g>
+    </g>
+    <g id="Sc">
+      <rect class="cls-20" x="376" y="409" width="181" height="181"/>
+      <g id="key-15" data-name="key">
+        <text class="cls-4" transform="translate(409.6 514.12) rotate(.01)"><tspan x="0" y="0">Sc</tspan></text>
+        <text class="cls-2" transform="translate(398.27 541.14)"><tspan x="0" y="0">Sco</tspan><tspan class="cls-18" x="49.35" y="0">r</tspan><tspan class="cls-24" x="61.01" y="0">r</tspan><tspan class="cls-21" x="72.05" y="0">ev</tspan><tspan x="101.47" y="0">oli</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

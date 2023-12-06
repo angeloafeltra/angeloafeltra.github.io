@@ -1,346 +1,132 @@
-/* || Constanti e Variabili Globali */
+/* || Classi */
 
-    const containerMap=document.querySelector('.map_container')
-    const containerPreventivo=document.querySelector('.form_container')
-    const container_immagini=document.querySelector('.container_immagini')
-    const container_descrizione_prodotto=document.querySelector('.container_descrizione_prodotto')
-    const btn_next=document.querySelector('.btn_next')
-    const btn_back=document.querySelector('.btn_back')
-    //Inserire qui nuovi prodotti, nuove immagini e modificare prodotti e immagini gia esistenti
+    class ParolaChiave {
+
+        #container=null
+        #immagine=null
+        #descrizione=null
+        #btn_touch=null
+        #active=null
+
+        #mobileMode=false
+
+
+        constructor(rif_container,rif_img,rif_decrizione,rif_touch) {
+            this.#container=rif_container
+            this.#immagine=rif_img
+            this.#descrizione=rif_decrizione
+            this.#btn_touch=rif_touch
+            this.#active=false
+
+            this.#container.addEventListener('click',this.eventListener.bind(this))
+            this.#container.addEventListener('mouseover', this.showDescrizione.bind(this))
+            this.#container.addEventListener('mouseout', this.hiddenDescrizione.bind(this))
+        }
+
+        setMobileMode(value){
+            this.#mobileMode= value
+        }
+
+        showDescrizione(){
+            if(!this.#mobileMode) {
+                if(this.#immagine.offsetHeight==this.#container.offsetHeight) {
+                    this.#immagine.style.opacity = 0.3;
+                    this.#descrizione.style.display = "flex";
+                    this.#btn_touch.style.opacity = 0.3;
+                }
+            }
+        }
+
+        hiddenDescrizione(){
+            if(!this.#mobileMode) {
+                if(this.#immagine.innerHeight==this.#container.innerHeight) {
+                    this.#immagine.style.opacity = 1;
+                    this.#descrizione.style.display = "none";
+                    this.#btn_touch.style.opacity = 1;
+                }
+            }
+        }
+
+        isActive(){
+            if(this.#active) return true; else return false;
+        }
+
+        eventListener(){
+            if(this.#mobileMode) {
+                if (this.isActive() == true) {
+                    this.#immagine.style.opacity = 1;
+                    this.#descrizione.style.display = "none";
+                    this.#btn_touch.style.opacity = 1;
+                    this.#active = false;
+                } else {
+                    this.#immagine.style.opacity = 0.3;
+                    this.#descrizione.style.display = "flex";
+                    this.#btn_touch.style.opacity = 0.3;
+                    this.#active = true;
+                }
+            }
+        }
+
+    }
+
+/* ... */
+
+
+
+
+/* || Variabili e constanti globali */
+
     const categoriaProdotti=[
         {
             main_category:'Porte',
-            sub_category: [
-                {
-                    nome: 'Porte Interne',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Porte Blindate',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img:'Immagini/Prodotti/Porte/porta1.jpeg',
         },
         {
             main_category:'Zanzariere',
-            sub_category: [
-                {
-                    nome: 'Zanzariere Bettio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta2.jpeg',
         },
         {
             main_category:'Tapparelle',
-            sub_category: [
-                {
-                    nome: 'Tapparelle',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta3.jpeg',
         },
         {
             main_category:'Cassonetti',
-            sub_category: [
-                {
-                    nome: 'Cassonetti',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta4.jpeg',
         },
         {
             main_category:'Persiane',
-            sub_category: [
-                {
-                    nome: 'Persiane',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta5.jpeg',
         },
         {
             main_category:'Finestre',
-            sub_category: [
-                {
-                    nome: 'Taglio-termico',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Alluminio-Legno',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Legno Alluminio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'PVC',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Porta-Finestre',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta2.jpeg',
         },
         {
             main_category:'Balaustre',
-            sub_category: [
-                {
-                    nome: 'Vetro/Acciaio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta1.jpeg',
         },
         {
             main_category:'Tende',
-            sub_category: [
-                {
-                    nome: 'Da Sole',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Oscuranti',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta4.jpeg',
         },
         {
             main_category:'Scorrevoli',
-            sub_category: [
-                {
-                    nome: 'Alluminio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Legno-Alluminio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta5.jpeg',
         },
         {
             main_category:'Battenti',
-            sub_category: [
-                {
-                    nome: 'Alluminio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'Legno-Alluminio',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                },
-                {
-                    nome: 'PVC',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                        'Immagini/Prodotti/Porte/porta1.jpeg',
-                        'Immagini/Prodotti/Porte/porta2.jpeg',
-                        'Immagini/Prodotti/Porte/porta3.jpeg',
-                        'Immagini/Prodotti/Porte/porta4.jpeg',
-                        'Immagini/Prodotti/Porte/porta5.jpeg',
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta1.jpeg'
         },
         {
             main_category:'Saliscendi',
-            sub_category: [
-                {
-                    nome: 'Saliscendi',
-                    descrizione: 'Porta interna moderna a battente in legno massiccio con finitura laccata ' +
-                        'Il design elegante si adatta perfettamente a ambienti contemporanei, aggiungendo un tocco di stile senza compromettere la funzionalità ' +
-                        'Dotata di maniglie in acciaio inossidabile di alta qualità, questa porta è facile da installare e offre una solida costruzione che garantisce durata nel tempo. ' +
-                        'Le dimensioni standard la rendono adatta a una varietà di spazi, mentre il colore neutro si abbina facilmente a qualsiasi arredamento.',
-                    list_img: [
-                    ]
-                }
-            ]
+            category_img: 'Immagini/Prodotti/Porte/porta1.jpeg'
         }
     ]
 
-    let list_sub_category=[]
-    let index_sub_category=0
-    let index_current_img=0;
-
-
+    const container_catalogo=document.querySelector('.container_catalogo')
+    let parolaChiave1=null
+    let parolaChiave2=null
+    let parolaChiave3=null
 
 /* ... */
 
@@ -349,259 +135,81 @@
 
 /* || Funzioni */
 
-    function setSizeContainer(){
-        if(window.innerWidth>=600) {
-            containerMap.style.height = containerPreventivo.offsetHeight + "px";
-        }else{
-            containerMap.style.height = "400px";
-        }
-    }
+    function createItem(name,img_path){
+        let container=document.createElement('div');
+        container.className='container_item';
 
-    function setSubCategory(element) {
-        let categoria = element.childNodes[1].innerHTML
+        let container_img=document.createElement('div');
+        container.appendChild(container_img)
+        container_img.className='container_img_item';
+        container_img.style.backgroundImage="url("+img_path+")";
+        /*
+        container_img.style.backgroundPosition="center center"
+        container_img.style.backgroundRepeat="no-repeat";
+        container_img.style.backgroundSize='cover';*/
 
-        for (var i = 0; i < categoriaProdotti.length; i++) {
-            if (categoriaProdotti[i].main_category === categoria) {
-                list_sub_category = categoriaProdotti[i].sub_category
-                index_sub_category = 0
-            }
-        }
-    }
-
-    function generateItemCatalogo(categoriaProdotto){
-        let item_catalogo=document.createElement('div')
-        item_catalogo.className='item'
-
-        let icon_container=document.createElement('div')
-        let icon=document.createElement('img')
-        icon.src="./Immagini/SVG/item.svg"
-        icon.alt="item_symbol"
-        icon.style.width="100%"
-        icon.style.height="100%"
-        icon_container.appendChild(icon);
-
-        let categoria=document.createElement('h2')
-        categoria.innerHTML=categoriaProdotto
-
-        item_catalogo.appendChild(icon_container)
-        item_catalogo.appendChild(categoria);
-
-        item_catalogo.addEventListener('click', function(event) { //Assegno un eventListener all'item
-            setSubCategory(event.currentTarget)
-            showProdotto(0);
-        });
-
-        return item_catalogo;
-    }
-
-    //Funzione per la gestione del catalogo dinamicamente
-    function generateDynamicCatalogue(){
-        let catalogo=document.querySelector('.container_categorie')
-        for(var i=0;i<categoriaProdotti.length;i++){
-            item_catalogo=generateItemCatalogo(categoriaProdotti[i].main_category) //Genero l'item
-            catalogo.appendChild(item_catalogo); //Aggiungo l'item al catalgo
-        }
-
-        if(catalogo.childNodes.length>0)
-            catalogo.childNodes[1].click(); //Simulo il click sul primo item del catalogo
-    }
-
-    function genereteDynamicCardMosaico(){
-
-        let classStyle=[
-            "card card-tall card-wide",
-            'card card-tall',
-            'card',
-            'card',
-            'card',
-            'card',
-            'card card-wide'
-        ]
-
-        card=document.createElement('div');
-        let indiceCasuale = Math.floor(Math.random() * classStyle.length);
-        //card.className=classStyle[indiceCasuale];
-        return card;
-    }
-
-    //Funzione che mostra il primo sotto-prodotto del prodotto scelto
-    function showProdotto(index) {
-
-        let prodotto = list_sub_category[index].nome
-        let descrizione = list_sub_category[index].descrizione
-        let list_img_prodotto = list_sub_category[index].list_img
-        index_current_img=0;
-
-        document.querySelector('.container_descrizione_prodotto h1').innerHTML = prodotto
-        document.querySelector('.container_descrizione_prodotto p').innerHTML = descrizione
-
-
-
-        while (document.querySelector('.circle_container_prodotti').firstChild) {
-            document.querySelector('.circle_container_prodotti').removeChild(document.querySelector('.circle_container_prodotti').firstChild);
-        }
-
-        if (list_sub_category.length > 1) {
-
-            for (let i = 0; i < list_sub_category.length; i++) {
-                let circle = document.createElement('div')
-                circle.className = 'circle'
-                if (i == index) circle.style.backgroundColor = '#D9D9D9';
-                document.querySelector('.circle_container_prodotti').appendChild(circle)
-            }
-            if(window.innerWidth>=1024){
-                btn_next.style.display="block";
-                btn_back.style.display="block";
-            }
-        }else{
-            btn_next.style.display="none";
-            btn_back.style.display="none";
-        }
-
-        if(window.innerWidth<600){ //Immagine Completa
-
-            if(list_img_prodotto.length!=0){
-                document.querySelector('.immagine_prodotto').src= list_img_prodotto[0];
-                document.querySelector('.container_immagini').style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("+list_img_prodotto[0]+")";
-
-                while (document.querySelector('.circle_container_img').firstChild) {
-                    document.querySelector('.circle_container_img').removeChild(document.querySelector('.circle_container_img').firstChild);
-                }
-                for (let i=0;i<list_img_prodotto.length;i++){
-                    let circle=document.createElement('div')
-                    circle.className='circle'
-                    if(i==0) circle.style.backgroundColor='#D9D9D9';
-                    document.querySelector('.circle_container_img').appendChild(circle)
-                }
-
-                document.querySelector('.container_immagini').style.display='flex';
-            }else{
-                document.querySelector('.container_immagini').style.display='none';
-            }
-
-        }else{ //Mosaico
-
-            console.log("Genero mosaico")
-
-            while (document.querySelector('.mosaico').firstChild) {
-                document.querySelector('.mosaico').removeChild(document.querySelector('.mosaico').firstChild);
-            }
-
-            let classStyle=[
-                "card card-tall card-wide",
-                'card card-tall',
-                'card',
-                'card',
-                'card',
-                'card',
-                'card card-wide'
-            ]
-
-            for (let i=0;i<list_img_prodotto.length;i++){
-                let card=genereteDynamicCardMosaico();
-                card.style.backgroundImage="url("+list_img_prodotto[i]+")"
-                card.className=classStyle[i];
-                document.querySelector('.mosaico').appendChild(card)
-            }
-            document.querySelector('.mosaico').style.display="grid";
-
-        }
-
-
-
-        document.querySelector('.container_prodotto').style.display='flex';
-
-    }
-
-    function changeImg(index){
-        document.querySelector('.immagine_prodotto').src=list_sub_category[index_sub_category].list_img[index]
-        document.querySelector('.container_immagini').style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("+list_sub_category[index_sub_category].list_img[index]+")"
-        document.querySelector('.circle_container_img').childNodes[index].style.backgroundColor="#D9D9D9"
+        let overlay=document.createElement('div')
+        container.appendChild(overlay)
+        overlay.className='overlay'
+        let item_name=document.createElement('h1')
+        container.appendChild(item_name)
+        item_name.innerHTML=name
+        return container
     }
 
 /* ... */
 
 
 
-/* || ActionEvent */
 
-    window.onload = function() {
-        generateDynamicCatalogue();
-        setSizeContainer();
-    };
+/* || EventListener */
 
-    container_immagini.addEventListener('touchstart', (e)=>{
-        startXslider=e.touches[0].clientX;
-    })
 
-    container_immagini.addEventListener('touchend', (e)=>{
-        const endX=e.changedTouches[0].clientX;
-        const deltaX = endX - startXslider;
-        if (deltaX <-20) {
-            document.querySelector('.circle_container_img').childNodes[index_current_img].style.backgroundColor="white"
-            if(index_current_img==list_sub_category[index_sub_category].list_img.length-1)  index_current_img=0; else index_current_img=index_current_img+1;
-            changeImg(index_current_img)
-        }else{
-            if (deltaX >20) {
-                document.querySelector('.circle_container_img').childNodes[index_current_img].style.backgroundColor="white"
-                if(index_current_img==0)  index_current_img=list_sub_category[index_sub_category].list_img.length-1; else index_current_img=index_current_img-1;
-                changeImg(index_current_img)
-            }
-        }
-    })
+window.addEventListener('resize',()=>{
+    if(window.innerWidth<1024){
+        parolaChiave1.setMobileMode(true)
+        parolaChiave2.setMobileMode(true)
+        parolaChiave3.setMobileMode(true)
+    }else{
+        parolaChiave1.setMobileMode(false)
+        parolaChiave2.setMobileMode(false)
+        parolaChiave3.setMobileMode(false)
+    }
+});
 
-    container_descrizione_prodotto.addEventListener('touchstart', (e)=>{
-        startXslider=e.touches[0].clientX;
-    })
 
-    container_descrizione_prodotto.addEventListener('touchend', (e)=>{
-        const endX=e.changedTouches[0].clientX;
-        const deltaX = endX - startXslider;
-        if (deltaX <-20) {
-            if(list_sub_category.length>1) {
-                document.querySelector('.circle_container_prodotti').childNodes[index_sub_category].style.backgroundColor = "white"
-            }
-            if(index_sub_category==list_sub_category.length-1)  index_sub_category=0; else index_sub_category=index_sub_category+1;
-            showProdotto(index_sub_category)
-        }else{
-            if (deltaX >20) {
-                if(list_sub_category.length>1) {
-                    document.querySelector('.circle_container_prodotti').childNodes[index_sub_category].style.backgroundColor = "white"
-                }
-                if(index_sub_category==0)  index_sub_category=list_sub_category.length-1; else index_sub_category=index_sub_category-1;
-                showProdotto(index_sub_category)
-            }
-        }
-    })
 
-    btn_back.addEventListener('click', (e)=>{
-        if(list_sub_category.length>1) {
-            document.querySelector('.circle_container_prodotti').childNodes[index_sub_category].style.backgroundColor = "white"
-        }
-        if(index_sub_category==0)  index_sub_category=list_sub_category.length-1; else index_sub_category=index_sub_category-1;
-        showProdotto(index_sub_category)
-    });
+window.addEventListener("load", (event) => {
+    window.scrollTo(0,0)
+    parolaChiave1=new ParolaChiave(document.getElementsByClassName('container_parolaChiave')[0],
+        document.getElementsByClassName('container_immagine_parolaChiave')[0],
+        document.getElementsByClassName('container_descrizione_parolaChiave')[0],
+        document.getElementsByClassName('container_touch_icon')[0])
 
-    btn_next.addEventListener('click', (e)=>{
-        if(list_sub_category.length>1) {
-            document.querySelector('.circle_container_prodotti').childNodes[index_sub_category].style.backgroundColor = "white"
-        }
-        if(index_sub_category==list_sub_category.length-1)  index_sub_category=0; else index_sub_category=index_sub_category+1;
-        showProdotto(index_sub_category)
-    });
+    parolaChiave2=new ParolaChiave(document.getElementsByClassName('container_parolaChiave')[1],
+        document.getElementsByClassName('container_immagine_parolaChiave')[1],
+        document.getElementsByClassName('container_descrizione_parolaChiave')[1],
+        document.getElementsByClassName('container_touch_icon')[1])
+    parolaChiave3=new ParolaChiave(document.getElementsByClassName('container_parolaChiave')[2],
+        document.getElementsByClassName('container_immagine_parolaChiave')[2],
+        document.getElementsByClassName('container_descrizione_parolaChiave')[2],
+        document.getElementsByClassName('container_touch_icon')[2])
 
+    if(window.innerWidth<1024){
+        parolaChiave1.setMobileMode(true)
+        parolaChiave2.setMobileMode(true)
+        parolaChiave3.setMobileMode(true)
+    }else{
+        parolaChiave1.setMobileMode(false)
+        parolaChiave2.setMobileMode(false)
+        parolaChiave3.setMobileMode(false)
+    }
+
+    for(let i=0;i<categoriaProdotti.length;i++){
+        container_catalogo.appendChild(createItem(categoriaProdotti[i].main_category,
+            categoriaProdotti[i].category_img))
+    }
+
+});
 
 /* ... */
-
-
-
-
-
-
-
-
-
-
-
-
-

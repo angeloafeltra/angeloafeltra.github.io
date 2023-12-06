@@ -6,7 +6,7 @@
 
 body, html {
     font-family: sans-serif;
-    background-color: #EDEAEA;
+    background-color: white;
     height: 100%;
     max-width: 100%;
     margin: 0;
@@ -79,58 +79,195 @@ body, html {
 
 
 
-/* || Section1 Element Style */
+/* || Slogan */
 
-    .container_descrizione{
-        background: #D9D9D9;
-        padding: 10% 3% 10% 3%;
+    .container_slogan{
+        margin: 50px 0;
+        padding: 0 3% 0 3%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .container_descrizione h1{
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
-        font-weight: lighter;
-        margin-bottom: 5%;
-        color: black;
+    .container_slogan h1{
+        font-family: 'Helvetica Neue';
+        font-size: 35px;
         text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px;
     }
 
-    .container_descrizione p{
+    .container_slogan p{
         font-family: 'Montserrat';
-        font-size: 18px;
-        font-weight: lighter;
-        color: black;
-    }
-
-    @media (min-width: 600px) {
-
-        .container_descrizione {
-            padding: 5% 5% 5% 5%;
-        }
-
+        font-size: 20px;
+        padding: 5px;
     }
 
     @media (min-width: 1024px) {
 
-        .container_descrizione {
-            padding: 5% 10% 5% 10%;
+        .container_slogan{
+            margin: 70px 0;
         }
 
-        .container_descrizione h1{
-            font-size: 40px;
-            margin-bottom: 2%;
+        .container_slogan h1 {
+            font-size: 45px;
         }
 
-        .container_descrizione p{
-            font-size: 20px;
+        .container_slogan p {
+            font-size: 25px;
         }
 
     }
 
     @media (min-width: 1920px) {
 
-        .container_descrizione {
+        .container_slogan{
+            margin: 70px 0;
+        }
+
+        .container_slogan h1 {
+            font-size: 55px;
+        }
+
+    }
+
+
+
+/* ... */
+
+
+
+/* || Elementi Sezione 1 */
+
+    .container_paroleChiavi{
+
+        /*boderde:black solid;*/
+        width: 100%;
+        padding: 10% 3% 10% 3%;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container_parolaChiave{
+        /*border: black solid;*/
+        display: block;
+        flex-basis: 85%;
+        height: 350px;
+        position: relative;
+    }
+
+    .container_immagine_parolaChiave{
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-shadow: 5px 0px 10px black;
+    }
+
+    .container_descrizione_parolaChiave{
+
+        position: absolute;
+        top:0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .container_descrizione_parolaChiave h1{
+        font-family: "Helvetica Neue";
+        font-size: 3.5vh;
+    }
+
+    .container_descrizione_parolaChiave p{
+        font-family: "Montserrat";
+        font-size: 2vh;
+    }
+
+    .container_touch_icon{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: #770404;
+        display: block;
+        bottom: 20px;
+        right: 10px;
+        border-radius: 20px;
+        padding: 7px;
+        box-shadow: 3px 3px 8px black;
+    }
+
+    @media (min-width: 600px) {
+
+        .container_paroleChiavi{
+            padding: 5% 5% 5% 5%;
+
+            flex-wrap: nowrap;
+            align-items: flex-start;
+        }
+
+        .container_parolaChiave{
+            flex-basis: 33%;
+            height: 400px;
+            gap: 10px;
+        }
+
+        .container_parolaChiave:hover{
+            transform: translateY(-30px);
+            transition: transform 1s ease;
+        }
+
+        .container_descrizione_parolaChiave h1{
+            font-size: 2vh;
+        }
+
+        .container_descrizione_parolaChiave p{
+            font-size: 1.5vh;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .container_paroleChiavi{
             padding: 5% 10% 5% 10%;
+        }
+
+        .container_parolaChiave{
+            flex-basis: 30%;
+        }
+
+        .container_touch_icon{
+            display: none;
+        }
+
+        .container_descrizione_parolaChiave h1{
+            font-size: 3.5vh;
+        }
+
+        .container_descrizione_parolaChiave p{
+            font-size: 2vh;
+        }
+
+    }
+
+    @media (min-width: 1920px) {
+
+        .container_parolaChiave{
+            flex-basis: 25%;
+            height: 400px;
         }
 
     }
@@ -140,310 +277,416 @@ body, html {
 
 
 
-/* || Section2 Element Style */
+/* || Elementi Sezione 2 */
 
-    .container_categorie{
-        background: white;
-        padding: 5%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap:10px
-    }
-
-    .item{
-        flex-basis: 48%;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        column-gap: 10px;
-        row-gap: 10px;
-    }
-
-    .item div{
-        display: block;
-        width: 40px;
-        height: 40px;
-    }
-
-    .item:hover{
-        scale: 1.1;
-        cursor: pointer;
-    }
-
-    .item h2{
-        font-family: 'Alfa Slab One';
-        font-size: 18px;
-        font-weight: lighter;
-    }
-
-    .container_prodotto{
-        display: none;
+    .sezione_sostenibilità{
         width: 100%;
+        height: 400px;
+        display: block;
+        /*border: black solid;*/
+        position: relative;
+
+        background: url("../Immagini/Prodotti/ImgSostenibilita.webp") no-repeat center center;
+        background-size: cover;
+    }
+
+
+    .sezione_sostenibilità h1{
+        position: absolute;
+        /*border: black solid;*/
+        bottom: 50px;
+        left: 20px;
+        font-family: 'Helvetica Neue';
+        font-size: 30px;
+        color: #770404;
+    }
+
+    @media (min-width: 600px) {
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .sezione_sostenibilità{
+            height: 410px;
+            background: url("../Immagini/Prodotti/ImgSostenibilita2.webp") no-repeat center center;
+            background-size: cover;
+        }
+
+
+        .sezione_sostenibilità h1{
+            font-size: 40px;
+        }
+
+    }
+
+    @media (min-width: 1920px) {
+
+        .sezione_sostenibilità{
+            height: 400px;
+            background: url("../Immagini/Prodotti/ImgSostenibilita2.webp") no-repeat center center;
+            background-size: cover;
+        }
+
+
+        .sezione_sostenibilità h1{
+            font-size: 40px;
+        }
+
+    }
+
+
+
+
+/* ... */
+
+
+
+/* || Sezione Prodotti */
+
+    .sezione_prodotti{
+        padding: 10% 3% 10% 3%;
+        display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        background-color: #191A1A;
-        gap: 10px;
-
     }
 
     .container_descrizione_prodotto{
-        background: none;
         flex-basis: 100%;
-        padding: 10% 3% 10% 3%;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .container_descrizione_prodotto h1{
         font-family: 'Alfa Slab One';
         font-size: 30px;
-        font-weight: lighter;
-        margin-bottom: 5%;
-        color: white;
-        text-transform: uppercase;
+        color: black;
     }
 
     .container_descrizione_prodotto p{
         font-family: 'Montserrat';
         font-size: 18px;
-        font-weight: lighter;
-        color: white;
-        margin-bottom: 10px;
+        color: black;
     }
 
-    .circle_container_prodotti{
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: 30px;
-    }
-
-    .container_immagini{
+    .container_tavola_elementi{
         flex-basis: 100%;
-        height: 450px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        display:none;
-        position: relative;
+        height: 300px;
     }
 
-    .immagine_prodotto{
-        width: 100%;
-        height: 100%;
-        object-fit:contain;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    @media (min-width: 600px){
 
-
-    .circle_container_img{
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .circle{
-        background-color: white;
-        width: 15px;
-        height: 15px;
-        border-radius: 7.5px;
-        display: inline-block;
-        margin: 3px;
-    }
-
-    .btn_back{
-        display: none;
-    }
-
-    .btn_next {
-        display: none;
-    }
-
-    @media (min-width: 600px) {
-
-        .container_categorie{
-            padding: 2% 5% 2% 5%;
-            justify-content: flex-start;
-            column-gap: 20px;
-            row-gap: 5px;
+        .sezione_prodotti{
+            padding: 5% 5% 5% 5%;
+            flex-wrap: wrap;
+            gap: 50px;
         }
 
-        .item{
-            flex-basis: 20%;
-            justify-content: start;
-            gap:5px;
-        }
-
-
-        .container_prodotto{
-            display: none;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            background-color: #191A1A;
-
+        .container_descrizione  h1{
+            font-size: 30px;
         }
 
         .container_descrizione_prodotto{
-            background: none;
             flex-basis: 100%;
-            padding: 5% 5% 5% 5%;
-            position: relative;
         }
 
-        .container_descrizione_prodotto h1{
-            font-family: 'Alfa Slab One';
-            font-size: 35px;
-            color: white;
-            margin-bottom: 20px;
+        .container_tavola_elementi{
+            flex-basis: 100%;
+        }
+
+    }
+
+    @media (min-width: 1024px){
+
+        .sezione_prodotti{
+            padding: 5% 10% 5% 10%;
+            flex-wrap: nowrap;
+            gap:50px;
+        }
+
+        .container_descrizione_prodotto{
+            flex-basis: 60%;
+        }
+
+        .container_tavola_elementi{
+            flex-basis: 40%;
         }
 
         .container_descrizione_prodotto p{
-            font-family: 'Montserrat';
-            font-size: 18px;
-            color: white;
+            font-size: 20px;
         }
 
-        .container_immagini{
-            display: none;
+    }
+
+    @media (min-width: 1920px){
+
+        .sezione_prodotti{
+            padding: 5% 10% 5% 10%;
+            flex-wrap: nowrap;
+            gap:50px;
         }
 
-        .mosaico{
-
-            display: grid;
-            flex-basis: 90%;
-            gap:10px;
-            grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
-            grid-auto-rows: 200px;
-            /*padding: 5% 5% 5% 5%;*/
-            margin-bottom: 40px;
-            /*border: white solid;*/
-
+        .container_descrizione_prodotto{
+            flex-basis: 60%;
         }
 
-        .card{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            height: 100%;
-            width: 100%;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: all 500ms;
-            padding: 0;
-            margin: 0;
-            /*border: black solid;*/
-
-            opacity: 0;
-            scale: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-
+        .container_tavola_elementi{
+            flex-basis: 40%;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                scale: 1;
-            }
+        .container_descrizione_prodotto h1{
+            font-size: 50px;
         }
 
-        .card-tall{
-            grid-row: span 2 /auto;
+        .container_descrizione_prodotto p{
+            font-size: 24px;
         }
 
-        .card-wide{
-            grid-column: span 2 /auto;
+    }
+
+
+
+
+/* ... */
+
+/* || Catalogo */
+
+    .container_catalogo{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10% 0% 10% 0%;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        /*border: black solid;*/
+        gap: 20px
+    }
+
+    .container_item{
+        flex-basis: 43%;
+        height: 150px;
+        /*border: black solid;*/
+        box-shadow: 5px 5px 10px black;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .container_img_item{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay{
+        width: 100%;
+        height: 100%;
+        background: url("../Immagini/Prodotti/overlay.svg") no-repeat;
+        background-size: contain;
+        opacity: 0.8;
+    }
+
+
+    .container_item h1{
+        position: absolute;
+        top:50%;
+        left:5%;
+        transform: translateY(-50%);
+        font-family: 'Helvetica Neue';
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+    }
+
+
+    @media (min-width: 600px) {
+
+        .container_catalogo{
+            padding: 5% 5% 5% 5%;
+            gap: 20px;
+            justify-content: left;
         }
 
-        .card:hover{
-            transform: scale(1.1);
-            z-index: 3;
-            box-shadow: 5px 5px 10px black;
+        .container_item{
+            flex-basis: 30%;
         }
 
     }
 
     @media (min-width: 1024px) {
 
-        .container_categorie{
-            padding: 1% 10% 1% 10%;
-            justify-content: center;
-            column-gap: 25px;
-            row-gap: 10px;
-        }
-
-        .item{
-            flex-basis: 10%;
-        }
-
-        .container_prodotto{
-            flex-wrap: wrap;
-            justify-content: center;
-            position: relative;
-        }
-
-        .btn_back{
-            display: block;
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            top:150px;
-            left:50px;
-            opacity: 0.5;
-            cursor: pointer;
-            z-index: 3;
-        }
-
-        .btn_next {
-            display: block;
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            top:150px;
-            right:50px;
-            opacity: 0.5;
-            cursor: pointer;
-            z-index: 3;
-        }
-
-        .btn_back:hover{
-            opacity: 1;
-        }
-
-        .btn_next:hover{
-            opacity: 1;
-        }
-
-        .container_descrizione_prodotto{
+        .container_catalogo{
             padding: 5% 10% 5% 10%;
+            justify-content: left;
         }
 
-        .mosaico{
-            flex-basis: 80%;
-            margin-bottom: 80px;
-            grid-auto-rows: 300px;
+        .container_item{
+            flex-basis: 30%;
+            height: 180px;
         }
 
+        .container_item h1{
+            font-size: 22px;
+        }
 
     }
 
     @media (min-width: 1920px) {
 
+
+        .container_catalogo{
+            padding: 3% 10% 3% 10%;
+            gap: 20px;
+            justify-content: left;
+        }
+
+        .container_item{
+            flex-basis: 30%;
+            height: 230px;
+        }
+
+        .container_item h1{
+            font-size: 26px;
+        }
+
+
     }
 
 
+/* ... */
 
+
+
+/* || Sezione Contattaci */
+
+    .container_contattaci{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #9d9999;
+        padding: 5% 3% 5% 3%;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    .container_descrizione_contattaci{
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container_descrizione_contattaci h1{
+        width: 100%;
+        font-family: 'Helvetica Neue';
+        font-size: 24px;
+        color: white;
+    }
+
+    .container_descrizione_contattaci p{
+        width: 100%;
+        font-family: 'Montserrat';
+        font-size: 18px;
+        color: white;
+    }
+
+    .container_contattaci button{
+        flex-basis: 50%;
+        font-family: 'Helvetica Neue';
+        font-size: 18px;
+        background-color: white;
+        color: #770404;
+        padding: 10px 0;
+        border: none;
+        font-weight: bold;
+        box-shadow: 5px 5px 10px black;
+        transition: color 1s, background-color 1s;
+    }
+
+    .container_contattaci button:hover{
+        color: white;
+        background-color: #770404;
+    }
+
+    @media (min-width: 600px){
+
+        .container_contattaci{
+            display: flex;
+            padding: 5% 5% 5% 5%;
+            gap: 30px;
+        }
+
+        .container_descrizione_contattaci{
+            flex-basis: 70%;
+        }
+
+
+        .container_contattaci button{
+            flex-basis: 20%;
+        }
+
+    }
+
+    @media (min-width: 1024px){
+
+        .container_contattaci{
+            display: flex;
+            padding: 5% 5% 5% 5%;
+            gap: 50px;
+        }
+
+        .container_descrizione_contattaci{
+            flex-basis: 75%;
+        }
+
+
+        .container_contattaci button{
+            flex-basis: 15%;
+        }
+
+        .container_descrizione_contattaci h1{
+            font-size: 30px;
+        }
+
+        .container_descrizione_contattaci p{
+            font-size: 20px;
+        }
+
+        .container_contattaci button{
+            font-size: 20px;
+        }
+
+    }
+
+    @media (min-width: 1920px){
+
+        .container_contattaci{
+            display: flex;
+            padding: 3% 5% 3% 5%;
+            gap: 100px;
+        }
+
+
+        .container_contattaci button{
+            flex-basis: 10%;
+        }
+
+        .container_descrizione_contattaci h1{
+            font-size: 35px;
+        }
+
+        .container_descrizione_contattaci p{
+            font-size: 23px;
+        }
+
+    }
 
 /* ... */
