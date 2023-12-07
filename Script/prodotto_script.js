@@ -19,6 +19,7 @@
     const btn_avanti=document.querySelector('.btn_avanti')
     const btn_dietro=document.querySelector('.btn_dietro')
     const immagine=document.querySelector('.img_full')
+    const img_mobile=document.querySelector('.container_single_img')
 
     let nomeProdotto;
     let descrizioneProdotto;
@@ -131,6 +132,8 @@ window.addEventListener("load", (event) => {
             if(img_prodotto[i]!="")
                 container.appendChild(createItem(img_prodotto[i]))
         }
+
+        img_mobile.style.backgroundImage="url("+img_prodotto[0]+")"
     })
 
 
@@ -186,6 +189,55 @@ btn_dietro.addEventListener('click', (e)=>{
 
     immagine.style.backgroundImage="url("+next_img+")"
 });
+
+
+let startXslider;
+img_mobile.addEventListener('touchstart', (e)=>{
+    startXslider=e.touches[0].clientX;
+})
+
+img_mobile.addEventListener('touchend', (e)=>{
+    const endX=e.changedTouches[0].clientX;
+    const deltaX = endX - startXslider;
+    if (deltaX <-20) {
+        let path_img=img_mobile.style.backgroundImage
+        let index=0
+        for (let i=0;i<img_prodotto.length;i++){
+            console.log(path_img)
+            console.log(img_prodotto[i])
+            if(path_img.includes(img_prodotto[i]))
+                index=i
+        }
+
+        console.log(index)
+        let next_img;
+        if(index==img_prodotto.length-1) {
+            next_img = img_prodotto[0]
+        }else{
+            next_img=img_prodotto[index+1]
+        }
+
+        img_mobile.style.backgroundImage="url("+next_img+")"
+    }else{
+        if (deltaX >20) {
+            let path_img=img_mobile.style.backgroundImage
+            let index=0
+            for (let i=0;i<img_prodotto.length;i++){
+                if(path_img.includes(img_prodotto[i]))
+                    index=i
+            }
+
+            let next_img;
+            if(index==0) {
+                next_img = img_prodotto[img_prodotto.length-1]
+            }else{
+                next_img=img_prodotto[index-1]
+            }
+
+            img_mobile.style.backgroundImage="url("+next_img+")"
+        }
+    }
+})
 
 /* ... */
 
