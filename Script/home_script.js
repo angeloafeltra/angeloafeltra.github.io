@@ -73,7 +73,7 @@
         setSizeContainerShowRoom()
 
         document.body.style.overflow = 'hidden';
-        document.querySelector('.navbar').style.backgroundColor="rgba(255,255,255,0)";
+        document.querySelector('.container_navbar').style.backgroundColor="rgba(255,255,255,0)";
         let links=document.getElementsByClassName('link_navbar');
         for (let i = 0; i < links.length; i++) {
             if (links[i].style.color != "rgb(240, 179, 87)") {

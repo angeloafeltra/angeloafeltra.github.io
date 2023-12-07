@@ -3,7 +3,7 @@
 
     const hamburger=document.querySelector('.hamburger')
     const navlinks=document.querySelector('.nav_links')
-    const navbar=document.querySelector('.navbar')
+    const navbar=document.querySelector('.container_navbar')
     const links=document.getElementsByClassName('link_navbar')
 
     let startX;
