@@ -75,58 +75,14 @@
 
 
 /* || Variabili e constanti globali */
-
-    const categoriaProdotti=[
-        {
-            main_category:'Porte',
-            category_img:'Immagini/Prodotti/Porte/porta1.jpeg',
-        },
-        {
-            main_category:'Zanzariere',
-            category_img: 'Immagini/Prodotti/Porte/porta2.jpeg',
-        },
-        {
-            main_category:'Tapparelle',
-            category_img: 'Immagini/Prodotti/Porte/porta3.jpeg',
-        },
-        {
-            main_category:'Cassonetti',
-            category_img: 'Immagini/Prodotti/Porte/porta4.jpeg',
-        },
-        {
-            main_category:'Persiane',
-            category_img: 'Immagini/Prodotti/Porte/porta5.jpeg',
-        },
-        {
-            main_category:'Finestre',
-            category_img: 'Immagini/Prodotti/Porte/porta2.jpeg',
-        },
-        {
-            main_category:'Balaustre',
-            category_img: 'Immagini/Prodotti/Porte/porta1.jpeg',
-        },
-        {
-            main_category:'Tende',
-            category_img: 'Immagini/Prodotti/Porte/porta4.jpeg',
-        },
-        {
-            main_category:'Scorrevoli',
-            category_img: 'Immagini/Prodotti/Porte/porta5.jpeg',
-        },
-        {
-            main_category:'Battenti',
-            category_img: 'Immagini/Prodotti/Porte/porta1.jpeg'
-        },
-        {
-            main_category:'Saliscendi',
-            category_img: 'Immagini/Prodotti/Porte/porta1.jpeg'
-        }
-    ]
-
     const container_catalogo=document.querySelector('.container_catalogo')
+    const xmlFilePath = './Prodotti.xml';
+
     let parolaChiave1=null
     let parolaChiave2=null
     let parolaChiave3=null
+    let categorie=null
+
 
 /* ... */
 
@@ -134,6 +90,90 @@
 
 
 /* || Funzioni */
+
+    function getNumberSubCategory(category){
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', xmlFilePath, true);
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    var parser = new DOMParser();
+                    var xmlText = xhr.responseText;
+                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+
+                    var categoryElements = xmlDoc.getElementsByTagName('categoria');
+                    let count=0
+                    for (let i=0;i<categoryElements.length;i++){
+                        let value=categoryElements[i].textContent
+                        if(value==category){
+                            count=count+1
+                        }
+                    }
+                    resolve(count)
+                } else {
+                    reject('Errore durante il caricamento del file XML:', xhr.statusText);
+                }
+            };
+            xhr.send();
+        });
+    }
+
+
+    function getImgCategory(categoryName) {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', xmlFilePath, true);
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    var parser = new DOMParser();
+                    var xmlText = xhr.responseText;
+                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+
+                    var prodottoElements = xmlDoc.getElementsByTagName('prodotto');
+                    let categoria;
+                    let list_img;
+                    for (let i=0;i<prodottoElements.length;i++){
+                        categoria=prodottoElements[i].getElementsByTagName('categoria')[0].textContent
+                        if(categoria==categoryName){
+                            list_img=prodottoElements[i].getElementsByTagName('immagini')[0]
+                            resolve(list_img.getElementsByTagName('img')[0].textContent)
+                        }
+                    }
+                } else {
+                    reject('Errore durante il caricamento del file XML:', xhr.statusText);
+                }
+            };
+            xhr.send();
+        });
+    }
+
+    function getCategory() {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', xmlFilePath, true);
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    var parser = new DOMParser();
+                    var xmlText = xhr.responseText;
+                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+
+                    var categoryElements = xmlDoc.getElementsByTagName('categoria');
+                    var categories = [];
+
+                    for (var i = 0; i < categoryElements.length; i++) {
+                        var category = categoryElements[i].textContent;
+                        if (categories.indexOf(category) === -1) {
+                            categories.push(category);
+                        }
+                    }
+                    resolve(categories)
+                } else {
+                    reject('Errore durante il caricamento del file XML:', xhr.statusText);
+                }
+            };
+            xhr.send();
+        });
+    }
 
     function createItem(name,img_path){
         let container=document.createElement('div');
@@ -150,7 +190,24 @@
         let item_name=document.createElement('h1')
         container.appendChild(item_name)
         item_name.innerHTML=name
+
+        container.addEventListener('click',showProduct)
         return container
+    }
+
+    function showProduct(event){
+
+        let element=event.currentTarget
+        let element_name=element.childNodes[2]
+        let categoria=element_name.innerHTML
+
+        getNumberSubCategory(categoria).then(function(n){
+            if (n>1){
+                window.location.href = "prodotti_intermedia.html?categoria="+categoria;
+            }else{
+                window.location.href = "prodotto.html?prodotto="+categoria;
+            }
+        })
     }
 
 /* ... */
@@ -201,10 +258,15 @@ window.addEventListener("load", (event) => {
         parolaChiave3.setMobileMode(false)
     }
 
-    for(let i=0;i<categoriaProdotti.length;i++){
-        container_catalogo.appendChild(createItem(categoriaProdotti[i].main_category,
-            categoriaProdotti[i].category_img))
-    }
+    getCategory().then(function(categories) {
+        for(let i=0;i<categories.length;i++){
+            getImgCategory(categories[i]).then(function (img){
+                container_catalogo.appendChild(createItem(categories[i],img))
+            })
+        }
+    })
+
+
 
 });
 
