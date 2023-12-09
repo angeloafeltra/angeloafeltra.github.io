@@ -1,12 +1,108 @@
+
+/* || Classi */
+
+    class MainImg {
+
+        #container_immagine_principale_element;
+        #overlay_element;
+        #subcontainer_immagine_principale_element;
+
+        #startY
+        #isMobile=false;
+
+        constructor(ref_cont_img_principale, ref_overlay, ref_subcontainer) {
+            this.#container_immagine_principale_element=ref_cont_img_principale;
+            this.#overlay_element=ref_overlay;
+            this.#subcontainer_immagine_principale_element=ref_subcontainer;
+
+            this.#overlay_element.addEventListener('wheel', this.#actionZoomOut.bind(this));
+            this.#container_immagine_principale_element.addEventListener('touchstart',this.#logInitialTouch.bind(this));
+            this.#container_immagine_principale_element.addEventListener('touchmove',this.#actionZoomOut.bind(this));
+            //this.#container_immagine_principale_element.addEventListener('touchend',());
+        }
+
+        setIsMobile(value){
+            this.#isMobile=value;
+        }
+
+        #animation_ZoomOut(event){
+
+            let scala_overlay=event.target.style.scale;
+            scala_overlay=parseFloat(scala_overlay);
+
+            if (scala_overlay>5){
+                this.#overlay_element.style.display="none";
+                this.#subcontainer_immagine_principale_element.style.opacity=1;
+
+                for (let link of document.querySelectorAll('.container_links .link_navbar')) {
+                    if (link.style.color != "rgb(240, 179, 87)") {
+                        link.style.color = "#ffffff";
+                    }
+                }
+
+                setTimeout(this.#endAnimationZoomOut, 400, this.#container_immagine_principale_element);
+            }else{
+
+                if(this.#isMobile){
+                    if(window.innerWidth<600)
+                        scala_overlay+=0.4
+                    else
+                        scala_overlay+=0.2
+                }else if (event.deltaY<20){ //Gestione scroll touch o mouse
+                    scala_overlay+=0.2;
+                } else{
+                    scala_overlay+=0.6;
+                }
+                this.#overlay_element.style.scale=scala_overlay.toString();
+            }
+
+        }
+
+        #endAnimationZoomOut(container){
+            container.style.position="static";
+            document.body.style.overflow = 'auto';
+            document.querySelector("main").style.display="block"
+        }
+
+        #actionZoomOut(event){
+            if(!this.#isMobile){
+                if(event.deltaY>0) {
+                    this.#animation_ZoomOut(event)
+                }
+            }else if(this.#isSwipeToTop(event)){
+                this.#animation_ZoomOut(event)
+            }
+
+        }
+
+        #logInitialTouch(event){
+            this.#startY=event.touches[0].clientY
+        }
+
+        #isSwipeToTop(event){
+            const endY=event.changedTouches[0].clientY;
+            if (endY < this.#startY) return true; else return false;
+        }
+
+    }
+
+/* ... */
+
+
+
 /* || Constanti e variabili globali */
 
-    const containerImgShowRoom=document.querySelector('#showroom .immagine_sezione')
-    const containerDescrizioneShowRoom=document.querySelector('#showroom .descrizione_sezione')
-    const copertina=document.querySelector('.copertina_main_img')
-    const main_img=document.querySelector('.main_img')
+    const mainImg=new MainImg(
+        document.querySelector('.container_immagine_principale'),
+        document.querySelector('.container_immagine_principale .overlay'),
+        document.querySelector('.container_immagine_principale .subcontainer_immagine_principale')
+    )
 
+    const sezione_showRoom_container_img=document.querySelector('.sezione_showRoom .container_immagine')
+    const sezione_showRoom_container_desc=document.querySelector('.sezione_showRoom .container_descrizione')
 
-    let startPositionY=0
+    let isTouchDevice;
+
 /* ... */
 
 
@@ -16,43 +112,11 @@
 
     function setSizeContainerShowRoom(){
         if(window.innerWidth>=600) {
-            containerImgShowRoom.style.height = containerDescrizioneShowRoom.offsetHeight + "px";
+            sezione_showRoom_container_img.style.height = sezione_showRoom_container_desc.offsetHeight + "px";
         }else{
-            containerImgShowRoom.style.height = "400px";
+            sezione_showRoom_container_img.style.height = "400px";
         }
     }
-
-    function animationCopertina(event) {
-
-        let copertina=document.querySelector('.copertina_main_img')
-        let scala=parseFloat(copertina.style.scale);
-        //Gestire scroll touch e mouse
-        if(event.deltaY<20)
-            scala=scala+0.2 //TouchPad
-        else
-            scala=scala+0.6//Mouse
-
-        copertina.style.scale=scala.toString()
-        if(parseFloat(copertina.style.scale)>5){
-            copertina.style.display="None"
-            document.querySelector('.over-text').style.opacity=1;
-            for (let i = 0; i < links.length; i++) {
-                if (links[i].style.color != "rgb(240, 179, 87)") {
-                    links[i].style.color = "#ffffff";
-                }
-            }
-
-            setTimeout(function() {
-                document.querySelector('.main_img').style.position="static";
-                document.body.style.overflow = 'auto';
-                document.querySelector("main").style.display="block"
-            }, 400);
-
-
-        }
-
-    }
-
 
 /* ... */
 
@@ -64,65 +128,28 @@
     window.addEventListener('scroll',()=>{
         setSizeContainerShowRoom()
     });
+
     window.addEventListener('resize',()=>{
         setSizeContainerShowRoom()
     });
 
     window.addEventListener('load',()=>{
+
+        if(window.ontouchstart!=undefined) isTouchDevice=true; else isTouchDevice=false;
+        mainImg.setIsMobile(isTouchDevice);
+
         window.scrollTo(0,0);
         setSizeContainerShowRoom()
 
         document.body.style.overflow = 'hidden';
         document.querySelector('.container_navbar').style.backgroundColor="rgba(255,255,255,0)";
         let links=document.getElementsByClassName('link_navbar');
-        for (let i = 0; i < links.length; i++) {
-            if (links[i].style.color != "rgb(240, 179, 87)") {
-                links[i].style.color = "#000000";
+        for (let link of links) {
+            if (link.style.color != "rgb(240, 179, 87)") {
+                link.style.color = "#000000";
             }
         }
     });
-
-
-    copertina.addEventListener('wheel', (event)=>{
-
-        if(event.deltaY>0) {
-            animationCopertina(event)
-        }
-
-    })
-
-    main_img.addEventListener('touchstart', (e)=>{
-        startPositionY=e.touches[0].clientY
-    })
-
-    main_img.addEventListener('touchmove', (e)=>{
-
-        let positionY=e.touches[0].clientY
-        if(positionY<startPositionY) {
-            let copertina=document.querySelector('.copertina_main_img')
-            let scala=parseFloat(copertina.style.scale);
-            if(window.innerWidth<600)
-                scala=scala+0.4
-            else
-                scala=scala+0.2
-            copertina.style.scale=scala.toString()
-            if(parseFloat(copertina.style.scale)>5){
-                copertina.style.display="None"
-                document.querySelector('.over-text').style.opacity=1;
-            }
-        }
-
-    })
-
-    main_img.addEventListener('touchend', (e)=>{
-        let copertina=document.querySelector('.copertina_main_img')
-        if(copertina.style.display=="none"){
-                document.querySelector('.main_img').style.position="static";
-                document.querySelector("main").style.display="block"
-                document.body.style.overflow = 'auto';
-        }
-
-    })
 
 /* ... */
 

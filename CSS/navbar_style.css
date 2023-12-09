@@ -6,8 +6,7 @@
     left: 0;
     justify-content: space-between;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 10px;
+    padding: 30px 0px 10px 0px;
     background-color: rgba(255,255,255,0);
     z-index: 1000;
 }
@@ -38,7 +37,7 @@
     background-color: #F0B357;
 }
 
-.nav_links{
+.container_links{
     position: fixed;
     display: none;
     width: 100%;
@@ -55,9 +54,9 @@
     width: 50%;
 
     color: black;
-    font-family: 'Montserrat';
+    font-family: Montserrat, sans-serif;
     font-size: 20px;
-    font-width: bold;
+    font-weight: lighter;
     text-decoration: none;
 }
 
@@ -76,7 +75,7 @@
         display: none;
     }
 
-    .nav_links {
+    .container_links {
         display: block;
         position: static;
         width: auto;
@@ -92,12 +91,12 @@
         display:inline-block;
 
         color: white;
-        font-family: 'Montserrat';
         font-size: 19px;
         text-decoration: none;
         width: auto;
         margin-left: 15px;
     }
+
 }
 
 

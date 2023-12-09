@@ -12,10 +12,9 @@ body, html {
     font-family: sans-serif;
     background-color: #EDEAEA;
     height: 100%;
-    max-width: 100%;
+    width: 100%;
     margin: 0;
     overscroll-behavior-y: none;
-    overscroll-behavior-x: none;
 }
 
 
@@ -23,20 +22,44 @@ body, html {
 
 /* || Main Image Element Style */
 
-    .main_img{
+    .container_immagine_principale{
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        max-width: 100%;
         height: 100%;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Home/MainImg.png") no-repeat center center;
         background-size: cover;
         overflow: hidden;
+        z-index: 30;
     }
 
+    .overlay{
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 20;
 
-    .over-text{
+        display: block;
+        width: 100%;
+        height: 100%;
+        scale: 1;
+        background:url("../Immagini/Home/ImmagineDiCopertina.svg") no-repeat center center;
+        background-size: cover;
+    }
+
+    .overlay .container_swipeUp{
+        width: 70px;
+        height: 70px;
+        display: block;
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.5;
+    }
+
+    .subcontainer_immagine_principale{
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -47,12 +70,12 @@ body, html {
         transition: opacity 1s ease;
     }
 
-    .logo_grande{
+    .container_logo_grande{
         width: 65%;
         height: 30%;
     }
 
-    .frase_space{
+    .container_frase{
         width: 100%;
         height: 50%;
         margin-top: 10px;
@@ -60,7 +83,7 @@ body, html {
         border-width: 3px;
     }
 
-    .over-text span{
+    .subcontainer_immagine_principale div{
         margin: 0 auto 0 auto;
     }
 
@@ -72,33 +95,35 @@ body, html {
     }
 
     @media (min-width: 600px) {
-        .frase_space{
+
+        .container_frase{
             width: 90%;
         }
 
         .frase{
             font-size: 35px;
         }
+
     }
 
     @media (min-width: 1024px) {
 
-        .main_img{
+        .container_immagine_principale{
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Home/MainImg.png") no-repeat center center fixed;
             background-size: cover;
         }
 
-        .frase_space{
+        .container_frase{
             width: 80%;
         }
 
         .frase{
             font-size: 40px;
         }
+
     }
 
 /* ... */
-
 
 
 
@@ -112,7 +137,7 @@ body, html {
         flex-wrap: wrap;
     }
 
-    .bussines_block{
+    .sezione_bussines_block .bussines_block{
         flex-basis: 100%;
         padding: 50px 10px 50px 10px;
 
@@ -123,63 +148,68 @@ body, html {
         align-content: center;
     }
 
-    .descrizioneBussiness{
-        font-family: Montserrat;
-        font-weight: bold;
-        text-align: center;
-        font-size: 17px;
-        color: #F0B357;
-    }
-
-    .icon_bussines_space{
+    .sezione_bussines_block .bussines_block .container_icona{
         height: 80px;
         width: 80px;
         margin: 0 auto 1.5rem auto;
         animation: fadeIn 1.5s ease;
     }
 
-    .bussines_description_space{
+    .sezione_bussines_block .bussines_block .container_descrizione{
         width:70%;
         margin: 0 auto 0 auto
     }
 
+    .sezione_bussines_block .bussines_block .container_descrizione .descrizioneBussiness{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        font-size: 17px;
+        color: #F0B357;
+    }
+
     @media (min-width: 600px){
+
         .sezione_bussines_block{
             flex-wrap: nowrap;
         }
 
-        .bussines_block{
+        .sezione_bussines_block .bussines_block{
             flex-basis: 55%;
         }
+
     }
 
     @media (min-width: 1024px) {
-        .bussines_block {
+
+        .sezione_bussines_block .bussines_block {
             padding: 80px 20px 80px 20px;
         }
 
-        .descrizioneBussiness {
-            font-size: 18px;
-        }
-
-        .icon_bussines_space {
+        .sezione_bussines_block .bussines_block .container_icona {
             height: 80px;
             width: 80px;
         }
+
+        .sezione_bussines_block .bussines_block .container_descrizione .descrizioneBussiness {
+            font-size: 18px;
+        }
+
     }
 
     @media (min-width: 1920px){
-        .bussines_block{
+
+        .sezione_bussines_block .bussines_block{
             padding: 110px 50px 110px 50px;
         }
 
-        .descrizioneBussiness{
-            font-size: 22px;
-        }
-
-        .icon_bussines_space{
+        .sezione_bussines_block .bussines_block .container_icona{
             height: 100px;
             width: 100px;
+        }
+
+        .sezione_bussines_block .bussines_block .container_descrizione .descrizioneBussiness{
+            font-size: 22px;
         }
 
     }
@@ -189,10 +219,9 @@ body, html {
 
 
 
-
 /* ||  Section1 Element Style */
 
-    #chiSiamo{
+    .sezione_chiSiamo{
         display: flex;
         width: 100%;
         max-width: 100%;
@@ -203,51 +232,26 @@ body, html {
         background-size: cover;
     }
 
-    #chiSiamo .descrizione_sezione{
+    .sezione_chiSiamo .container_descrizione{
         flex-basis: 100%;
         align-self: stretch;
         height: 100%;
-        /*background-color: green;*/
     }
 
-    #chiSiamo .immagine_sezione{
-        display: inline-block;
-        flex-basis: 100%;
-        /*background-color: yellow;*/
-        align-self: stretch;
-        position: relative;
-        height: 400px;
-    }
-
-    #chiSiamo .immagine_sezione .img_bg{
-        position:absolute;
-        background:rgba(119,4,4,1);
-        width: 75%;
-        height: 75%; top:0; left:0;
-    }
-
-    #chiSiamo .immagine_sezione .img_container{
-        position:absolute;
-        /*background:red;*/
-        width: 93%;
-        height: 95%;
-        top:5%; left:7%;
-    }
-
-    #chiSiamo .descrizione_sezione .header_style{
-        font-family: 'Alfa Slab One';
+    .sezione_chiSiamo .container_descrizione .header_descrizione{
+        font-family: 'Alfa Slab One', sans-serif;
         font-size: 40px;
         color: white;
         font-weight: lighter;
     }
 
-    #chiSiamo .descrizione_sezione .body_style{
-        font-family: 'Montserrat';
+    .sezione_chiSiamo .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         color: white;
     }
 
-    #chiSiamo .descrizione_sezione .list_parole_chiavi{
+    .sezione_chiSiamo .container_descrizione .container_paroleChiavi{
         display: flex;
         flex-wrap: nowrap;
         gap: 5px;
@@ -255,14 +259,14 @@ body, html {
         margin-top: 10px;
     }
 
-    #chiSiamo .descrizione_sezione .list_parole_chiavi .parola_chiave{
-        font-family: Montserrat;
+    .sezione_chiSiamo .container_descrizione .container_paroleChiavi .parola_chiave{
+        font-family: 'Montserrat', sans-serif;
         font-weight: bolder;
         font-size: 18px;
         color: #FBFBFB;
     }
 
-    #chiSiamo .descrizione_sezione .list_parole_chiavi .circle{
+    .sezione_chiSiamo .container_descrizione .container_paroleChiavi .circle{
         display: inline-block;
         width: 10px;
         height: 10px;
@@ -270,10 +274,10 @@ body, html {
         border-radius: 5px;
     }
 
-    #chiSiamo .descrizione_sezione .btn_chisiamo{
+    .btn_type1{
         display: block;
-        font-family: 'Montserrat';
-        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
         color: white;
         font-weight: bold;
         background-color: rgba(119,4,4,1);
@@ -282,17 +286,39 @@ body, html {
         border: none;
         cursor:pointer;
         box-shadow: 5px 5px 10px black;
+        border-radius: 20px;
     }
 
-    #chiSiamo .descrizione_sezione .btn_chisiamo:hover{
+    .btn_type1:hover{
         color: rgba(119,4,4,1);
         background-color: white;
     }
 
+    .sezione_chiSiamo .container_immagine{
+        display: inline-block;
+        flex-basis: 100%;
+        align-self: stretch;
+        position: relative;
+        height: 400px;
+    }
+
+    .sezione_chiSiamo .container_immagine .img_bg{
+        position:absolute;
+        background:rgba(119,4,4,1);
+        width: 75%;
+        height: 75%; top:0; left:0;
+    }
+
+    .sezione_chiSiamo .container_immagine .subcontainer_immagine{
+        position:absolute;
+        width: 93%;
+        height: 95%;
+        top:5%; left:7%;
+    }
 
     @media (min-width: 600px){
 
-        #chiSiamo {
+        .sezione_chiSiamo {
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
@@ -300,12 +326,12 @@ body, html {
             padding: 15% 7% 15% 7%;
         }
 
-        #chiSiamo .descrizione_sezione{
+        .sezione_chiSiamo .container_descrizione{
             align-self: center;
             flex-basis: 50%;
         }
 
-        #chiSiamo .immagine_sezione{
+        .sezione_chiSiamo .container_immagine{
             display: inline-block;
             align-self: center;
             flex-basis: 50%;
@@ -317,7 +343,7 @@ body, html {
 
     @media (min-width: 1024px){
 
-        #chiSiamo {
+        .sezione_chiSiamo {
             flex-wrap: nowrap;
             justify-content: center;
             gap: 10px;
@@ -326,12 +352,12 @@ body, html {
             background-size: cover;
         }
 
-        #chiSiamo .descrizione_sezione{
+        .sezione_chiSiamo .container_descrizione{
             align-self: center;
             flex-basis: 50%;
         }
 
-        #chiSiamo .immagine_sezione{
+        .sezione_chiSiamo .container_immagine{
             display: inline-block;
             align-self: center;
             flex-basis: 50%;
@@ -341,7 +367,7 @@ body, html {
 
     @media (min-width: 1920px){
 
-        #chiSiamo {
+        .sezione_chiSiamo {
             flex-wrap: nowrap;
             justify-content: center;
             gap: 10px;
@@ -350,30 +376,24 @@ body, html {
             background-size: cover;
         }
 
-        #chiSiamo .descrizione_sezione{
+        .sezione_chiSiamo .container_descrizione{
             align-self: center;
             flex-basis: 50%;
         }
 
-        #chiSiamo .immagine_sezione{
-            display: inline-block;
-            align-self: center;
-            flex-basis: 50%;
-        }
-
-        #chiSiamo .descrizione_sezione .header_style{
+        .sezione_chiSiamo .container_descrizione .header_descrizione{
             font-size: 50px;
         }
 
-        #chiSiamo .descrizione_sezione .body_style{
+        .sezione_chiSiamo .container_descrizione .body_descrizione{
             font-size: 24px;
         }
 
-        #chiSiamo .descrizione_sezione .list_parole_chiavi .parola_chiave{
+        .sezione_chiSiamo .container_descrizione .container_paroleChiavi .parola_chiave{
             font-size: 26px;
         }
 
-        #chiSiamo .descrizione_sezione .list_parole_chiavi .circle{
+        .sezione_chiSiamo .container_descrizione .container_paroleChiavi .circle{
             display: inline-block;
             width: 10px;
             height: 10px;
@@ -381,8 +401,14 @@ body, html {
             border-radius: 5px;
         }
 
-        #chiSiamo .descrizione_sezione .btn_chisiamo{
+        .btn_type1{
             font-size: 22px;
+        }
+
+        .sezione_chiSiamo .container_immagine{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
         }
 
     }
@@ -392,10 +418,9 @@ body, html {
 
 
 
-
 /* ||  Section2 Element Style */
 
-    #showroom{
+    .sezione_showRoom{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -407,14 +432,14 @@ body, html {
         overflow: hidden;
     }
 
-    #showroom .immagine_sezione{
+    .sezione_showRoom .container_immagine{
         display: inline-block;
         flex-basis: 100%;
         align-self: stretch;
         height: 400px;
     }
 
-    #showroom .descrizione_sezione{
+    .sezione_showRoom .container_descrizione{
         flex-basis: 100%;
         align-self: stretch;
         height: 100%;
@@ -422,34 +447,35 @@ body, html {
         padding: 7% 7% 7% 7%;
     }
 
-    #showroom .descrizione_sezione .header_style{
-        font-family: 'Alfa Slab One';
+    .sezione_showRoom .container_descrizione .header_descrizione{
+        font-family: 'Alfa Slab One', sans-serif;
         font-size: 40px;
         color: white;
         font-weight: lighter;
     }
 
-    #showroom .descrizione_sezione .body_style{
-        font-family: 'Montserrat';
+    .sezione_showRoom .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         color: white;
     }
 
-    #showroom .descrizione_sezione .btn_showroom{
+    .btn_type2{
         display: block;
-        font-family: 'Montserrat';
-        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
         color: #770404;
         font-weight: bold;
         background-color: rgba(255,255,255,1);
-        padding: 15px 8px 15px 8px;
+        padding: 15px 20px 15px 20px;
         margin: 20px auto 20px auto;
         border: white solid 2px;
         cursor:pointer;
         box-shadow: 5px 5px 10px black;
+        border-radius: 25px;
     }
 
-    #showroom .descrizione_sezione .btn_showroom:hover{
+    .btn_type2:hover{
         color: white;
         background-color: #770404;
         border: white solid 2px;
@@ -457,22 +483,22 @@ body, html {
 
     @media (min-width: 600px){
 
-        #showroom .descrizione_sezione{
+        .sezione_showRoom .container_descrizione{
             flex-basis: 55%;
         }
 
-        #showroom .immagine_sezione{
+        .sezione_showRoom .container_immagine{
             display: inline-block;
             flex-basis: 45%;
             align-self: center;
 
         }
 
-        #showroom .descrizione_sezione .header_style{
+        .sezione_showRoom .container_descrizione .header_descrizione{
             font-size: 36px;
         }
 
-        #showroom .descrizione_sezione .body_style{
+        .sezione_showRoom .container_descrizione .body_descrizione{
             font-size: 18px;
         }
 
@@ -480,28 +506,27 @@ body, html {
 
     @media (min-width: 1024px){
 
-       #showroom{
+        .sezione_showRoom{
            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
            background-size: cover;
        }
 
-        #showroom .descrizione_sezione{
+        .sezione_showRoom .container_immagine{
+            display: inline-block;
+            flex-basis: 45%;
+            align-self: center;
+        }
+
+        .sezione_showRoom .container_descrizione{
             flex-basis: 55%;
             padding: 5% 5% 5% 5%;
         }
 
-        #showroom .immagine_sezione{
-            display: inline-block;
-            flex-basis: 45%;
-            align-self: center;
-
-        }
-
-        #showroom .descrizione_sezione .header_style{
+        .sezione_showRoom .container_descrizione .header_descrizione{
             font-size: 40px;
         }
 
-        #showroom .descrizione_sezione .body_style{
+        .sezione_showRoom .container_descrizione .body_descrizione{
             font-size: 20px;
         }
 
@@ -509,32 +534,32 @@ body, html {
 
     @media (min-width: 1920px){
 
-        #showroom{
+        .sezione_showRoom{
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background1.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
-        #showroom .descrizione_sezione{
-            flex-basis: 55%;
-            padding: 3% 5% 3% 5%;
-        }
-
-        #showroom .immagine_sezione{
+        .sezione_showRoom .container_immagine{
             display: inline-block;
             flex-basis: 45%;
             align-self: center;
 
         }
 
-        #showroom .descrizione_sezione .header_style{
+        .sezione_showRoom .container_descrizione{
+            flex-basis: 55%;
+            padding: 3% 5% 3% 5%;
+        }
+
+        .sezione_showRoom .container_descrizione .header_style{
             font-size: 44px;
         }
 
-        #showroom .descrizione_sezione .body_style{
+        .sezione_showRoom .container_descrizione .body_descrizione{
             font-size: 24px;
         }
 
-        #showroom .descrizione_sezione .btn_showroom{
+        .btn_type2{
             font-size: 20px;
             padding: 15px 30px 15px 30px;
         }
@@ -546,10 +571,9 @@ body, html {
 
 
 
-
 /* ||  Section3 Element Style */
 
-    #prodotti{
+    .sezione_prodotti{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -560,23 +584,53 @@ body, html {
         background-size: cover;
     }
 
-    #prodotti .descrizione_sezione{
+    .sezione_prodotti .container_descrizione{
         flex-basis: 100%;
         align-self: stretch;
         height: 100%;
-        /*background-color: green;*/
     }
 
-    #prodotti .immagine_sezione{
+    .sezione_prodotti .container_descrizione .header_descrizione{
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
+        color: white;
+        font-weight: lighter;
+    }
+
+    .sezione_prodotti .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: white;
+    }
+
+    .sezione_prodotti .container_descrizione .btn_type1{
+            display: block;
+            font-family: 'Montserrat';
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            background-color: rgba(119,4,4,1);
+            padding: 13px 20px 13px 20px;
+            margin: 20px auto 20px auto;
+            border: none;
+            cursor:pointer;
+            box-shadow: 5px 5px 10px black;
+        }
+
+    .sezione_prodotti .container_descrizione .btn_type1:hover{
+            color: rgba(119,4,4,1);
+            background-color: white;
+        }
+
+    .sezione_prodotti .container_immagine{
         display: inline-block;
         flex-basis: 100%;
-        /*background-color: yellow;*/
         align-self: stretch;
         position: relative;
         height: 400px;
     }
 
-    #prodotti .immagine_sezione .img_bg1{
+    .sezione_prodotti .container_immagine .img_bg1{
         position:absolute;
         background:rgba(119,4,4,1);
         width: 75%;
@@ -586,7 +640,7 @@ body, html {
         z-index: 1;
     }
 
-    #prodotti .immagine_sezione .img_bg2{
+    .sezione_prodotti .container_immagine .img_bg2{
         position:absolute;
         background:rgba(119,4,4,1);
         width: 75%;
@@ -596,7 +650,7 @@ body, html {
         z-index: 2;
     }
 
-    #prodotti .immagine_sezione .img_container{
+    .sezione_prodotti .container_immagine .subcontainer_immagine{
         position:absolute;
         width: 86%;
         height: 90%;
@@ -607,41 +661,9 @@ body, html {
         z-index: 3;
     }
 
-    #prodotti .descrizione_sezione .header_style{
-        font-family: 'Alfa Slab One';
-        font-size: 40px;
-        color: white;
-        font-weight: lighter;
-    }
-
-    #prodotti .descrizione_sezione .body_style{
-        font-family: 'Montserrat';
-        font-size: 18px;
-        color: white;
-    }
-
-    #prodotti .descrizione_sezione .btn_prodotti{
-        display: block;
-        font-family: 'Montserrat';
-        font-size: 14px;
-        color: white;
-        font-weight: bold;
-        background-color: rgba(119,4,4,1);
-        padding: 13px 20px 13px 20px;
-        margin: 20px auto 20px auto;
-        border: none;
-        cursor:pointer;
-        box-shadow: 5px 5px 10px black;
-    }
-
-    #prodotti .descrizione_sezione .btn_prodotti:hover{
-        color: rgba(119,4,4,1);
-        background-color: white;
-    }
-
     @media (min-width: 600px){
 
-        #prodotti {
+        .sezione_prodotti {
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
@@ -649,12 +671,12 @@ body, html {
             padding: 15% 7% 15% 7%;
         }
 
-        #prodotti .descrizione_sezione{
+        .sezione_prodotti .container_descrizione{
             align-self: center;
             flex-basis: 50%;
         }
 
-        #prodotti .immagine_sezione{
+        .sezione_prodotti .container_immagine{
             display: inline-block;
             align-self: center;
             flex-basis: 50%;
@@ -665,7 +687,7 @@ body, html {
 
     @media (min-width: 1024px){
 
-        #prodotti {
+        .sezione_prodotti {
             flex-wrap: nowrap;
             justify-content: center;
             gap: 10px;
@@ -674,12 +696,12 @@ body, html {
             background-size: cover;
         }
 
-        #prodotti .descrizione_sezione{
+        .sezione_prodotti .container_descrizione{
             align-self: center;
             flex-basis: 50%;
         }
 
-        #prodotti .immagine_sezione{
+        .sezione_prodotti .container_immagine{
             display: inline-block;
             align-self: center;
             flex-basis: 50%;
@@ -689,7 +711,7 @@ body, html {
 
     @media (min-width: 1920px){
 
-        #prodotti {
+        .sezione_prodotti {
             flex-wrap: nowrap;
             justify-content: center;
             gap: 10px;
@@ -698,27 +720,27 @@ body, html {
             background-size: cover;
         }
 
-        #prodotti .descrizione_sezione{
+        .sezione_prodotti .container_descrizione{
             align-self: center;
             flex-basis: 50%;
         }
 
-        #prodotti .immagine_sezione{
-            display: inline-block;
-            align-self: center;
-            flex-basis: 50%;
-        }
-
-        #prodotti .descrizione_sezione .header_style{
+        .sezione_prodotti .container_descrizione .header_descrizione{
             font-size: 50px;
         }
 
-        #prodotti .descrizione_sezione .body_style{
+        .sezione_prodotti .container_descrizione .body_descrizione{
             font-size: 24px;
         }
 
-        #prodotti .descrizione_sezione .btn_prodotti{
+        .btn_type1{
             font-size: 22px;
+        }
+
+        .sezione_prodotti .container_immagine{
+            display: inline-block;
+            align-self: center;
+            flex-basis: 50%;
         }
 
     }

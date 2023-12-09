@@ -10,12 +10,12 @@ footer{
     padding: 30px 5% 30px 5%;
 }
 
-.info_container{
+.container_info{
     flex-basis: 100%;
     padding: 10px 20px 10px 20px;
 }
 
-.end_container{
+.social_and_credits_container{
     flex-basis: 100%;
 
     display: flex;
@@ -40,7 +40,7 @@ footer{
     border-bottom: white solid;
 }
 
-.end_footer_container{
+.credits_container{
     flex-basis: 100%;
     text-align: center;
     padding: 10px;
@@ -72,19 +72,19 @@ footer{
     transform: translateY(-10px);
 }
 
-.end_footer_container h1{
+.credits_container h1{
     font-family: Kristi;
     font-size: 40px;
     color: white;
 }
 
-.end_footer_container h1 span{
+.credits_container h1 span{
     font-family: Kristi;
     font-size: 24px;
     color: white;
 }
 
-.end_footer_container p{
+.credits_container p{
     font-family: Montserrat;
     font-size: 15px;
     padding: 1px;
@@ -102,12 +102,12 @@ footer{
 
     }
 
-    .info_container{
+    .container_info{
         flex-basis: 60%;
         padding: 0;
     }
 
-    .end_container{
+    .social_and_credits_container{
         flex-basis: 30%;
     }
 
@@ -117,7 +117,7 @@ footer{
         flex-basis: 100%;
     }
 
-    .end_footer_container{
+    .credits_container{
         flex-basis: 100%;
     }
 
@@ -133,19 +133,19 @@ footer{
         font-size: 16px;
     }
 
-    .end_footer_container h1{
+    .credits_container h1{
         font-family: Kristi;
         font-size: 26px;
         color: white;
     }
 
-    .end_footer_container h1 span{
+    .credits_container h1 span{
         font-family: Kristi;
         font-size: 18px;
         color: white;
     }
 
-    .end_footer_container p{
+    .credits_container p{
         font-family: Montserrat;
         font-size: 12px;
         padding: 1px;
@@ -177,19 +177,19 @@ footer{
         font-size: 18px;
     }
 
-    .end_footer_container h1{
+    .credits_container h1{
         font-family: Kristi;
         font-size: 34px;
         color: white;
     }
 
-    .end_footer_container h1 span{
+    .credits_container h1 span{
         font-family: Kristi;
         font-size: 18px;
         color: white;
     }
 
-    .end_footer_container p{
+    .credits_container p{
         font-family: Montserrat;
         font-size: 15px;
         padding: 1px;
