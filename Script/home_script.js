@@ -6,54 +6,73 @@
         #container_immagine_principale_element;
         #overlay_element;
         #subcontainer_immagine_principale_element;
-
         #startY
-        #isMobile=false;
 
         constructor(ref_cont_img_principale, ref_overlay, ref_subcontainer) {
             this.#container_immagine_principale_element=ref_cont_img_principale;
             this.#overlay_element=ref_overlay;
             this.#subcontainer_immagine_principale_element=ref_subcontainer;
 
-            this.#overlay_element.addEventListener('wheel', this.#actionZoomOut.bind(this));
+            this.#overlay_element.addEventListener('wheel', this.#animation_ZoomOut.bind(this));
             this.#container_immagine_principale_element.addEventListener('touchstart',this.#logInitialTouch.bind(this));
-            this.#container_immagine_principale_element.addEventListener('touchmove',this.#actionZoomOut.bind(this));
+            this.#container_immagine_principale_element.addEventListener('touchmove',this.#animation_ZoomOutMobile.bind(this));
             //this.#container_immagine_principale_element.addEventListener('touchend',());
         }
 
-        setIsMobile(value){
-            this.#isMobile=value;
-        }
 
         #animation_ZoomOut(event){
+            if(event.deltaY>0) {
+                let scala_overlay = event.target.style.scale;
+                scala_overlay = parseFloat(scala_overlay);
 
-            let scala_overlay=event.target.style.scale;
-            scala_overlay=parseFloat(scala_overlay);
+                if (scala_overlay > 5) {
+                    this.#overlay_element.style.display = "none";
+                    this.#subcontainer_immagine_principale_element.style.opacity = 1;
 
-            if (scala_overlay>5){
-                this.#overlay_element.style.display="none";
-                this.#subcontainer_immagine_principale_element.style.opacity=1;
-
-                for (let link of document.querySelectorAll('.container_links .link_navbar')) {
-                    if (link.style.color != "rgb(240, 179, 87)") {
-                        link.style.color = "#ffffff";
+                    for (let link of document.querySelectorAll('.container_links .link_navbar')) {
+                        if (link.style.color !== "rgb(240, 179, 87)") {
+                            link.style.color = "#ffffff";
+                        }
                     }
+
+                    setTimeout(this.#endAnimationZoomOut, 400, this.#container_immagine_principale_element);
+                } else {
+                    if (event.deltaY < 20) { //Gestione scroll touch o mouse
+                        scala_overlay += 0.2;
+                    } else {
+                        scala_overlay += 0.6;
+                    }
+                    this.#overlay_element.style.scale = scala_overlay.toString();
                 }
+            }
 
-                setTimeout(this.#endAnimationZoomOut, 400, this.#container_immagine_principale_element);
-            }else{
+        }
 
-                if(this.#isMobile){
+        #animation_ZoomOutMobile(event){
+
+            if(this.#isSwipeToTop(event)) {
+                let scala_overlay = event.target.style.scale;
+                scala_overlay = parseFloat(scala_overlay);
+
+                if (scala_overlay > 5) {
+                    this.#overlay_element.style.display = "none";
+                    this.#subcontainer_immagine_principale_element.style.opacity = 1;
+
+                    for (let link of document.querySelectorAll('.container_links .link_navbar')) {
+                        if (link.style.color !== "rgb(240, 179, 87)") {
+                            link.style.color = "#ffffff";
+                        }
+                    }
+
+                    setTimeout(this.#endAnimationZoomOut, 400, this.#container_immagine_principale_element);
+                } else {
                     if(window.innerWidth<600)
                         scala_overlay+=0.4
                     else
                         scala_overlay+=0.2
-                }else if (event.deltaY<20){ //Gestione scroll touch o mouse
-                    scala_overlay+=0.2;
-                } else{
-                    scala_overlay+=0.6;
+
+                    this.#overlay_element.style.scale = scala_overlay.toString();
                 }
-                this.#overlay_element.style.scale=scala_overlay.toString();
             }
 
         }
@@ -64,24 +83,13 @@
             document.querySelector("main").style.display="block"
         }
 
-        #actionZoomOut(event){
-            if(!this.#isMobile){
-                if(event.deltaY>0) {
-                    this.#animation_ZoomOut(event)
-                }
-            }else if(this.#isSwipeToTop(event)){
-                this.#animation_ZoomOut(event)
-            }
-
-        }
-
         #logInitialTouch(event){
             this.#startY=event.touches[0].clientY
         }
 
         #isSwipeToTop(event){
             const endY=event.changedTouches[0].clientY;
-            if (endY < this.#startY) return true; else return false;
+            return endY < this.#startY;
         }
 
     }
@@ -100,8 +108,6 @@
 
     const sezione_showRoom_container_img=document.querySelector('.sezione_showRoom .container_immagine')
     const sezione_showRoom_container_desc=document.querySelector('.sezione_showRoom .container_descrizione')
-
-    let isTouchDevice;
 
 /* ... */
 
@@ -135,9 +141,6 @@
 
     window.addEventListener('load',()=>{
 
-        if(window.ontouchstart!=undefined) isTouchDevice=true; else isTouchDevice=false;
-        mainImg.setIsMobile(isTouchDevice);
-
         window.scrollTo(0,0);
         setSizeContainerShowRoom()
 
@@ -145,7 +148,7 @@
         document.querySelector('.container_navbar').style.backgroundColor="rgba(255,255,255,0)";
         let links=document.getElementsByClassName('link_navbar');
         for (let link of links) {
-            if (link.style.color != "rgb(240, 179, 87)") {
+            if (link.style.color !== "rgb(240, 179, 87)") {
                 link.style.color = "#000000";
             }
         }

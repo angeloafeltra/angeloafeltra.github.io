@@ -88,7 +88,7 @@ body, html {
     }
 
     .frase{
-        font-family: Kristi;
+        font-family: Kristi, sans-serif;
         font-size: 26px;
         text-align: center;
         color: #F0B357;
@@ -425,8 +425,8 @@ body, html {
         flex-wrap: wrap;
         width: 100%;
         max-width: 100%;
-        gap: 0px;
-        padding: 0% 0% 0% 0%;
+        gap: 0;
+        padding: 0 0 0 0;
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Home/Background2.jpg) no-repeat center center;
         background-size: cover;
         overflow: hidden;
@@ -605,7 +605,7 @@ body, html {
 
     .sezione_prodotti .container_descrizione .btn_type1{
             display: block;
-            font-family: 'Montserrat';
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             color: white;
             font-weight: bold;

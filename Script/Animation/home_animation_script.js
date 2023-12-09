@@ -20,7 +20,7 @@ const img_prodotti=document.querySelector('.sezione_prodotti .container_immagine
 
 
 function createIntersectionObserver(classToAdd,visibility,delay) {
-    const handleIntersection = (entries, observer) => {
+    const handleIntersection = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 setTimeout(() => {
