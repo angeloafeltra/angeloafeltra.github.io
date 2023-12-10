@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
     <meta name="format-detection" content="telephone=no">
 
@@ -20,176 +20,183 @@
 </head>
 <body>
 
-<header>
-    <nav class="container_navbar">
-        <a href="index.html" class="logo_navbar">
-            <img class="logo" src="./Immagini/logo.svg" style="width: 100%; height: 100%">
-        </a>
+    <header>
+        <nav class="container_navbar">
+            <a href="index.html" class="logo_navbar">
+                <img class="logo" src="./Immagini/logo.svg" alt="Logo Inda" style="width: 100%; height: 100%">
+            </a>
 
-        <!-- hamburger viene visualizzato solamente quando non si è in modalita desktop -->
-        <div class="hamburger">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
 
-        <div class="nav_links">
-            <a class="link_navbar" href="index.html" >Home</a>
-            <a class="link_navbar" href="chisiamo.html" style="color: #F0B357; text-decoration: underline">Chi Siamo</a>
-            <a class="link_navbar" href="">ShowRoom</a>
-            <a class="link_navbar" href="prodotti.html">Prodotti</a>
-            <a class="link_navbar" href="contatti.html">Contatti</a>
-        </div>
-    </nav>
-</header>
+            <div class="container_links">
+                <a class="link_navbar" href="index.html" style="color: #F0B357; text-decoration: underline">Home</a>
+                <a class="link_navbar" href="chisiamo.html">Chi Siamo</a>
+                <a class="link_navbar" href="">ShowRoom</a>
+                <a class="link_navbar" href="prodotti.html">Prodotti</a>
+                <a class="link_navbar" href="contatti.html">Contatti</a>
+            </div>
+        </nav>
+    </header>
 
-    <div  class="main_img">
+    <div class="container_immagine_principale">
         <h1 class="frase">CHI SIAMO</h1>
     </div>
+
     <h1 class="sinceText">since2023</h1>
 
+    <div class="sezione_laNostraStoria" style="overflow: hidden">
 
-    <div class="container_section1" style="overflow: hidden">
-        <div class="container_img">
-            <img src="./Immagini/ChiSiamo/Img1.jpg" style="width: 100%; height: 100%; object-position: center; object-fit: cover">
+        <div class="container_immagine">
+            <img src="./Immagini/ChiSiamo/Img1.jpg" alt="Immagine ChiSiamo" style="width: 100%; height: 100%; object-position: center; object-fit: cover">
         </div>
+
         <div class="container_descrizione">
-            <h1>INDA, ECCELLENZA MADE IN ITALY</h1>
-            <p>A partire dal 2023, la nostra azienda si distingue con orgoglio nella produzione di serramenti completamente Made in Itali. Utilizzando materiali di eccellente qualità, sviluppiamo prodotti caratterizzate da un design unico e da varie combinazioni di materiali, tra cui PVC, alluminio e legno.
+            <h1 class="header_descrizione" >INDA, ECCELLENZA MADE IN ITALY</h1>
+            <p class="body_descrizione" >
+                A partire dal 2023, la nostra azienda si distingue con orgoglio nella produzione di serramenti completamente Made in Itali. Utilizzando materiali di eccellente qualità, sviluppiamo prodotti caratterizzate da un design unico e da varie combinazioni di materiali, tra cui PVC, alluminio e legno.
                 INDA è un'azienda tutta italiana, presente sul mercato dal 2023 e oggi protagonista indiscussa nel settore della produzione dei serramenti Made in Italy. Fin dall'inizio i nostri prodotti si sono distinti per l'impiego di materie prime di altissima qualità e per le linee pulite dall'inconfondibile design.
-                Attraverso una continua ricerca e attività di progettazione, siamo in grado di presentarti oggi una vasta selezione di prodotti che si distingue per l'adozione delle tecnologie più avanzate e l'utilizzo di vari materiali.</p>
-            <button class="btn_section1" onclick="location.href = 'contatti.html'" ontouchstart="location.href = 'contatti.html'">Contattaci</button>
-        </div>
-    </div>
-
-    <div class="container_img2"></div>
-
-    <div class="container_section2" style="overflow: hidden">
-        <div class="container_parolaChiave">
-            <div class="container_icona">
-                <img src="./Immagini/ChiSiamo/SVG/Goal.svg" style="width: 100%; height: 100%; object-position: center; object-fit: cover;">
-            </div>
-            <div class="container_descrizione_parolachiave">
-                <h1>Obiettivo</h1>
-                <p>
-                    Miriamo a garantire la felicità del cliente offrendo articoli di eccellente qualità, esteticamente piacevoli, raffinati, all'avanguardia dal punto di vista tecnologico e rispettosi dell'ambiente grazie alla loro assenza di sostanze dannose e alla loro origine da un processo produttivo responsabile.
-                </p>
-            </div>
-
-        </div>
-        <div class="container_parolaChiave">
-            <div class="container_icona">
-                <img src="./Immagini/ChiSiamo/SVG/Filosofia.svg" style="width: 100%; height: 100%; object-position: center; object-fit: cover;">
-            </div>
-            <div class="container_descrizione_parolachiave">
-                <h1>Filosofia</h1>
-                <p>
-                    La scrupolosa scelta delle materie prime e l'impiego di un processo produttivo certificato consentono di realizzare serramenti con notevoli prestazioni, dove la parola chiave è "Futuro".
-                </p>
-            </div>
-
-        </div>
-        <div class="container_parolaChiave">
-            <div class="container_icona">
-                <img src="./Immagini/ChiSiamo/SVG/Valori.svg" style="width: 100%; height: 100%; object-position: center; object-fit: cover;">
-            </div>
-            <div class="container_descrizione_parolachiave">
-                <h1>Valori</h1>
-                <p>
-                    La dedizione verso la nostra professione e l'impegno nel promuovere l'eccellenza italiana a livello globale, con un particolare focus sulla sostenibilità ambientale, definiscono la nostra incessante ricerca. Il rispetto per i nostri clienti, l'attenzione all'ambiente e l'aderenza alla tradizione artigianale del Made in Italy coesistono armoniosamente con un occhio vigile sulle innovazioni e le opportunità tecnologiche, costituendo le fondamenta della nostra produzione.
-                </p>
-            </div>
-
-        </div>
-        <div class="container_parolaChiave">
-            <div class="container_icona">
-                <img src="./Immagini/ChiSiamo/SVG/Green.svg" style="width: 100%; height: 100%; object-position: center; object-fit: cover;">
-            </div>
-            <div class="container_descrizione_parolachiave">
-                <h1>Ambiente</h1>
-                <p>
-                    La considerazione per l'ambiente è una componente integrante delle nostre strategie di ricerca e sviluppo. Prestiamo una cura particolare nella scelta delle materie prime, garantendo che i nostri profili siano conformi alle normative europee. Nel processo di produzione, impieghiamo macchinari e metodologie mirate a ridurre significativamente il consumo energetico, contribuendo così a un approccio più sostenibile.
-                </p>
-            </div>
-
-        </div>
-        <div class="container_parolaChiave">
-            <div class="container_icona">
-                <img src="./Immagini/ChiSiamo/SVG/Collaboratori.svg" style="width: 100%; height: 100%; object-position: center; object-fit: cover;">
-            </div>
-            <div class="container_descrizione_parolachiave">
-                <h1>Collaboratori</h1>
-                <p>
-                    Per la distribuzione dei nostri prodotti, ci avvaliamo di Partner professionali e qualificati in arado di assicurare efficaci standard lavorativi e organizzativi.
-                </p>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="container_section3">
-    </div>
-
-    <div class="container_section4" style="overflow: hidden">
-
-        <div class="container_descrizione_team">
-            <h1>Il Nostro Team</h1>
-            <p>Il nostro team dedicato agli infissi si distingue per anni di esperienza, professionalità e attenzione ai dettagli. Ogni membro, selezionato con cura, garantisce soluzioni su misura e un servizio affidabile. La passione per il design guida ogni progetto, creando ambienti sicuri ed esteticamente appaganti.
-                La professionalità è il nostro tratto distintivo, mantenendo gli standard più elevati dalla consulenza all'installazione. Scegliere il nostro team significa affidarsi a professionisti appassionati, pronti a trasformare le idee in realtà. Ogni finestra, porta o complemento d'arredo rappresenta la nostra dedizione alla perfezione.</p>
-            <button class="btn_section4" onclick="location.href = 'contatti.html'" ontouchstart="location.href = 'contatti.html'">Contattaci</button>
-        </div>
-        <div class="container_img_team">
-            <img src="./Immagini/ChiSiamo/img4.jpg" style="width: 100%; height: 100%; object-position: center; object-fit: cover">
+                Attraverso una continua ricerca e attività di progettazione, siamo in grado di presentarti oggi una vasta selezione di prodotti che si distingue per l'adozione delle tecnologie più avanzate e l'utilizzo di vari materiali.
+            </p>
+            <button class="btn_type1" onclick="location.href = 'contatti.html'" ontouchstart="location.href = 'contatti.html'">Contattaci</button>
         </div>
 
     </div>
 
+    <div class="container_immagine_divisoria" style="background-image: url(./Immagini/ChiSiamo/img2.jpg)"></div>
 
+    <div class="sezione_perche_scegliere_noi">
 
+        <h1 class="header_sezione">Perchè scegliere noi?</h1>
 
+        <div class="container_caratteristiche_azienda">
 
+            <div class="container_caratteristica">
+                <div class="container_icona">
+                    <img src="./Immagini/ChiSiamo/SVG/Goal.svg" alt="Icona Obiettivo" style="width: 100%; height: 100%; object-position: center; object-fit: contain;">
+                </div>
+                <div class="container_descrizione">
+                    <h1 class="header_descrizione">Obiettivo</h1>
+                    <p class="body_descrizione">
+                        Miriamo a garantire la felicità del cliente offrendo articoli di eccellente qualità, esteticamente piacevoli, raffinati, all'avanguardia dal punto di vista tecnologico e rispettosi dell'ambiente grazie alla loro assenza di sostanze dannose e alla loro origine da un processo produttivo responsabile.
+                    </p>
+                </div>
+            </div>
 
+            <div class="container_caratteristica">
+                <div class="container_icona">
+                    <img src="./Immagini/ChiSiamo/SVG/Filosofia.svg" alt="Icona Filosofia" style="width: 100%; height: 100%; object-position: center; object-fit: contain;">
+                </div>
+                <div class="container_descrizione">
+                    <h1 class="header_descrizione">Filosofia</h1>
+                    <p class="body_descrizione">
+                        La scrupolosa scelta delle materie prime e l'impiego di un processo produttivo certificato consentono di realizzare serramenti con notevoli prestazioni, dove la parola chiave è "Futuro".
+                    </p>
+                </div>
+            </div>
 
+            <div class="container_caratteristica">
+                <div class="container_icona">
+                    <img src="./Immagini/ChiSiamo/SVG/Valori.svg" alt="Icona Valori" style="width: 100%; height: 100%; object-position: center; object-fit: contain;">
+                </div>
+                <div class="container_descrizione">
+                    <h1 class="header_descrizione">Valori</h1>
+                    <p class="body_descrizione">
+                        La dedizione verso la nostra professione e l'impegno nel promuovere l'eccellenza italiana a livello globale, con un particolare focus sulla sostenibilità ambientale, definiscono la nostra incessante ricerca. Il rispetto per i nostri clienti, l'attenzione all'ambiente e l'aderenza alla tradizione artigianale del Made in Italy coesistono armoniosamente con un occhio vigile sulle innovazioni e le opportunità tecnologiche, costituendo le fondamenta della nostra produzione.
+                    </p>
+                </div>
+            </div>
 
-<footer>
-    <div class="info_container">
-        <h1 class="footer-header">Dove Siamo</h1>
-        <p class="footer-body">Show Room - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
-        <p class="footer-body">Sede Operativa - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
-        <div class="space"></div>
-        <h1 class="footer-header">Recapiti</h1>
-        <p class="footer-body">+39 3394487294</p>
-        <p class="footer-body">indainfissi@gmail.com</p>
-        <!--<button class="contattaci_footer">Contattaci</button>-->
+            <div class="container_caratteristica">
+                <div class="container_icona">
+                    <img src="./Immagini/ChiSiamo/SVG/Green.svg" alt="Icona Ambiente" style="width: 100%; height: 100%; object-position: center; object-fit: contain;">
+                </div>
+                <div class="container_descrizione">
+                    <h1 class="header_descrizione">Ambiente</h1>
+                    <p class="body_descrizione">
+                        La considerazione per l'ambiente è una componente integrante delle nostre strategie di ricerca e sviluppo. Prestiamo una cura particolare nella scelta delle materie prime, garantendo che i nostri profili siano conformi alle normative europee. Nel processo di produzione, impieghiamo macchinari e metodologie mirate a ridurre significativamente il consumo energetico, contribuendo così a un approccio più sostenibile.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="container_caratteristica">
+                <div class="container_icona">
+                    <img src="./Immagini/ChiSiamo/SVG/Collaboratori.svg" alt="Icona Collaboratori" style="width: 100%; height: 100%; object-position: center; object-fit: contain;">
+                </div>
+                <div class="container_descrizione">
+                    <h1 class="header_descrizione">Collaboratori</h1>
+                    <p class="body_descrizione">
+                        Per la distribuzione dei nostri prodotti, ci avvaliamo di Partner professionali e qualificati in arado di assicurare efficaci standard lavorativi e organizzativi.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="end_container">
-        <div class="social_container">
-            <div class="social">
-                <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%;">
+    <div class="sezione_ilNostroTeam" style="overflow: hidden">
+
+        <div class="container_descrizione">
+            <h1 class="header_descrizione" >Il NOSTRO TEAM</h1>
+            <p class="body_descrizione" >
+                Il nostro team dedicato agli infissi si distingue per anni di esperienza, professionalità e attenzione ai dettagli.
+                Ogni membro, selezionato con cura, garantisce soluzioni su misura e un servizio affidabile.
+                La passione per il design guida ogni progetto, creando ambienti sicuri ed esteticamente appaganti. La professionalità è il nostro tratto distintivo, mantenendo gli standard più elevati dalla consulenza all'installazione.
+                Scegliere il nostro team significa affidarsi a professionisti appassionati, pronti a trasformare le idee in realtà. Ogni finestra, porta o complemento d'arredo rappresenta la nostra dedizione alla perfezione.
+            </p>
+            <button class="btn_type1" onclick="location.href = 'contatti.html'" ontouchstart="location.href = 'contatti.html'">Contattaci</button>
+        </div>
+
+        <div class="container_immagine">
+            <img src="./Immagini/ChiSiamo/img4.jpg" alt="Immagine Team" style="width: 100%; height: 100%; object-position: center; object-fit: cover">
+        </div>
+
+
+
+    </div>
+
+    <footer>
+
+        <div class="container_info">
+            <h1 class="footer-header">Dove Siamo</h1>
+            <p class="footer-body">Show Room - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
+            <p class="footer-body">Sede Operativa - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
+            <div class="space"></div>
+            <h1 class="footer-header">Recapiti</h1>
+            <p class="footer-body">+39 3394487294</p>
+            <p class="footer-body">indainfissi@gmail.com</p>
+        </div>
+
+        <div class="social_and_credits_container">
+            <div class="social_container">
+                <div class="social">
+                    <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%;">
+                </div>
+                <div class="social">
+                    <img src="Immagini/SVG/instagram.svg" alt="instagram_logo" style="width: 100%; height: 100%;">
+                </div>
+                <div class="social">
+                    <img src="Immagini/SVG/linkedin.svg" alt="linkedin_logo" style="width: 100%; height: 100%;">
+                </div>
             </div>
-            <div class="social">
-                <img src="Immagini/SVG/instagram.svg" alt="instagram_logo" style="width: 100%; height: 100%;">
-            </div>
-            <div class="social">
-                <img src="Immagini/SVG/linkedin.svg" alt="linkedin_logo" style="width: 100%; height: 100%;">
+
+            <div class="credits_container">
+                <h1  style="font-family: Kristi, sans-serif;">Inda <span>spa</span></h1>
+                <p>P.Iva 02607220908</p>
+                <p>Privacy e Cookies Policy</p>
+                <p>Design Angelo Afeltra</p>
             </div>
         </div>
 
-        <div class="end_footer_container">
-            <h1  style="font-family: Kristi;">Inda <span>spa</span></h1>
-            <p>P.Iva 02607220908</p>
-            <p>Privacy e Cookies Policy</p>
-            <p>Design Angelo Afeltra</p>
-        </div>
-    </div>
-
-
-
-</footer>
+    </footer>
 
 </body>
-<script src="./Script/navbar_effect.js"></script>
+<script src="Script/navbar_script.js"></script>
 <script src="./Script/chisiamo_script.js"></script>
 <script src="./Script/Animation/chisiamo_animation_script.js"></script>
 </html>

@@ -6,7 +6,6 @@
 
 body, html {
     font-family: sans-serif;
-    /*background-color: #EDEAEA;*/
     background-color: white;
     height: 100%;
     max-width: 100%;
@@ -17,7 +16,7 @@ body, html {
 
 /* || Main Image Element Style */
 
-    .main_img{
+    .container_immagine_principale{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -31,8 +30,8 @@ body, html {
 
     .frase{
         color: white;
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 50px;
         font-weight: lighter;
         text-transform: uppercase;
         opacity: 0;
@@ -55,7 +54,7 @@ body, html {
 
     @media (min-width: 1024px) {
 
-        .main_img{
+        .container_immagine_principale{
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ChiSiamo/Background1.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
@@ -70,7 +69,7 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .main_img{
+        .container_immagine_principale{
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ChiSiamo/Background1.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
@@ -85,13 +84,17 @@ body, html {
 
 /* ... */
 
-/* || element since */
+
+
+
+/* || Since */
 
     .sinceText{
-        margin: 50px 0;
+        width: 100%;
+        padding: 50px 0;
         display: block;
-        font-family: 'Helvetica Neue';
-        font-size: 70px;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 100px;
         text-align: center;
         color: white;
         -webkit-text-stroke: 2px #770404;
@@ -107,8 +110,6 @@ body, html {
 
         .sinceText{
             font-size: 110px;
-            -webkit-text-stroke: 2px #770404;
-            text-stroke: 2px #770404;
         }
 
     }
@@ -117,8 +118,6 @@ body, html {
 
         .sinceText{
             font-size: 130px;
-            -webkit-text-stroke: 2px #770404;
-            text-stroke: 2px #770404;
         }
 
     }
@@ -127,8 +126,6 @@ body, html {
 
         .sinceText{
             font-size: 200px;
-            -webkit-text-stroke: 2px #770404;
-            text-stroke: 2px #770404;
         }
 
     }
@@ -136,130 +133,126 @@ body, html {
 /* ... */
 
 
-/* || Section1 Element */
 
-    .container_section1{
+
+/* || Sezione "La Nostra Storia" Element */
+
+    .sezione_laNostraStoria{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        /*border: black solid;*/
     }
 
-    .container_section1 .container_img{
+    .sezione_laNostraStoria .container_immagine{
         display: block;
         flex-basis: 100%;
         height: 300px;
-        /*border: black solid;*/
     }
 
-    .container_section1 .container_descrizione{
+    .sezione_laNostraStoria .container_descrizione{
         display: block;
         flex-basis: 100%;
-        /*border: black solid;*/
-        padding: 20px 5%;
+        padding: 5% 7%;
     }
 
-    .container_descrizione  h1{
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
+    .sezione_laNostraStoria  .container_descrizione .header_descrizione{
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
         color: black;
+        font-weight: lighter;
     }
 
-    .container_descrizione  p{
-        font-family: 'Montserrat';
+    .sezione_laNostraStoria  .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         color: black;
     }
 
-    .btn_section1{
+    .btn_type1{
         display: block;
-        font-family: 'Montserrat';
-        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
         color: white;
         font-weight: bold;
         background-color: rgba(119,4,4,1);
         padding: 10px 30px 10px 30px;
         margin: 20px auto 20px auto;
-        border: #770404 solid 3px;
+        border: none;
         cursor:pointer;
         box-shadow: 5px 5px 10px black;
+        border-radius: 20px;
         transition: background-color 1s ease, color 1s ease;
     }
 
-    .btn_section1:hover{
+    .btn_type1:hover{
         color: #770404;
         background-color: white;
     }
 
     @media (min-width: 600px) {
 
-        .container_section1 .container_img{
+        .sezione_laNostraStoria .container_immagine{
             height: 400px;
-        }
-
-        .container_descrizione  h1{
-            font-size: 30px;
-        }
-
-        .container_descrizione  p{
-            margin-top: 10px;
         }
 
     }
 
     @media (min-width: 1024px) {
 
-        .container_section1{
+        .sezione_laNostraStoria{
             flex-wrap: nowrap;
             align-items: stretch;
+            padding: 3% 0% 3% 0%;
+            gap:40px;
         }
 
-        .container_section1 .container_img{
+        .sezione_laNostraStoria .container_immagine{
             flex-basis: 40%;
         }
 
-        .container_section1 .container_descrizione{
+        .sezione_laNostraStoria .container_descrizione{
             flex-basis: 60%;
+            padding: 0% 5% 0% 0%;
         }
 
     }
 
     @media (min-width: 1920px) {
 
-        .container_descrizione  h1{
+        .sezione_laNostraStoria  .container_descrizione .header_descrizione{
             font-size: 50px;
         }
 
-        .container_descrizione  p{
+        .sezione_laNostraStoria  .container_descrizione .body_descrizione{
             font-size: 24px;
         }
 
-        .btn_section1{
+        .btn_type1{
             font-size: 22px;
         }
 
     }
 
-
 /* ... */
 
-/* || element since */
 
-    .container_img2{
+
+
+/* || Immagine divisoria */
+
+    .container_immagine_divisoria{
         display: block;
-        /*border: black solid;*/
         width: 100%;
         height: 300px;
-        background: url(../Immagini/ChiSiamo/img2.jpg) no-repeat center center;
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
-        margin: 50px 0;
     }
-
 
     @media (min-width: 600px) {
 
-        .container_img2{
+        .container_immagine_divisoria{
             height: 400px;
         }
 
@@ -267,31 +260,43 @@ body, html {
 
     @media (min-width: 1024px) {
 
-        .container_img2{
+        .container_immagine_divisoria{
             height: 500px;
-            background: url(../Immagini/ChiSiamo/img2.jpg) no-repeat center center fixed;
-            background-size: cover;
-            margin: 100px 0;
+            background-attachment: fixed;
         }
 
     }
 
 /* ... */
 
-/* || Elementi Section2 */
 
-    .container_section2{
+
+
+/* || Sezione "perche scegliere noi" Elementi  */
+
+    .sezione_perche_scegliere_noi{
+        padding: 10% 7% 10% 7%;
+    }
+
+    .sezione_perche_scegliere_noi .header_sezione{
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
+        color: black;
+        font-weight: lighter;
+        text-transform: uppercase;
+    }
+
+    .container_caratteristiche_azienda{
+        margin-top: 50px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap:30px;
-        padding: 20px 5%;
     }
 
-    .container_parolaChiave{
+    .container_caratteristiche_azienda .container_caratteristica{
         flex-basis: 100%;
-
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -299,113 +304,134 @@ body, html {
         gap:20px
     }
 
-    .container_parolaChiave .container_icona{
+    .container_caratteristiche_azienda .container_caratteristica .container_icona{
         flex-basis: 30%;
-        height: 90px;
-        /*border: black solid;*/
+        height: 125px;
+        background-color: #1d1d1b;
         box-shadow: 5px 0px 10px black;
         transform: translateY(0px);
         transition: transform 0.5s ease;
+        padding: 10px;
     }
 
-    .container_parolaChiave .container_icona:hover{
+    .container_caratteristiche_azienda .container_caratteristica .container_icona:hover{
         transform: translateY(-10px);
         transition: transform 1s ease;
         cursor: pointer;
     }
 
-    .container_descrizione_parolachiave{
+    .container_caratteristiche_azienda .container_caratteristica .container_descrizione{
         flex-basis: 100%;
         display: none;
     }
 
-    .container_descrizione_parolachiave h1{
-        font-family: 'Helvetica Neue';
+    .container_caratteristiche_azienda .container_caratteristica .container_descrizione .header_descrizione{
+        font-family: 'Helvetica Neue', sans-serif;
         font-size: 26px;
         text-align: center;
         margin-bottom: 10px;
     }
 
-    .container_descrizione_parolachiave p{
-        font-family: 'Montserrat';
+    .container_caratteristiche_azienda .container_caratteristica .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
         font-size: 15px;
+        text-align: center;
     }
-
-
 
     @media (min-width: 600px) {
 
+        .sezione_perche_scegliere_noi{
+            padding: 5% 7% 5% 7%;
+        }
 
-        .container_section2{
+        .container_caratteristiche_azienda{
             display: flex;
             flex-wrap: wrap;
             align-items: flex-start;
             justify-content: center;
             gap:30px;
-            padding: 20px 5%;;
         }
 
+        .container_caratteristiche_azienda .container_caratteristica{
+            flex-wrap: nowrap;
+        }
 
-        .container_parolaChiave .container_icona{
-            flex-basis: 20%;
+        .container_caratteristiche_azienda .container_caratteristica .container_icona{
+            flex-basis: 18%;
             height: 150px;
         }
 
-        .container_descrizione_parolachiave{
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione{
             flex-basis: 75%;
             display: block;
         }
 
-        .container_descrizione_parolachiave h1{
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione .header_descrizione{
             text-align: left;
         }
+
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione .body_descrizione{
+            text-align: left;
+        }
+
     }
 
     @media (min-width: 1024px) {
 
-        .container_section2{
-            padding: 0% 10% 5% 10%;
+        .sezione_perche_scegliere_noi{
+            padding: 5% 10% 5% 10%;
         }
 
-        .container_parolaChiave .container_icona{
-            flex-basis: 16%;
+        .container_caratteristiche_azienda .container_caratteristica{
+            flex-basis: 100%;
         }
 
-        .container_descrizione_parolachiave{
+        .container_caratteristiche_azienda .container_caratteristica .container_icona{
+            flex-basis: 18%;
+            height: 150px;
+        }
+
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione{
             flex-basis: 80%;
         }
 
-        .container_descrizione_parolachiave p{
-            font-size: 18px;
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione .header_descrizione{
+            font-size: 30px;
         }
+
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione .body_descrizione{
+            font-size: 17px;
+        }
+
     }
 
     @media (min-width: 1920px) {
 
-        .container_section2{
-            padding: 0% 10% 5% 10%;
+        .sezione_perche_scegliere_noi .header_sezione{
+            font-size: 50px;
         }
 
-        .container_parolaChiave{
-            flex-basis: 100%;
-        }
-
-        .container_parolaChiave .container_icona{
+        .container_caratteristiche_azienda .container_caratteristica .container_icona{
             flex-basis: 12%;
+            height: 150px;
         }
 
-        .container_descrizione_parolachiave{
-            flex-basis: 80%;
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione{
+            flex-basis: 84%;
         }
 
-        .container_descrizione_parolachiave p{
-            font-size: 20px;
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione .header_descrizione{
+            font-size: 34px;
+        }
+
+        .container_caratteristiche_azienda .container_caratteristica .container_descrizione .body_descrizione{
+            font-size: 24px;
         }
     }
 
-
-
 /* ... */
+
+
 
 
 /* || Elementi Sezione 3 */
@@ -427,8 +453,6 @@ body, html {
             background-size: cover;
         }
 
-
-
     }
 
     @media (min-width: 1024px) {
@@ -440,7 +464,6 @@ body, html {
             margin: 100px 0;
         }
 
-
     }
 
     @media (min-width: 1920px) {
@@ -451,127 +474,91 @@ body, html {
             background-size: cover;
         }
 
-
     }
-
 
 /* ... */
 
 
 
 
-/* || Section4 Element */
+/* || Sezione "Il Nostro Team" Element */
 
-.container_section4{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    /*border: black solid;*/
-}
-
-.container_section4 .container_img_team{
-    display: block;
-    flex-basis: 100%;
-    height: 300px;
-    /*border: black solid;*/
-}
-
-.container_section4 .container_descrizione_team{
-    display: block;
-    flex-basis: 100%;
-    /*border: black solid;*/
-    padding: 20px 5%;
-}
-
-.container_descrizione_team  h1{
-    font-family: 'Alfa Slab One';
-    font-size: 30px;
-    color: black;
-}
-
-.container_descrizione_team  p{
-    font-family: 'Montserrat';
-    font-size: 18px;
-    color: black;
-}
-
-.btn_section4{
-    display: block;
-    font-family: 'Montserrat';
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    background-color: rgba(119,4,4,1);
-    padding: 10px 30px 10px 30px;
-    margin: 20px auto 20px auto;
-    border: #770404 solid 3px;
-    cursor:pointer;
-    box-shadow: 5px 5px 10px black;
-    transition: background-color 1s ease, color 1s ease;
-}
-
-.btn_section4:hover{
-    color: #770404;
-    background-color: white;
-}
-
-@media (min-width: 600px) {
-
-
-    .container_section4 .container_img_team{
-        height: 400px;
+    .sezione_ilNostroTeam{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
     }
 
-    .container_descrizione_team  h1{
-        font-size: 30px;
+    .sezione_ilNostroTeam .container_immagine{
+        display: block;
+        flex-basis: 100%;
+        height: 300px;
     }
 
-    .container_descrizione_team  p{
-        margin-top: 10px;
+    .sezione_ilNostroTeam .container_descrizione{
+        display: block;
+        flex-basis: 100%;
+        padding: 5% 7%;
     }
 
-}
-
-@media (min-width: 1024px) {
-
-    .container_section4{
-        flex-wrap: nowrap;
-        align-items: stretch;
-        margin-top: 30px;
-        margin-bottom: 100px;
+    .sezione_ilNostroTeam  .container_descrizione .header_descrizione{
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
+        color: black;
+        font-weight: lighter;
     }
 
-    .container_section4 .container_img_team{
-        flex-basis: 40%;
+    .sezione_ilNostroTeam  .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: black;
     }
 
-    .container_section4 .container_descrizione_team{
-        flex-basis: 60%;
+
+    @media (min-width: 600px) {
+
+        .sezione_ilNostroTeam .container_immagine{
+            height: 400px;
+        }
+
     }
 
-}
+    @media (min-width: 1024px) {
 
-@media (min-width: 1920px) {
+        .sezione_ilNostroTeam{
+            flex-wrap: nowrap;
+            align-items: stretch;
+            padding: 3% 0% 3% 0%;
+            gap:40px;
+        }
 
-    .container_section4{
-        margin-bottom: 150px;
+        .sezione_ilNostroTeam .container_immagine{
+            flex-basis: 40%;
+        }
+
+        .sezione_ilNostroTeam .container_descrizione{
+            flex-basis: 60%;
+            padding: 0% 0% 0% 5%;
+        }
+
     }
 
-    .container_descrizione_team  h1{
-        font-size: 50px;
+    @media (min-width: 1920px) {
+
+        .sezione_ilNostroTeam  .container_descrizione .header_descrizione{
+            font-size: 50px;
+        }
+
+        .sezione_ilNostroTeam  .container_descrizione .body_descrizione{
+            font-size: 24px;
+        }
+
+        .btn_type1{
+            font-size: 22px;
+        }
+
     }
-
-    .container_descrizione_team  p{
-        font-size: 24px;
-    }
-
-    .btn_section4{
-        font-size: 22px;
-    }
-
-}
-
 
 /* ... */
 

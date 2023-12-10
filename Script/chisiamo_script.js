@@ -1,47 +1,53 @@
 /* || Classi */
 
-class ParolaChiave {
+class CaratteristicheAzienda {
 
-    #img=null
-    #descrizione=null
-    #active=false;
+    #list_caratteristiche;
+
+    constructor(list_caratteristiche) {
+        this.#list_caratteristiche=list_caratteristiche;
+    }
+
+    enableMobileStyle(){
+        for(let caratteristica of this.#list_caratteristiche)
+            caratteristica.hiddenDescrizione()
+    }
+
+    disableMobileStyle(){
+        for(let caratteristica of this.#list_caratteristiche)
+            caratteristica.showDescrizione()
+    }
+
+
+}
+
+class Caratteristica {
+
+    #img_element=null
+    #descrizione_element=null
 
     constructor(ref_img,ref_descrizione) {
-        this.#img=ref_img;
-        this.#descrizione=ref_descrizione
-        this.eventListener=this.eventListener.bind(this)
-        this.#img.addEventListener('click',this.eventListener)
+        this.#img_element=ref_img;
+        this.#descrizione_element=ref_descrizione
+        this.#img_element.addEventListener('click',this.actionShowHiddenDescription.bind(this))
     }
 
     showDescrizione(){
-        this.#descrizione.style.display="block"
-        this.#active=true
+        this.#descrizione_element.style.display="block"
     }
 
     hiddenDescrizione(){
-        this.#descrizione.style.display="none"
-        this.#active=false
+        this.#descrizione_element.style.display="none"
     }
 
-    eventListener(){
+    actionShowHiddenDescription(){
         if(window.innerWidth<600) {
-            if (!this.#active) {
+            let isVisible=window.getComputedStyle(this.#descrizione_element).getPropertyValue('display');
+            if (isVisible==='none') {
                 this.showDescrizione()
-            } else {
+            } else if(isVisible==='block'){
                 this.hiddenDescrizione()
             }
-        }
-    }
-
-    restoreNoMobileStyle(){
-        this.#descrizione.style.display="block"
-    }
-
-    restoreMobileStyle(){
-        if(this.#active){
-            this.#descrizione.style.display="block"
-        }else{
-            this.#descrizione.style.display="none"
         }
     }
 
@@ -53,19 +59,24 @@ class ParolaChiave {
 
 /* || Constanti e variabili globali */
 
-    const containerImg_section1=document.querySelector('.container_section1 .container_img')
-    const containerDesc_section1=document.querySelector('.container_section1 .container_descrizione')
-    const containerImg_section4=document.querySelector('.container_section4 .container_img_team')
-    const containerDesc_section4=document.querySelector('.container_section4 .container_descrizione_team')
-    const lista_parole_chiavi=document.getElementsByClassName('container_parolaChiave')
+    let caratteristica1=new Caratteristica(document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_icona')[0],
+        document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_descrizione')[0])
+    let caratteristica2=new Caratteristica(document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_icona')[1],
+        document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_descrizione')[1])
+    let caratteristica3=new Caratteristica(document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_icona')[2],
+        document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_descrizione')[2])
+    let caratteristica4=new Caratteristica(document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_icona')[3],
+        document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_descrizione')[3])
+    let caratteristica5=new Caratteristica(document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_icona')[4],
+        document.querySelectorAll('.sezione_perche_scegliere_noi .container_caratteristiche_azienda .container_caratteristica .container_descrizione')[4])
 
-    let parolaChiave1=new ParolaChiave(lista_parole_chiavi[0].childNodes[1],lista_parole_chiavi[0].childNodes[3])
-    let parolaChiave2=new ParolaChiave(lista_parole_chiavi[1].childNodes[1],lista_parole_chiavi[1].childNodes[3])
-    let parolaChiave3=new ParolaChiave(lista_parole_chiavi[2].childNodes[1],lista_parole_chiavi[2].childNodes[3])
-    let parolaChiave4=new ParolaChiave(lista_parole_chiavi[3].childNodes[1],lista_parole_chiavi[3].childNodes[3])
-    let parolaChiave5=new ParolaChiave(lista_parole_chiavi[4].childNodes[1],lista_parole_chiavi[4].childNodes[3])
+    let caratteristicheAzienda=new CaratteristicheAzienda([caratteristica1,caratteristica2,caratteristica3,caratteristica4,caratteristica5])
 
+    let container_descrizione_laNostraStoria=document.querySelector('.sezione_laNostraStoria .container_descrizione');
+    let container_immagine_laNostraStoria=document.querySelector('.sezione_laNostraStoria .container_immagine');
 
+    let container_descrizione_ilNostroTeam=document.querySelector('.sezione_ilNostroTeam .container_descrizione');
+    let container_immagine_ilNostroTeam=document.querySelector('.sezione_ilNostroTeam .container_immagine');
 
 /* ... */
 
@@ -74,19 +85,11 @@ class ParolaChiave {
 
 /* || Funzioni */
 
-    function setSizeImgSection1(){
+    function setSizeImg(containerImg,containerDesc){
         if(window.innerWidth>=600) {
-            containerImg_section1.style.height = containerDesc_section1.offsetHeight + "px";
+            containerImg.style.height = containerDesc.offsetHeight + "px";
         }else{
-            containerImg_section1.style.height = "400px";
-        }
-    }
-
-    function setSizeImgSection4(){
-        if(window.innerWidth>=600) {
-            containerImg_section4.style.height = containerDesc_section4.offsetHeight + "px";
-        }else{
-            containerImg_section4.style.height = "400px";
+            containerImg.style.height = "400px";
         }
     }
 
@@ -99,28 +102,29 @@ class ParolaChiave {
 /* || ActionEvent */
 
     window.addEventListener('resize',()=>{
-        setSizeImgSection1()
+
+        setSizeImg(container_immagine_laNostraStoria,container_descrizione_laNostraStoria)
+        setSizeImg(container_immagine_ilNostroTeam,container_descrizione_ilNostroTeam)
+
         if(window.innerWidth<600){
             console.log("Mobile")
-            parolaChiave1.restoreMobileStyle()
-            parolaChiave2.restoreMobileStyle()
-            parolaChiave3.restoreMobileStyle()
-            parolaChiave4.restoreMobileStyle()
-            parolaChiave5.restoreMobileStyle()
+            caratteristicheAzienda.enableMobileStyle()
         }else{
             console.log("Tablet-Desktop")
-            parolaChiave1.restoreNoMobileStyle()
-            parolaChiave2.restoreNoMobileStyle()
-            parolaChiave3.restoreNoMobileStyle()
-            parolaChiave4.restoreNoMobileStyle()
-            parolaChiave5.restoreNoMobileStyle()
+            caratteristicheAzienda.disableMobileStyle()
         }
+
     });
 
     window.addEventListener('load',()=>{
         window.scrollTo(0,0);
-        setSizeImgSection1()
-        setSizeImgSection4()
+        setSizeImg(container_immagine_laNostraStoria,container_descrizione_laNostraStoria)
+        setSizeImg(container_immagine_ilNostroTeam,container_descrizione_ilNostroTeam)
+    });
+
+    window.addEventListener('scroll',()=>{
+        setSizeImg(container_immagine_laNostraStoria,container_descrizione_laNostraStoria)
+        setSizeImg(container_immagine_ilNostroTeam,container_descrizione_ilNostroTeam)
     });
 
 

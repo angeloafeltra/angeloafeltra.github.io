@@ -17,9 +17,9 @@
             this.#container_links_element=rif_container_links;
             this.#list_links_element=rif_list_links;
 
-            this.#hamburger_elemenet.addEventListener('click',this.#actionShowHiddenLateralMenu.bind(this));
-            this.#container_links_element.addEventListener('touchstart',this.#logInitialTouch.bind(this));
-            this.#container_links_element.addEventListener('touchend',this.#actionHiddenLateralMenuSwipe.bind(this));
+            this.#hamburger_elemenet.addEventListener('click',this.actionShowHiddenLateralMenu.bind(this));
+            this.#container_links_element.addEventListener('touchstart',this.logInitialTouch.bind(this));
+            this.#container_links_element.addEventListener('touchend',this.actionHiddenLateralMenuSwipe.bind(this));
 
         }
 
@@ -28,7 +28,7 @@
             this.#container_navBar_element.style.backgroundColor="rgba(255,255,255,1)";
             this.#container_links_element.style.display="block";
 
-            this.#setColorLinksBlack()
+            this.setColorLinksBlack()
 
             document.body.style.overflowY = "hidden"; //Blocco lo scroll della pagina
         }
@@ -44,14 +44,14 @@
         setDynamicStyleNavBar(){
             if (window.scrollY > 35) { //Non sono al Top della pagina, sfondo navbar bianco
                 this.#container_navBar_element.style.backgroundColor = "rgba(255,255,255,0.9)";
-                this.#setColorLinksBlack()
+                this.setColorLinksBlack()
             } else {
                 this.#container_navBar_element.style.backgroundColor = "rgba(255,255,255,0)";
-                this.#setColorLinksWhite()
+                this.setColorLinksWhite()
             }
         }
 
-        #setColorLinksWhite(){
+        setColorLinksWhite(){
             let colorText;
             for (let link of this.#list_links_element ) {
                 colorText=window.getComputedStyle(link).getPropertyValue('color');
@@ -61,7 +61,7 @@
             }
         }
 
-        #setColorLinksBlack(){
+        setColorLinksBlack(){
             let colorText;
             for (let link of this.#list_links_element) {
                 colorText=window.getComputedStyle(link).getPropertyValue('color');
@@ -71,11 +71,11 @@
             }
         }
 
-        #logInitialTouch(event){
+        logInitialTouch(event){
             this.#startX=event.touches[0].clientX
         }
 
-        #isSwipeToLeft(event){
+        isSwipeToLeft(event){
             const endX=event.changedTouches[0].clientX;
             const deltaX = endX - this.#startX;
             if (deltaX <-20) return true; else return false;
@@ -94,7 +94,7 @@
             }
         }
 
-        #actionShowHiddenLateralMenu(){
+        actionShowHiddenLateralMenu(){
             let displayValue=window.getComputedStyle(this.#container_links_element).getPropertyValue('display');
 
             if(displayValue=="none"){
@@ -104,8 +104,8 @@
             }
         }
 
-        #actionHiddenLateralMenuSwipe(event){
-            if (this.#isSwipeToLeft(event)) this.hideLateralMenu();
+        actionHiddenLateralMenuSwipe(event){
+            if (this.isSwipeToLeft(event)) this.hideLateralMenu();
         }
 
     }

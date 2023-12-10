@@ -13,14 +13,14 @@
             this.#overlay_element=ref_overlay;
             this.#subcontainer_immagine_principale_element=ref_subcontainer;
 
-            this.#overlay_element.addEventListener('wheel', this.#animation_ZoomOut.bind(this));
-            this.#container_immagine_principale_element.addEventListener('touchstart',this.#logInitialTouch.bind(this));
-            this.#container_immagine_principale_element.addEventListener('touchmove',this.#animation_ZoomOutMobile.bind(this));
+            this.#overlay_element.addEventListener('wheel', this.animation_ZoomOut.bind(this));
+            this.#container_immagine_principale_element.addEventListener('touchstart',this.logInitialTouch.bind(this));
+            this.#container_immagine_principale_element.addEventListener('touchmove',this.animation_ZoomOutMobile.bind(this));
             //this.#container_immagine_principale_element.addEventListener('touchend',());
         }
 
 
-        #animation_ZoomOut(event){
+        animation_ZoomOut(event){
             if(event.deltaY>0) {
                 let scala_overlay = event.target.style.scale;
                 scala_overlay = parseFloat(scala_overlay);
@@ -35,7 +35,7 @@
                         }
                     }
 
-                    setTimeout(this.#endAnimationZoomOut, 400, this.#container_immagine_principale_element);
+                    setTimeout(this.endAnimationZoomOut, 400, this.#container_immagine_principale_element);
                 } else {
                     if (event.deltaY < 20) { //Gestione scroll touch o mouse
                         scala_overlay += 0.2;
@@ -48,9 +48,9 @@
 
         }
 
-        #animation_ZoomOutMobile(event){
+        animation_ZoomOutMobile(event){
 
-            if(this.#isSwipeToTop(event)) {
+            if(this.isSwipeToTop(event)) {
                 let scala_overlay = event.target.style.scale;
                 scala_overlay = parseFloat(scala_overlay);
 
@@ -64,7 +64,7 @@
                         }
                     }
 
-                    setTimeout(this.#endAnimationZoomOut, 400, this.#container_immagine_principale_element);
+                    setTimeout(this.endAnimationZoomOut, 400, this.#container_immagine_principale_element);
                 } else {
                     if(window.innerWidth<600)
                         scala_overlay+=0.4
@@ -77,17 +77,17 @@
 
         }
 
-        #endAnimationZoomOut(container){
+        endAnimationZoomOut(container){
             container.style.position="static";
             document.body.style.overflow = 'auto';
             document.querySelector("main").style.display="block"
         }
 
-        #logInitialTouch(event){
+        logInitialTouch(event){
             this.#startY=event.touches[0].clientY
         }
 
-        #isSwipeToTop(event){
+        isSwipeToTop(event){
             const endY=event.changedTouches[0].clientY;
             return endY < this.#startY;
         }
