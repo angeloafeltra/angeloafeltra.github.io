@@ -20,61 +20,54 @@
 </head>
 <body>
 
-    <header>
-        <nav class="container_navbar">
-            <a href="index.html" class="logo_navbar">
-                <img class="logo" src="./Immagini/logo.svg" style="width: 100%; height: 100%">
-            </a>
+<header>
+    <nav class="container_navbar">
+        <a href="index.html" class="logo_navbar">
+            <img class="logo" src="./Immagini/logo.svg" alt="Logo Inda" style="width: 100%; height: 100%">
+        </a>
 
-            <!-- hamburger viene visualizzato solamente quando non si è in modalita desktop -->
-            <div class="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>
+        <div class="hamburger">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
 
-            <div class="nav_links">
-                <a class="link_navbar" href="index.html" >Home</a>
-                <a class="link_navbar" href="chisiamo.html">Chi Siamo</a>
-                <a class="link_navbar" href="">ShowRoom</a>
-                <a class="link_navbar" href="prodotti.html" style="color: #F0B357; text-decoration: underline">Prodotti</a>
-                <a class="link_navbar" href="contatti.html">Contatti</a>
-            </div>
-        </nav>
-    </header>
+        <div class="container_links">
+            <a class="link_navbar" href="index.html" style="color: #F0B357; text-decoration: underline">Home</a>
+            <a class="link_navbar" href="chisiamo.html">Chi Siamo</a>
+            <a class="link_navbar" href="">ShowRoom</a>
+            <a class="link_navbar" href="prodotti.html">Prodotti</a>
+            <a class="link_navbar" href="contatti.html">Contatti</a>
+        </div>
+    </nav>
+</header>
 
-    <div  class="main_img">
-        <h1 class="frase">I nostri prodotti</h1>
+    <div class="container_immagine_principale">
+        <h1 class="frase">I NOSTRI PRODOTTI</h1>
     </div>
 
-
-    <div class="container_catalogo" style="margin-top: 50px">
+    <div class="container_catalogo">
 
     </div>
 
+    <div class="sezione_contattaci" style="overflow: hidden">
 
-
-    <div class="container_contattaci" style="overflow: hidden">
-        <div class="container_descrizione_contattaci">
-            <h1>
+        <div class="container_descrizione">
+            <h1 class="header_descrizione">
                 La nostra porta è sempre aperta
             </h1>
-            <p>
+            <p class="body_descrizione">
                 Hai domande sui nostri prodotti o vorresti discutere un progetto con noi? Non esitare, inviaci un'email, ti ricontatteremo il prima possibile.
             </p>
         </div>
         <button onclick="location.href = 'contatti.html'" ontouchstart="location.href = 'contatti.html'" >
             Contattaci
         </button>
+
     </div>
 
-
-
-
-
-
     <footer>
-        <div class="info_container">
+        <div class="container_info">
             <h1 class="footer-header">Dove Siamo</h1>
             <p class="footer-body">Show Room - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
             <p class="footer-body">Sede Operativa - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
@@ -85,7 +78,7 @@
             <!--<button class="contattaci_footer">Contattaci</button>-->
         </div>
 
-        <div class="end_container">
+        <div class="social_and_credits_container">
             <div class="social_container">
                 <div class="social">
                     <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%;">
@@ -98,7 +91,7 @@
                 </div>
             </div>
 
-            <div class="end_footer_container">
+            <div class="credits_container">
                 <h1  style="font-family: Kristi;">Inda <span>spa</span></h1>
                 <p>P.Iva 02607220908</p>
                 <p>Privacy e Cookies Policy</p>
@@ -111,7 +104,7 @@
     </footer>
 
 </body>
-<script src="./Script/navbar_effect.js"></script>
+<script src="Script/navbar_script.js"></script>
 <script src="./Script/prodotti_intermedi_script.js"></script>
 <script src="./Script/Animation/prodotti_intermedi_animation_script.js"></script>
 </html>

@@ -3,19 +3,23 @@
 class CaratteristicheAzienda {
 
     #list_caratteristiche;
+    #isMobile;
 
     constructor(list_caratteristiche) {
         this.#list_caratteristiche=list_caratteristiche;
+        if(window.innerWidth<600) this.#isMobile=true; else this.@#isMobile=false;
     }
 
     enableMobileStyle(){
-        for(let caratteristica of this.#list_caratteristiche)
-            caratteristica.hiddenDescrizione()
+        if(!this.#isMobile)
+            for(let caratteristica of this.#list_caratteristiche)
+                caratteristica.hiddenDescrizione()
     }
 
     disableMobileStyle(){
-        for(let caratteristica of this.#list_caratteristiche)
-            caratteristica.showDescrizione()
+        if(this.#isMobile)
+            for(let caratteristica of this.#list_caratteristiche)
+                caratteristica.showDescrizione()
     }
 
 

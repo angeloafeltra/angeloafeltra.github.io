@@ -1,71 +1,154 @@
 /* || Classi */
 
-    class ParolaChiave {
+    class CaratteristicheProdotti {
+
+        #list_caratteristiche;
+        #isMobile;
+
+        constructor(list_caratteristiche) {
+            this.#list_caratteristiche=list_caratteristiche;
+            this.#isMobile = window.innerWidth < 600;
+        }
+
+        enableMobileStyle(){
+            if(!this.#isMobile)
+                for(let caratteristica of this.#list_caratteristiche)
+                    caratteristica.hiddenDescrizione()
+        }
+
+        disableMobileStyle(){
+            if(this.#isMobile)
+                for(let caratteristica of this.#list_caratteristiche)
+                    caratteristica.showDescrizione()
+        }
+
+
+    }
+
+    class Caratteristica {
 
         #container=null
         #immagine=null
         #descrizione=null
         #btn_touch=null
-        #active=null
-
-        #mobileMode=false
-
 
         constructor(rif_container,rif_img,rif_decrizione,rif_touch) {
             this.#container=rif_container
             this.#immagine=rif_img
             this.#descrizione=rif_decrizione
             this.#btn_touch=rif_touch
-            this.#active=false
 
-            this.#container.addEventListener('click',this.eventListener.bind(this))
+            this.#container.addEventListener('click',this.actionShowHiddenDescription.bind(this))
             this.#container.addEventListener('mouseover', this.showDescrizione.bind(this))
             this.#container.addEventListener('mouseout', this.hiddenDescrizione.bind(this))
         }
 
-        setMobileMode(value){
-            this.#mobileMode= value
-        }
 
         showDescrizione(){
-            if(!this.#mobileMode) {
-                if(this.#immagine.offsetHeight==this.#container.offsetHeight) {
-                    this.#immagine.style.opacity = 0.3;
-                    this.#descrizione.style.display = "flex";
-                    this.#btn_touch.style.opacity = 0.3;
-                }
+            if(this.#immagine.offsetHeight===this.#container.offsetHeight) {
+                this.#immagine.style.opacity = 0.3;
+                this.#descrizione.style.display = "flex";
+                this.#btn_touch.style.opacity = 0.3;
             }
         }
 
         hiddenDescrizione(){
-            if(!this.#mobileMode) {
-                if(this.#immagine.offsetHeight==this.#container.offsetHeight) {
-                    this.#immagine.style.opacity = 1;
-                    this.#descrizione.style.display = "none";
-                    this.#btn_touch.style.opacity = 1;
+            if(this.#immagine.offsetHeight===this.#container.offsetHeight) {
+                this.#immagine.style.opacity = 1;
+                this.#descrizione.style.display = "none";
+                this.#btn_touch.style.opacity = 1;
+            }
+        }
+
+
+        actionShowHiddenDescription(){
+            if(window.innerWidth<1024) {
+                if (this.#descrizione.style.display === "flex") {
+                    this.hiddenDescrizione();
+                } else if(this.#descrizione.style.display === "none") {
+                    this.showDescrizione()
                 }
             }
         }
 
-        isActive(){
-            if(this.#active) return true; else return false;
+    }
+
+    class Catalogo{
+
+        #container_catalogo_element;
+        #listaProdotti;
+
+        constructor(ref_catalogo) {
+            this.#container_catalogo_element=ref_catalogo;
+            this.#listaProdotti=[];
         }
 
-        eventListener(){
-            if(this.#mobileMode) {
-                if (this.isActive() == true) {
-                    this.#immagine.style.opacity = 1;
-                    this.#descrizione.style.display = "none";
-                    this.#btn_touch.style.opacity = 1;
-                    this.#active = false;
-                } else {
-                    this.#immagine.style.opacity = 0.3;
-                    this.#descrizione.style.display = "flex";
-                    this.#btn_touch.style.opacity = 0.3;
-                    this.#active = true;
-                }
-            }
+        addProdotto(nome,img_path,n){
+            let prodotto=new ProdottoElement(nome,img_path,n)
+            this.#listaProdotti.push(prodotto);
+            this.#container_catalogo_element.appendChild(prodotto.getContainerElement())
         }
+
+    }
+
+    class ProdottoElement {
+
+        #container_element;
+        #immagine_element;
+        #overlay_element;
+        #nome_element;
+        #href_prodotto;
+
+        constructor(nome, img_path,n) {
+
+            this.#container_element=document.createElement('div');
+            this.#container_element.className='container_item';
+
+            this.#immagine_element=document.createElement('div');
+            this.#immagine_element.className='container_immagine';
+            this.#immagine_element.style.backgroundImage="url("+img_path+")";
+
+            this.#overlay_element=document.createElement('div');
+            this.#overlay_element.className='overlay'
+
+            this.#nome_element=document.createElement('h1');
+            this.#nome_element.innerHTML=nome;
+
+            this.#container_element.appendChild(this.#immagine_element)
+            this.#container_element.appendChild(this.#overlay_element)
+            this.#container_element.appendChild(this.#nome_element)
+
+            if (n>1){
+                this.#href_prodotto = "prodotti_intermedia.html?categoria="+nome;
+            }else{
+                this.#href_prodotto = "prodotto.html?prodotto="+nome;
+            }
+
+
+            this.#container_element.addEventListener('click',this.actionShowProduct.bind(this));
+        }
+
+        getContainerElement() {return this.#container_element;}
+        getImmagineElement() {return this.#immagine_element;}
+        getOverlay() {return this.#overlay_element;}
+        getNome() {return this.#nome_element;}
+        actionShowProduct(){
+            window.location.href = this.#href_prodotto;
+        }
+
+    }
+
+    class CategoriaBean {
+        #nome;
+        #immagine_categoria;
+
+        constructor(nome, immagine) {
+            this.#nome=nome;
+            this.#immagine_categoria=immagine;
+        }
+
+        getNome() { return this.#nome; }
+        getImmagine() { return this.#immagine_categoria;}
 
     }
 
@@ -75,13 +158,24 @@
 
 
 /* || Variabili e constanti globali */
-    const container_catalogo=document.querySelector('.container_catalogo')
-    const xmlFilePath = './Prodotti.xml';
+    const caratteristica1=new Caratteristica(document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica')[0],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine')[0],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_descrizione')[0],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .icona_touch')[0]);
 
-    let parolaChiave1=null
-    let parolaChiave2=null
-    let parolaChiave3=null
-    let categorie=null
+    const caratteristica2=new Caratteristica(document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica')[1],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine')[1],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_descrizione')[1],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .icona_touch')[1]);
+
+    const caratteristica3=new Caratteristica(document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica')[2],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine')[2],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_descrizione')[2],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .icona_touch')[2]);
+
+    const caratteristicheProdotti=new CaratteristicheProdotti([caratteristica1,caratteristica2,caratteristica3]);
+
+    const catalgo=new Catalogo(document.querySelector('.container_catalogo'))
 
 
 /* ... */
@@ -91,183 +185,81 @@
 
 /* || Funzioni */
 
-    function getNumberSubCategory(category){
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', xmlFilePath, true);
-            xhr.onload = function () {
+
+    function getXMLFile(){
+
+        return new Promise(function (resolve,reject) {
+            let xhr=new XMLHttpRequest();
+            xhr.open('GET','./Prodotti.xml',true);
+            xhr.onload=function () {
                 if (xhr.status >= 200 && xhr.status < 300) {
-                    var parser = new DOMParser();
-                    var xmlText = xhr.responseText;
-                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-
-                    var categoryElements = xmlDoc.getElementsByTagName('categoria');
-                    let count=0
-                    for (let i=0;i<categoryElements.length;i++){
-                        let value=categoryElements[i].textContent
-                        if(value==category){
-                            count=count+1
-                        }
-                    }
-                    resolve(count)
-                } else {
-                    reject('Errore durante il caricamento del file XML:', xhr.statusText);
+                    let parser=new DOMParser();
+                    let xmlText= xhr.responseText;
+                    let xmlDoc=parser.parseFromString(xmlText,'text/xml');
+                    resolve(xmlDoc);
+                }else{
+                    console.log("Errore durante il caricamento del file XML")
+                    reject(null);
                 }
-            };
-            xhr.send();
-        });
-    }
-
-
-    function getImgCategory(categoryName) {
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', xmlFilePath, true);
-            xhr.onload = function () {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    var parser = new DOMParser();
-                    var xmlText = xhr.responseText;
-                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-
-                    var prodottoElements = xmlDoc.getElementsByTagName('prodotto');
-                    let categoria;
-                    let list_img;
-                    for (let i=0;i<prodottoElements.length;i++){
-                        categoria=prodottoElements[i].getElementsByTagName('categoria')[0].textContent
-                        if(categoria==categoryName){
-                            list_img=prodottoElements[i].getElementsByTagName('immagini')[0]
-                            resolve(list_img.getElementsByTagName('img')[0].textContent)
-                        }
-                    }
-                } else {
-                    reject('Errore durante il caricamento del file XML:', xhr.statusText);
-                }
-            };
-            xhr.send();
-        });
-    }
-
-    function getCategory() {
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', xmlFilePath, true);
-            xhr.onload = function () {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    var parser = new DOMParser();
-                    var xmlText = xhr.responseText;
-                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-
-                    var categoryElements = xmlDoc.getElementsByTagName('categoria');
-                    var categories = [];
-
-                    for (var i = 0; i < categoryElements.length; i++) {
-                        var category = categoryElements[i].textContent;
-                        if (categories.indexOf(category) === -1) {
-                            categories.push(category);
-                        }
-                    }
-                    resolve(categories)
-                } else {
-                    reject('Errore durante il caricamento del file XML:', xhr.statusText);
-                }
-            };
-            xhr.send();
-        });
-    }
-
-    function createItem(name,img_path){
-        let container=document.createElement('div');
-        container.className='container_item';
-
-        let container_img=document.createElement('div');
-        container.appendChild(container_img)
-        container_img.className='container_img_item';
-        container_img.style.backgroundImage="url("+img_path+")";
-
-        let overlay=document.createElement('div')
-        container.appendChild(overlay)
-        overlay.className='overlay'
-        let item_name=document.createElement('h1')
-        container.appendChild(item_name)
-        item_name.innerHTML=name
-
-        container.addEventListener('click',showProduct)
-        return container
-    }
-
-    function showProduct(event){
-
-        let element=event.currentTarget
-        let element_name=element.childNodes[2]
-        let categoria=element_name.innerHTML
-
-        getNumberSubCategory(categoria).then(function(n){
-            if (n>1){
-                window.location.href = "prodotti_intermedia.html?categoria="+categoria;
-            }else{
-                window.location.href = "prodotto.html?prodotto="+categoria;
             }
-        })
+            xhr.send();
+        });
     }
+
+    function getCategorie(xmlDoc){
+        let categoryElements=xmlDoc.getElementsByTagName('categoria');
+        let list_categorie=[];
+        let tmp=[];
+        for (let categoria of categoryElements){
+            if(tmp.indexOf(categoria.textContent)===-1){
+                tmp.push(categoria.textContent);
+                let padre=categoria.parentNode;
+                let immagini_elements=padre.getElementsByTagName('img');
+                list_categorie.push(new CategoriaBean(categoria.textContent, immagini_elements[0].textContent))
+            }
+        }
+        return list_categorie;
+    }
+
+    function getNumProdottiByCategory(xmlDoc,categoria){
+
+        let categoryElements = xmlDoc.getElementsByTagName('categoria');
+        let count=0
+        for (let category of categoryElements){
+            if(category.textContent===categoria){
+                count=count+1
+            }
+        }
+        return count
+    }
+
+
 
 /* ... */
 
 
 
-
 /* || EventListener */
-
 
 window.addEventListener('resize',()=>{
     if(window.innerWidth<1024){
-        parolaChiave1.setMobileMode(true)
-        parolaChiave2.setMobileMode(true)
-        parolaChiave3.setMobileMode(true)
+        caratteristicheProdotti.enableMobileStyle()
     }else{
-        parolaChiave1.setMobileMode(false)
-        parolaChiave2.setMobileMode(false)
-        parolaChiave3.setMobileMode(false)
+        caratteristicheProdotti.disableMobileStyle()
     }
 });
-
-
 
 window.addEventListener("load", (event) => {
+
     window.scrollTo(0,0)
-    parolaChiave1=new ParolaChiave(document.getElementsByClassName('container_parolaChiave')[0],
-        document.getElementsByClassName('container_immagine_parolaChiave')[0],
-        document.getElementsByClassName('container_descrizione_parolaChiave')[0],
-        document.getElementsByClassName('container_touch_icon')[0])
-
-    parolaChiave2=new ParolaChiave(document.getElementsByClassName('container_parolaChiave')[1],
-        document.getElementsByClassName('container_immagine_parolaChiave')[1],
-        document.getElementsByClassName('container_descrizione_parolaChiave')[1],
-        document.getElementsByClassName('container_touch_icon')[1])
-    parolaChiave3=new ParolaChiave(document.getElementsByClassName('container_parolaChiave')[2],
-        document.getElementsByClassName('container_immagine_parolaChiave')[2],
-        document.getElementsByClassName('container_descrizione_parolaChiave')[2],
-        document.getElementsByClassName('container_touch_icon')[2])
-
-    if(window.innerWidth<1024){
-        parolaChiave1.setMobileMode(true)
-        parolaChiave2.setMobileMode(true)
-        parolaChiave3.setMobileMode(true)
-    }else{
-        parolaChiave1.setMobileMode(false)
-        parolaChiave2.setMobileMode(false)
-        parolaChiave3.setMobileMode(false)
-    }
-
-    getCategory().then(function(categories) {
-        for(let i=0;i<categories.length;i++){
-            getImgCategory(categories[i]).then(function (img){
-                container_catalogo.appendChild(createItem(categories[i],img))
-            })
+    getXMLFile().then(function(xmlFile){
+        for(let categoria of getCategorie(xmlFile)){
+            let num_sottocategorie=getNumProdottiByCategory(xmlFile,categoria.getNome())
+            catalgo.addProdotto(categoria.getNome(),categoria.getImmagine(),num_sottocategorie)
         }
-    })
-
-
+    });
 
 });
+
 
 /* ... */
