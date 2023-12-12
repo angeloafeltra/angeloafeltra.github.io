@@ -54,13 +54,13 @@
         isSwipeToLeft(event){
             const endX=event.changedTouches[0].clientX;
             const deltaX = endX - this.#startX;
-            if (deltaX <-20) return true; else return false;
+            return deltaX <-20;
         }
 
         isSwipeToRight(event){
             const endX=event.changedTouches[0].clientX;
             const deltaX = endX - this.#startX;
-            if (deltaX > 20) return true; else return false;
+            return deltaX > 20;
         }
 
         actionSwipeImg(event){
@@ -69,6 +69,71 @@
             else if (this.isSwipeToRight(event))
                 this.immaginePrecedente();
         }
+
+    }
+
+    class SliderDesktop{
+
+        #container_slider_element;
+        #container_immagine;
+        #list_immagini;
+
+        #btn_avanti_element;
+        #btn_indietro_element;
+        #btn_chiudi_element;
+
+        constructor(rif_container_slider, rif_container_immagine, rif_btn_avanti, rif_btn_indietro, rif_btn_chiudi, list_img) {
+            this.#container_slider_element=rif_container_slider;
+            this.#container_immagine=rif_container_immagine;
+            this.#btn_avanti_element=rif_btn_avanti;
+            this.#btn_indietro_element=rif_btn_indietro;
+            this.#btn_chiudi_element=rif_btn_chiudi;
+            this.#list_immagini=list_img;
+
+            this.#btn_avanti_element.addEventListener('click',this.immagineSuccessiva.bind(this));
+            this.#btn_indietro_element.addEventListener('click',this.immaginePrecedente.bind(this));
+            this.#btn_chiudi_element.addEventListener('click',this.hideSlider.bind(this));
+        }
+
+        getIndexCurrentImg(){
+            let path_img=this.#container_immagine.style.backgroundImage
+            let index=0
+            for (let i=0;i<this.#list_immagini.length;i++){
+                if(path_img.includes(this.#list_immagini[i]))
+                    index=i
+            }
+            return index;
+        }
+
+        immagineSuccessiva(){
+            let index_current_img=this.getIndexCurrentImg();
+            if(index_current_img===this.#list_immagini.length-1) {
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[0]+")"
+            }else{
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[index_current_img+1]+")"
+            }
+        }
+
+        immaginePrecedente(){
+            let index_current_img=this.getIndexCurrentImg();
+            if(index_current_img===0) {
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#list_immagini.length-1]+")"
+            }else{
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[index_current_img-1]+")"
+            }
+        }
+
+        showSlider(img_path){
+            document.body.style.overflowY = "hidden";
+            this.#container_slider_element.style.display="block";
+            this.#container_immagine.style.backgroundImage="url("+img_path+")";
+        }
+
+        hideSlider(){
+            document.body.style.overflowY = "auto";
+            this.#container_slider_element.style.display="none";
+        }
+
 
     }
 
@@ -95,6 +160,43 @@
         getImmagini() {return this.#list_img;}
     }
 
+    class Mosaico{
+
+        #mosaico_element;
+        #list_item;
+
+        constructor(ref_mosaico) {
+            this.#mosaico_element=ref_mosaico;
+            this.#list_item=[]
+        }
+
+        addItem(img_path){
+            let item=new ItemMosaico(img_path);
+            this.#list_item.push(item);
+            this.#mosaico_element.appendChild(item.getImgElement());
+        }
+
+    }
+
+    class ItemMosaico{
+        #imgElement;
+
+        constructor(img_path) {
+            this.#imgElement=document.createElement('img')
+            this.#imgElement.src=img_path
+            this.#imgElement.className='item'
+
+            this.#imgElement.addEventListener('click',this.showFullScreenImg.bind(this));
+        }
+
+        getImgElement() {
+            return this.#imgElement;}
+
+        showFullScreenImg(){
+            sliderDesktop.showSlider(this.#imgElement.src)
+        }
+    }
+
 /* ... */
 
 
@@ -108,6 +210,8 @@
     const descrizioneProdotto=document.querySelector('.container_descrizione_prodotto .body_descrizione')
 
     let slider;
+    let sliderDesktop;
+    let mosaico;
     let nome_prodotto;
 /* ... */
 
@@ -156,27 +260,6 @@
         return null;
     }
 
-    /*function createItem(path){
-        let img=document.createElement('img')
-        img.src=path
-        img.className='item'
-        img.addEventListener('click',(event)=>{
-            if(window.innerWidth>600) {
-                if (img_full.style.display == "none") {
-                    document.body.style.overflow = 'hidden';
-                    img_full.style.display = "block"
-                    immagine.style.backgroundImage = "url(" + event.target.src + ")"
-
-                } else {
-                    document.body.style.overflow = 'none';
-                    img_full.style.display = "none"
-                }
-            }
-        })
-        return img
-    }
-    */
-
 /* ... */
 
 
@@ -189,16 +272,27 @@ window.addEventListener("load", () => {
     window.scrollTo(0,0)
 
     nome_prodotto= urlParams.get('prodotto');
-    if(nome_prodotto==null || nome_prodotto=="") window.location.href="prodotti.html";
+    if(nome_prodotto===null || nome_prodotto==="") window.location.href="prodotti.html";
 
     frase.innerHTML=nome_prodotto;
 
     getXMLFile().then(function(xmlFile) {
         let prodotto=getProdottoByName(xmlFile,nome_prodotto);
         descrizioneProdotto.innerHTML=prodotto.getDescrizione();
-        slider=new Slider(document.querySelector('.sezione_immagini .container_immagine_singola'),
+        slider=new Slider(document.querySelector('.sezione_immagini .slider'),
             prodotto.getImmagini(),
             prodotto.getImmagini()[0])
+        mosaico=new Mosaico(document.querySelector('.sezione_immagini .mosaico_immagini'));
+        for (let immagine of prodotto.getImmagini()) {
+            mosaico.addItem(immagine)
+        }
+        sliderDesktop=new SliderDesktop(document.querySelector('.container_slider_fullscreen'),
+            document.querySelector('.container_slider_fullscreen .container_immagine'),
+            document.querySelector('.container_slider_fullscreen .btn_avanti'),
+            document.querySelector('.container_slider_fullscreen .btn_dietro'),
+            document.querySelector('.container_slider_fullscreen .btn_close'),
+            prodotto.getImmagini()
+            );
     });
 
 })

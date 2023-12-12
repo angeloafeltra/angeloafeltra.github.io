@@ -222,7 +222,10 @@
                 tmp.push(categoria.textContent);
                 let padre=categoria.parentNode;
                 let immagini_elements=padre.getElementsByTagName('img');
-                list_categorie.push(new CategoriaBean(categoria.textContent, immagini_elements[0].textContent))
+                if(immagini_elements.length>0)
+                    list_categorie.push(new CategoriaBean(categoria.textContent, immagini_elements[0].textContent))
+                else
+                    list_categorie.push(new CategoriaBean(categoria.textContent, ""))
             }
         }
         return list_categorie;
