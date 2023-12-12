@@ -161,7 +161,7 @@ body, html {
         align-items: center;
         justify-content: center;
         gap: 20px;
-        padding: 10% 0% 10% 0%;
+        padding: 5% 0% 10% 0%;
     }
 
     .sezione_immagini .header_immagine{
@@ -218,7 +218,7 @@ body, html {
     @media (min-width: 600px) {
 
         .sezione_immagini{
-            padding: 5% 0% 5% 0%;
+            padding: 0% 0% 5% 0%;
             gap: 30px;
         }
 
@@ -240,9 +240,12 @@ body, html {
     @media (min-width: 1024px) {
 
         .sezione_immagini{
-            padding: 5% 10% 5% 10%;
+            padding: 0% 10% 5% 10%;
         }
 
+        .sezione_immagini .header_immagine{
+            padding: 0% 0% 0% 0%;
+        }
 
         .sezione_immagini .slider{
             display: none;
@@ -279,8 +282,8 @@ body, html {
         .container_slider_fullscreen .container_immagine{
             display: block;
             position: fixed;
-            width: 70%;
-            height: 70%;
+            width: 85%;
+            height: 85%;
             top:50%;
             left: 50%;
             transform: translate(-50%,-50%);
@@ -299,6 +302,11 @@ body, html {
             right: 5%;
             z-index: 6;
             cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .container_slider_fullscreen .btn_close:hover{
+            opacity: 1;
         }
 
         .container_slider_fullscreen .btn_dietro{
@@ -311,6 +319,11 @@ body, html {
             transform: translateY(-50%);
             cursor: pointer;
             z-index: 2;
+            opacity: 0.7;
+        }
+
+        .container_slider_fullscreen .btn_dietro:hover{
+            opacity: 1;
         }
 
         .container_slider_fullscreen .btn_avanti{
@@ -323,6 +336,11 @@ body, html {
             transform: translateY(-50%);
             cursor: pointer;
             z-index: 2;
+            opacity: 0.7;
+        }
+
+        .container_slider_fullscreen .btn_avanti:hover{
+            opacity: 1;
         }
 
     }
@@ -338,8 +356,8 @@ body, html {
         }
 
         .container_slider_fullscreen .container_immagine{
-            width: 30%;
-            height: 70%;
+            width: 80%;
+            height: 80%;
         }
 
         .container_slider_fullscreen .btn_close{

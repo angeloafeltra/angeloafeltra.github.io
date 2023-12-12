@@ -31,10 +31,10 @@
 
         immagineSuccessiva(){
             if(this.#index_current_img===this.#list_immagini.length-1) {
-                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[0]+")"
+                this.setImg(this.#list_immagini[0])
                 this.#index_current_img=0
             }else{
-                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#index_current_img+1]+")"
+                this.setImg(this.#list_immagini[this.#index_current_img+1])
                 this.#index_current_img=this.#index_current_img+1;
             }
         }
