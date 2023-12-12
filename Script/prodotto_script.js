@@ -3,14 +3,16 @@
     class Slider{
 
         #container_immagine;
+        #img;
         #list_immagini;
         #index_current_img;
         #startX;
 
-        constructor(ref_container_img,lista_immagini,start_img) {
+        constructor(ref_container_img,ref_img,lista_immagini,start_img) {
             this.#container_immagine=ref_container_img;
+            this.#img=ref_img;
             this.#list_immagini=lista_immagini;
-            this.#container_immagine.style.backgroundImage="url("+start_img+")";
+            this.setImg(start_img);
             this.#index_current_img=this.getIndexCurrentImg();
 
             this.#container_immagine.addEventListener('touchstart',this.logInitialTouch.bind(this));
@@ -39,12 +41,17 @@
 
         immaginePrecedente(){
             if(this.#index_current_img===0) {
-                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#list_immagini.length-1]+")"
+                this.setImg(this.#list_immagini[this.#list_immagini.length-1])
                 this.#index_current_img=this.#list_immagini.length-1
             }else{
-                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#index_current_img-1]+")"
+                this.setImg(this.#list_immagini[this.#index_current_img-1])
                 this.#index_current_img=this.#index_current_img-1;
             }
+        }
+
+        setImg(imgUrl){
+            this.#container_immagine.style.backgroundImage="linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("+imgUrl+")"
+            this.#img.src=imgUrl;
         }
 
         logInitialTouch(event){
@@ -223,7 +230,6 @@
     function getXMLFile(){
 
         return new Promise(function (resolve,reject) {
-            console.log("Entra")
             let xhr=new XMLHttpRequest();
             xhr.open('GET','./Prodotti.xml',true);
             xhr.onload=function () {
@@ -280,6 +286,7 @@ window.addEventListener("load", () => {
         let prodotto=getProdottoByName(xmlFile,nome_prodotto);
         descrizioneProdotto.innerHTML=prodotto.getDescrizione();
         slider=new Slider(document.querySelector('.sezione_immagini .slider'),
+            document.querySelector('.sezione_immagini .slider .immagine'),
             prodotto.getImmagini(),
             prodotto.getImmagini()[0])
         mosaico=new Mosaico(document.querySelector('.sezione_immagini .mosaico_immagini'));

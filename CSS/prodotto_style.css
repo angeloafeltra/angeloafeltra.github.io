@@ -186,6 +186,16 @@ body, html {
         padding: 0% 0% 0% 0%;
     }
 
+    .sezione_immagini .slider .immagine{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%,-50%);
+        object-fit: contain;
+    }
+
      .sezione_immagini .slider .container_icona_swipe{
          position: absolute;
          width: 40px;
@@ -208,13 +218,31 @@ body, html {
     @media (min-width: 600px) {
 
         .sezione_immagini{
-            padding: 5% 5% 5% 5%;
+            padding: 5% 0% 5% 0%;
             gap: 30px;
         }
 
         .sezione_immagini .header_immagine{
-            padding: 0% 0% 0% 0%;
+            padding: 0% 5% 0% 5%;
         }
+
+        .sezione_immagini .slider{
+            height: 700px;
+        }
+
+        .sezione_immagini .slider .container_icona_swipe{
+            width: 60px;
+            height: 60px;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+
+        .sezione_immagini{
+            padding: 5% 10% 5% 10%;
+        }
+
 
         .sezione_immagini .slider{
             display: none;
@@ -296,36 +324,6 @@ body, html {
             cursor: pointer;
             z-index: 2;
         }
-
-    }
-
-    @media (min-width: 1024px) {
-
-        .sezione_immagini{
-            padding: 5% 10% 5% 10%;
-        }
-
-        .container_slider_fullscreen .container_immagine{
-            width: 70%;
-            height: 70%;
-        }
-
-        .container_slider_fullscreen .btn_close{
-            width: 50px;
-            height: 50px;
-        }
-
-        .container_slider_fullscreen .btn_dietro{
-            width: 50px;
-            height: 50px;
-        }
-
-        .container_slider_fullscreen .btn_avanti{
-            width: 50px;
-            height: 50px;
-        }
-
-
 
     }
 
