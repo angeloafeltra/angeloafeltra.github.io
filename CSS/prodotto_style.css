@@ -14,14 +14,17 @@ body, html {
     overscroll-behavior-x: none;
 }
 
+
+
+
 /* || Main Image Element Style */
 
-    .main_img{
+    .container_immagine_principale{
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_12.jpeg") no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ChiSiamo/Background1.jpg") no-repeat center center;
         background-size: cover;
         text-align: center;
         padding-right: 10%;
@@ -30,8 +33,8 @@ body, html {
 
     .frase{
         color: white;
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
         font-weight: lighter;
         text-transform: uppercase;
         opacity: 0;
@@ -44,7 +47,6 @@ body, html {
         }
     }
 
-
     @media (min-width: 600px) {
 
         .frase{
@@ -55,8 +57,8 @@ body, html {
 
     @media (min-width: 1024px) {
 
-        .main_img{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_12.jpeg") no-repeat center center fixed;
+        .container_immagine_principale{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ChiSiamo/Background1.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
             padding-left: 15%;
@@ -70,8 +72,8 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .main_img{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_12.jpeg") no-repeat center center fixed;
+        .container_immagine_principale{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ChiSiamo/Background1.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
             padding-left: 15%;
@@ -91,9 +93,9 @@ body, html {
 
 /* || Sezione Descirzione Prodotto */
 
-    .container_descrizione{
+    .container_descrizione_prodotto{
         width: 100%;
-        padding: 10% 3% 10% 3%;
+        padding: 10% 7% 10% 7%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -101,34 +103,34 @@ body, html {
         gap:20px
     }
 
-    .container_descrizione h1{
+    .container_descrizione_prodotto .header_descrizione{
         flex-basis: 100%;
-        font-family: 'Alfa Slab One';
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
+        color: black;
         font-weight: lighter;
-        font-size: 30px;
+        text-transform: uppercase;
+        text-align: left;
     }
 
-    .container_descrizione p{
+    .container_descrizione_prodotto .body_descrizione{
         flex-basis: 100%;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-size: 18px;
+        color: black;
     }
 
     @media (min-width: 600px) {
 
-        .container_descrizione{
+        .container_descrizione_prodotto{
             padding: 5% 5% 5% 5%;
-        }
-
-        .container_descrizione h1{
-            font-size: 30px;
         }
 
     }
 
     @media (min-width: 1024px) {
 
-        .container_descrizione{
+        .container_descrizione_prodotto{
             padding: 5% 10% 5% 10%;
         }
 
@@ -136,23 +138,15 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .container_descrizione{
-            padding: 5% 10% 5% 10%;
-            gap:20px
-        }
-
-        .container_descrizione h1{
+        .container_descrizione_prodotto .header_descrizione{
             font-size: 50px;
         }
 
-        .container_descrizione p{
+        .container_descrizione_prodotto .body_descrizione{
             font-size: 24px;
         }
 
     }
-
-
-
 
 /* ... */
 
@@ -161,57 +155,60 @@ body, html {
 
 /* || Sezione immagini */
 
-
     .sezione_immagini{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap: 20px;
-        padding: 5% 3% 10% 3%;
+        padding: 10% 7% 10% 7%;
     }
 
-    .sezione_immagini h1{
+    .sezione_immagini .header_immagine{
         flex-basis: 100%;
-        font-family: 'Alfa Slab One';
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
+        color: black;
         font-weight: lighter;
-        font-size: 30px;
+        text-transform: uppercase;
+        text-align: left;
     }
 
-    .item{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-        box-shadow: 5px 5px 10px black;
-        cursor: pointer;
-    }
-
-    .container_immagini{
+    .sezione_immagini .mosaico_immagini{
         display: none;
     }
 
-    .container_single_img{
+    .sezione_immagini .container_immagine_singola{
         display: block;
         width: 100%;
-        height: 500px;
+        height: 600px;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
+        position: relative;
     }
+
+     .sezione_immagini .container_immagine_singola .container_icona_swipe{
+         position: absolute;
+         width: 80px;
+         height: 40px;
+         bottom: 3%;
+         left: 50%;
+         transform: translateX(-50%);
+     }
 
     @media (min-width: 600px) {
 
         .sezione_immagini{
-            padding: 0% 5% 5% 5%;
+            padding: 5% 5% 5% 5%;
             gap: 30px;
         }
 
-        .container_single_img{
+        .sezione_immagini .container_immagine_singola{
             display: none;
         }
 
-        .container_immagini{
+        .sezione_immagini .mosaico_immagini{
             display: grid;
             flex-basis: 100%;
             gap:10px;
@@ -237,7 +234,6 @@ body, html {
             height: 100%;
             background-color: rgba(0,0,0,0.8);
         }
-
 
         .img_full{
             display: block;
@@ -292,7 +288,7 @@ body, html {
     @media (min-width: 1024px) {
 
         .sezione_immagini{
-            padding: 0% 10% 5% 10%;
+            padding: 5% 10% 5% 10%;
         }
 
         .container_immagini{
@@ -330,7 +326,7 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .sezione_immagini h1{
+        .sezione_immagini .header_immagine{
             font-size: 50px;
         }
 
@@ -357,15 +353,12 @@ body, html {
 
     }
 
-
-
-
 /* ... */
 
 
 /* || Sezione Contattaci */
 
-    .container_contattaci{
+    .sezione_contattaci{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -376,7 +369,7 @@ body, html {
         margin: 20px 0;
     }
 
-    .container_descrizione_contattaci{
+    .sezione_contattaci .container_descrizione{
         flex-basis: 100%;
         display: flex;
         flex-wrap: nowrap;
@@ -384,23 +377,23 @@ body, html {
         gap: 10px;
     }
 
-    .container_descrizione_contattaci h1{
+    .sezione_contattaci .container_descrizione .header_descrizione{
         width: 100%;
-        font-family: 'Helvetica Neue';
+        font-family: 'Helvetica Neue', sans-serif;
         font-size: 24px;
         color: white;
     }
 
-    .container_descrizione_contattaci p{
+    .sezione_contattaci .container_descrizione .body_descrizione{
         width: 100%;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         font-size: 18px;
         color: white;
     }
 
-    .container_contattaci button{
+    .sezione_contattaci button{
         flex-basis: 50%;
-        font-family: 'Helvetica Neue';
+        font-family: 'Helvetica Neue', sans-serif;
         font-size: 18px;
         background-color: white;
         color: #770404;
@@ -411,25 +404,24 @@ body, html {
         transition: color 1s, background-color 1s;
     }
 
-    .container_contattaci button:hover{
+    .sezione_contattaci button:hover{
         color: white;
         background-color: #770404;
     }
 
     @media (min-width: 600px){
 
-        .container_contattaci{
+        .sezione_contattaci{
             display: flex;
             padding: 5% 5% 5% 5%;
             gap: 30px;
         }
 
-        .container_descrizione_contattaci{
+        .sezione_contattaci .container_descrizione{
             flex-basis: 70%;
         }
 
-
-        .container_contattaci button{
+        .sezione_contattaci button{
             flex-basis: 20%;
         }
 
@@ -437,30 +429,29 @@ body, html {
 
     @media (min-width: 1024px){
 
-        .container_contattaci{
+        .sezione_contattaci{
             display: flex;
             padding: 5% 5% 5% 5%;
             gap: 50px;
         }
 
-        .container_descrizione_contattaci{
+        .sezione_contattaci .container_descrizione{
             flex-basis: 75%;
         }
 
-
-        .container_contattaci button{
+        .sezione_contattaci button{
             flex-basis: 15%;
         }
 
-        .container_descrizione_contattaci h1{
+        .sezione_contattaci .container_descrizione .header_descrizione{
             font-size: 30px;
         }
 
-        .container_descrizione_contattaci p{
+        .sezione_contattaci .container_descrizione .body_descrizione{
             font-size: 20px;
         }
 
-        .container_contattaci button{
+        .sezione_contattaci button{
             font-size: 20px;
         }
 
@@ -468,22 +459,21 @@ body, html {
 
     @media (min-width: 1920px){
 
-        .container_contattaci{
+        .sezione_contattaci{
             display: flex;
             padding: 3% 5% 3% 5%;
             gap: 100px;
         }
 
-
-        .container_contattaci button{
+        .sezione_contattaci button{
             flex-basis: 10%;
         }
 
-        .container_descrizione_contattaci h1{
+        .sezione_contattaci .container_descrizione .header_descrizione{
             font-size: 35px;
         }
 
-        .container_descrizione_contattaci p{
+        .sezione_contattaci .container_descrizione .body_descrizione{
             font-size: 23px;
         }
 

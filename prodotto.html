@@ -23,85 +23,95 @@
     <header>
         <nav class="container_navbar">
             <a href="index.html" class="logo_navbar">
-                <img class="logo" src="./Immagini/logo.svg" style="width: 100%; height: 100%">
+                <img class="logo" src="./Immagini/logo.svg" alt="Logo Inda" style="width: 100%; height: 100%">
             </a>
 
-            <!-- hamburger viene visualizzato solamente quando non si è in modalita desktop -->
             <div class="hamburger">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
             </div>
 
-            <div class="nav_links">
-                <a class="link_navbar" href="index.html" >Home</a>
+            <div class="container_links">
+                <a class="link_navbar" href="index.html" style="color: #F0B357; text-decoration: underline">Home</a>
                 <a class="link_navbar" href="chisiamo.html">Chi Siamo</a>
                 <a class="link_navbar" href="">ShowRoom</a>
-                <a class="link_navbar" href="prodotti.html" style="color: #F0B357; text-decoration: underline">Prodotti</a>
+                <a class="link_navbar" href="prodotti.html">Prodotti</a>
                 <a class="link_navbar" href="contatti.html">Contatti</a>
             </div>
         </nav>
     </header>
 
-    <div  class="main_img">
-        <h1 class="frase">I nostri prodotti</h1>
+    <div class="container_immagine_principale">
+        <h1 class="frase">I NOSTRI PRODOTTI</h1>
     </div>
 
-    <div class="container_descrizione">
-        <h1>Descrizione</h1>
-        <p>
-            Le nostre balaustre rappresentano la sintesi perfetta tra design moderno e resistenza, offrendo una soluzione versatile e duratura per impreziosire ogni contesto.
-            Realizzate con materiali di alta qualità, le balaustre in vetro e acciaio presenti nel nostro assortimento sono progettate per garantire sicurezza, durabilità e un impatto visivo straordinario. L'acciaio conferisce robustezza e stabilità strutturale, mentre il vetro, elegante e trasparente, crea un effetto visivo leggero e luminoso.
-            Scegliete tra una varietà di stili e finiture per personalizzare le vostre balaustre e adattarle perfettamente al vostro ambiente. Che si tratti di un progetto residenziale o commerciale, le nostre balaustre in vetro e acciaio si integrano armoniosamente, aggiungendo un tocco contemporaneo e raffinato alla vostra architettura.
-            Navigando attraverso la nostra selezione, troverete soluzioni pensate per soddisfare le vostre esigenze estetiche e funzionali.
+    <div class="container_descrizione_prodotto">
+        <h1 class="header_descrizione">Descrizione</h1>
+        <p class="body_descrizione">
         </p>
     </div>
 
     <div class="sezione_immagini">
-        <h1>Alcuni dei nostri lavori</h1>
-        <div class="container_immagini">
+
+        <h1 class="header_immagine">Alcuni dei nostri lavori</h1>
+
+        <div class="container_immagine_singola">
+
+
+            <div class="container_icona_swipe">
+                <img src="Immagini/Prodotti/swipe.svg" alt="Icon Swipe" style="width: 100%; height: 100%; object-position: center">
+            </div>
+
         </div>
 
-        <div class="container_single_img">
-
+        <div class="mosaico_immagini">
         </div>
 
+        <!--
+        <div class="container_immagine_fullscreen">
 
-        <div class="container_img_full">
-            <div class="img_full">
+            <div class="container_immagine">
+
                 <div class="btn_close">
-                    <img src="Immagini/Prodotti/close.svg" style="width: 100%; height: 100%; rotate:180deg;">
+                    <img src="Immagini/Prodotti/close.svg" alt="Icona Chiudi" style="width: 100%; height: 100%; rotate:180deg;">
                 </div>
 
+            </div>
 
-            </div>
             <div class="btn_dietro">
-                <img src="Immagini/Prodotti/freccia.svg" style="width: 100%; height: 100%; rotate:180deg;">
+                <img src="Immagini/Prodotti/freccia.svg" alt="Icona freccia indietro" style="width: 100%; height: 100%; rotate:180deg;">
             </div>
+
             <div class="btn_avanti">
-                <img src="Immagini/Prodotti/freccia.svg" style="width: 100%; height: 100%">
+                <img src="Immagini/Prodotti/freccia.svg" alt="Icona freccia avanti" style="width: 100%; height: 100%">
             </div>
+
         </div>
+        -->
+
     </div>
 
 
 
-    <div class="container_contattaci" style="overflow: hidden">
-        <div class="container_descrizione_contattaci">
-            <h1>
+    <div class="sezione_contattaci" style="overflow: hidden">
+
+        <div class="container_descrizione">
+            <h1 class="header_descrizione">
                 La nostra porta è sempre aperta
             </h1>
-            <p>
+            <p class="body_descrizione">
                 Hai domande sui nostri prodotti o vorresti discutere un progetto con noi? Non esitare, inviaci un'email, ti ricontatteremo il prima possibile.
             </p>
         </div>
         <button onclick="location.href = 'contatti.html'" ontouchstart="location.href = 'contatti.html'" >
             Contattaci
         </button>
+
     </div>
 
     <footer>
-        <div class="info_container">
+        <div class="container_info">
             <h1 class="footer-header">Dove Siamo</h1>
             <p class="footer-body">Show Room - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
             <p class="footer-body">Sede Operativa - Via Teilliti 45, 80050, Sant'Antonio Abate (NA)</p>
@@ -109,10 +119,9 @@
             <h1 class="footer-header">Recapiti</h1>
             <p class="footer-body">+39 3394487294</p>
             <p class="footer-body">indainfissi@gmail.com</p>
-            <!--<button class="contattaci_footer">Contattaci</button>-->
         </div>
 
-        <div class="end_container">
+        <div class="social_and_credits_container">
             <div class="social_container">
                 <div class="social">
                     <img src="Immagini/SVG/facebook.svg" alt="facebook_logo" style="width: 100%; height: 100%;">
@@ -125,8 +134,8 @@
                 </div>
             </div>
 
-            <div class="end_footer_container">
-                <h1  style="font-family: Kristi;">Inda <span>spa</span></h1>
+            <div class="credits_container">
+                <h1  style="font-family: Kristi,sans-serif;">Inda <span>spa</span></h1>
                 <p>P.Iva 02607220908</p>
                 <p>Privacy e Cookies Policy</p>
                 <p>Design Angelo Afeltra</p>
@@ -138,6 +147,6 @@
     </footer>
 
 </body>
-<script src="./Script/navbar_effect.js"></script>
+<script src="Script/navbar_script.js"></script>
 <script src="Script/prodotto_script.js"></script>
 </html>

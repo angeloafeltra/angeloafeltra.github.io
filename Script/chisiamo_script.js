@@ -7,7 +7,7 @@ class CaratteristicheAzienda {
 
     constructor(list_caratteristiche) {
         this.#list_caratteristiche=list_caratteristiche;
-        if(window.innerWidth<600) this.#isMobile=true; else this.@#isMobile=false;
+        if(window.innerWidth<600) this.#isMobile=true; else this.#isMobile=false;
     }
 
     enableMobileStyle(){

@@ -429,13 +429,14 @@ body, html {
     .container_catalogo .container_item h1{
         position: absolute;
         top:50%;
-        left:10%;
-        width: 50%;
+        left:5%;
+        width: 65%;
         transform: translateY(-50%);
         font-family: 'Helvetica Neue', sans-serif;
         font-size: 18px;
         color: white;
         font-weight: bold;
+        word-wrap: break-word;
     }
 
     @media (min-width: 600px){

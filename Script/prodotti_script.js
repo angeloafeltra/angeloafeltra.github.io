@@ -39,8 +39,8 @@
             this.#btn_touch=rif_touch
 
             this.#container.addEventListener('click',this.actionShowHiddenDescription.bind(this))
-            this.#container.addEventListener('mouseover', this.showDescrizione.bind(this))
-            this.#container.addEventListener('mouseout', this.hiddenDescrizione.bind(this))
+            this.#container.addEventListener('mouseover', this.actionShowHiddenDescription.bind(this))
+            this.#container.addEventListener('mouseout',  this.actionShowHiddenDescription.bind(this))
         }
 
 
@@ -61,15 +61,22 @@
         }
 
 
-        actionShowHiddenDescription(){
-            if(window.innerWidth<1024) {
-                if (this.#descrizione.style.display === "flex") {
+        actionShowHiddenDescription(event){
+            if(window.innerWidth<1024 && event.type==='click') {
+                if (window.getComputedStyle(this.#descrizione).display === "flex") {
                     this.hiddenDescrizione();
-                } else if(this.#descrizione.style.display === "none") {
-                    this.showDescrizione()
+                } else if(window.getComputedStyle(this.#descrizione).display === "none") {
+                    this.showDescrizione();
+                }
+            }else if(window.innerWidth>1024){
+                if(event.type==='mouseover') {
+                    this.showDescrizione();
+                }else if(event.type==='mouseout'){
+                    this.hiddenDescrizione();
                 }
             }
         }
+
 
     }
 

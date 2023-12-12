@@ -1,5 +1,99 @@
 /* || Classi */
 
+    class Slider{
+
+        #container_immagine;
+        #list_immagini;
+        #index_current_img;
+        #startX;
+
+        constructor(ref_container_img,lista_immagini,start_img) {
+            this.#container_immagine=ref_container_img;
+            this.#list_immagini=lista_immagini;
+            this.#container_immagine.style.backgroundImage="url("+start_img+")";
+            this.#index_current_img=this.getIndexCurrentImg();
+
+            this.#container_immagine.addEventListener('touchstart',this.logInitialTouch.bind(this));
+            this.#container_immagine.addEventListener('touchend',this.actionSwipeImg.bind(this));
+        }
+
+        getIndexCurrentImg(){
+            let path_img=this.#container_immagine.style.backgroundImage
+            let index=0
+            for (let i=0;i<this.#list_immagini.length;i++){
+                if(path_img.includes(this.#list_immagini[i]))
+                    index=i
+            }
+            return index;
+        }
+
+        immagineSuccessiva(){
+            if(this.#index_current_img===this.#list_immagini.length-1) {
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[0]+")"
+                this.#index_current_img=0
+            }else{
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#index_current_img+1]+")"
+                this.#index_current_img=this.#index_current_img+1;
+            }
+        }
+
+        immaginePrecedente(){
+            if(this.#index_current_img===0) {
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#list_immagini.length-1]+")"
+                this.#index_current_img=this.#list_immagini.length-1
+            }else{
+                this.#container_immagine.style.backgroundImage="url("+this.#list_immagini[this.#index_current_img-1]+")"
+                this.#index_current_img=this.#index_current_img-1;
+            }
+        }
+
+        logInitialTouch(event){
+            this.#startX=event.touches[0].clientX
+        }
+
+        isSwipeToLeft(event){
+            const endX=event.changedTouches[0].clientX;
+            const deltaX = endX - this.#startX;
+            if (deltaX <-20) return true; else return false;
+        }
+
+        isSwipeToRight(event){
+            const endX=event.changedTouches[0].clientX;
+            const deltaX = endX - this.#startX;
+            if (deltaX > 20) return true; else return false;
+        }
+
+        actionSwipeImg(event){
+            if(this.isSwipeToLeft(event))
+                this.immagineSuccessiva();
+            else if (this.isSwipeToRight(event))
+                this.immaginePrecedente();
+        }
+
+    }
+
+    class ProdottoBean{
+
+        #nome;
+        #descrizione;
+        #materiale;
+        #categoria;
+        #list_img=[];
+
+        constructor(nome, descrizione, materiale, categoria, list_img) {
+            this.#nome=nome;
+            this.#descrizione=descrizione;
+            this.#materiale=materiale;
+            this.#categoria=categoria;
+            this.#list_img=list_img;
+        }
+
+        getNome() {return this.#nome;}
+        getDescrizione() {return this.#descrizione;}
+        getMateriale() {return this.#materiale;}
+        getCategoria() {return this.#categoria;}
+        getImmagini() {return this.#list_img;}
+    }
 
 /* ... */
 
@@ -10,23 +104,11 @@
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const xmlFilePath = './Prodotti.xml';
     const frase=document.querySelector('.frase')
-    const descrizioneHtml=document.querySelector('.container_descrizione p')
-    const container=document.querySelector('.container_immagini')
-    const img_full=document.querySelector('.container_img_full')
-    const btn_close=document.querySelector('.btn_close')
-    const btn_avanti=document.querySelector('.btn_avanti')
-    const btn_dietro=document.querySelector('.btn_dietro')
-    const immagine=document.querySelector('.img_full')
-    const img_mobile=document.querySelector('.container_single_img')
+    const descrizioneProdotto=document.querySelector('.container_descrizione_prodotto .body_descrizione')
 
-    let nomeProdotto;
-    let descrizioneProdotto;
-    let materialeProdotto;
-    let categoriaProdotto;
-    let img_prodotto=[]
-
+    let slider;
+    let nome_prodotto;
 /* ... */
 
 
@@ -34,49 +116,47 @@
 
 /* || Funzioni */
 
-    function getProdotto(prodottoName){
-        return new Promise(function(resolve, reject) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', xmlFilePath, true);
-            xhr.onload = function () {
+    function getXMLFile(){
+
+        return new Promise(function (resolve,reject) {
+            console.log("Entra")
+            let xhr=new XMLHttpRequest();
+            xhr.open('GET','./Prodotti.xml',true);
+            xhr.onload=function () {
                 if (xhr.status >= 200 && xhr.status < 300) {
-                    var parser = new DOMParser();
-                    var xmlText = xhr.responseText;
-                    var xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-
-                    var prodottoElements = xmlDoc.getElementsByTagName('prodotto');
-                    for(let i=0;i<prodottoElements.length;i++){
-                        let nome=prodottoElements[i].getElementsByTagName('nome')[0].textContent
-                        if(nome==prodottoName){
-                            let descrizione=prodottoElements[i].getElementsByTagName('descrizione')[0].textContent
-                            let materiale=prodottoElements[i].getElementsByTagName('materiale')[0].textContent
-                            let categoria=prodottoElements[i].getElementsByTagName('categoria')[0].textContent
-                            let immaginiElements=prodottoElements[i].getElementsByTagName('immagini')[0]
-                            let list_img=[]
-                            for(let j=0;j<immaginiElements.getElementsByTagName('img').length;j++){
-                                list_img.push(immaginiElements.getElementsByTagName('img')[j].textContent)
-                            }
-
-                            resolve({
-                                nome: nome,
-                                descrizione: descrizione,
-                                categoria: categoria,
-                                materiale: materiale,
-                                immagini: list_img
-                            })
-                        }
-                    }
-
-                } else {
-                    console.log('Errore durante il caricamento del file XML:', xhr.statusText)
+                    let parser=new DOMParser();
+                    let xmlText= xhr.responseText;
+                    let xmlDoc=parser.parseFromString(xmlText,'text/xml');
+                    resolve(xmlDoc);
+                }else{
+                    console.log("Errore durante il caricamento del file XML")
                     reject(null);
                 }
-            };
+            }
             xhr.send();
         });
     }
 
-    function createItem(path){
+    function getProdottoByName(xmlDoc,nome){
+
+        let prodottoElements = xmlDoc.getElementsByTagName('prodotto');
+        for(let prodotto of prodottoElements){
+            if(prodotto.getElementsByTagName('nome')[0].textContent===nome){
+                let nomeProdotto=prodotto.getElementsByTagName('nome')[0].textContent;
+                let descrizioneProdotto=prodotto.getElementsByTagName('descrizione')[0].textContent;
+                let materialeProdotto=prodotto.getElementsByTagName('materiale')[0].textContent;
+                let categoriaProdotto=prodotto.getElementsByTagName('categoria')[0].textContent;
+                let immaginiProdotto=[];
+                for (let img of prodotto.getElementsByTagName('img'))
+                    immaginiProdotto.push(img.textContent)
+
+                return new ProdottoBean(nomeProdotto,descrizioneProdotto,materialeProdotto,categoriaProdotto,immaginiProdotto)
+            }
+        }
+        return null;
+    }
+
+    /*function createItem(path){
         let img=document.createElement('img')
         img.src=path
         img.className='item'
@@ -95,6 +175,7 @@
         })
         return img
     }
+    */
 
 /* ... */
 
@@ -103,141 +184,25 @@
 
 /* || EventListener */
 
-window.addEventListener("resize", (event) => {
-
-    if(window.innerWidth<600){
-        img_full.style.display="none";
-    }
-})
-
-window.addEventListener("load", (event) => {
-
+window.addEventListener("load", () => {
 
     window.scrollTo(0,0)
 
-    prodotto_name= urlParams.get('prodotto');
-    if(prodotto_name==null || prodotto_name=="") window.location.href="prodotti.html";
+    nome_prodotto= urlParams.get('prodotto');
+    if(nome_prodotto==null || nome_prodotto=="") window.location.href="prodotti.html";
 
-    frase.innerHTML=prodotto_name;
+    frase.innerHTML=nome_prodotto;
 
-    getProdotto(prodotto_name).then(function(product) {
-        nomeProdotto=product.nome
-        descrizioneProdotto=product.descrizione
-        materialeProdotto=product.materiale
-        categoriaProdotto=product.categoria
-        img_prodotto=product.immagini
-
-        descrizioneHtml.innerHTML=descrizioneProdotto
-        for (let i=0;i<img_prodotto.length;i++){
-            if(img_prodotto[i]!="")
-                container.appendChild(createItem(img_prodotto[i]))
-        }
-
-        img_mobile.style.backgroundImage="url("+img_prodotto[0]+")"
-    })
-
+    getXMLFile().then(function(xmlFile) {
+        let prodotto=getProdottoByName(xmlFile,nome_prodotto);
+        descrizioneProdotto.innerHTML=prodotto.getDescrizione();
+        slider=new Slider(document.querySelector('.sezione_immagini .container_immagine_singola'),
+            prodotto.getImmagini(),
+            prodotto.getImmagini()[0])
+    });
 
 })
 
-btn_close.addEventListener('click',()=>{
-    if(img_full.style.display=="none") {
-        document.body.style.overflow = 'hidden';
-        img_full.style.display = "block"
-    }else{
-        document.body.style.overflow = 'auto';
-        img_full.style.display = "none"
-    }
-})
-
-btn_avanti.addEventListener('click', (e)=>{
-
-    let path_img=immagine.style.backgroundImage
-    let index=0
-    for (let i=0;i<img_prodotto.length;i++){
-        console.log(path_img)
-        console.log(img_prodotto[i])
-        if(path_img.includes(img_prodotto[i]))
-            index=i
-    }
-
-    console.log(index)
-    let next_img;
-    if(index==img_prodotto.length-1) {
-        next_img = img_prodotto[0]
-    }else{
-        next_img=img_prodotto[index+1]
-    }
-
-    immagine.style.backgroundImage="url("+next_img+")"
-});
-
-btn_dietro.addEventListener('click', (e)=>{
-
-    let path_img=immagine.style.backgroundImage
-    let index=0
-    for (let i=0;i<img_prodotto.length;i++){
-        if(path_img.includes(img_prodotto[i]))
-            index=i
-    }
-
-    let next_img;
-    if(index==0) {
-        next_img = img_prodotto[img_prodotto.length-1]
-    }else{
-        next_img=img_prodotto[index-1]
-    }
-
-    immagine.style.backgroundImage="url("+next_img+")"
-});
-
-
-let startXslider;
-img_mobile.addEventListener('touchstart', (e)=>{
-    startXslider=e.touches[0].clientX;
-})
-
-img_mobile.addEventListener('touchend', (e)=>{
-    const endX=e.changedTouches[0].clientX;
-    const deltaX = endX - startXslider;
-    if (deltaX <-20) {
-        let path_img=img_mobile.style.backgroundImage
-        let index=0
-        for (let i=0;i<img_prodotto.length;i++){
-            console.log(path_img)
-            console.log(img_prodotto[i])
-            if(path_img.includes(img_prodotto[i]))
-                index=i
-        }
-
-        console.log(index)
-        let next_img;
-        if(index==img_prodotto.length-1) {
-            next_img = img_prodotto[0]
-        }else{
-            next_img=img_prodotto[index+1]
-        }
-
-        img_mobile.style.backgroundImage="url("+next_img+")"
-    }else{
-        if (deltaX >20) {
-            let path_img=img_mobile.style.backgroundImage
-            let index=0
-            for (let i=0;i<img_prodotto.length;i++){
-                if(path_img.includes(img_prodotto[i]))
-                    index=i
-            }
-
-            let next_img;
-            if(index==0) {
-                next_img = img_prodotto[img_prodotto.length-1]
-            }else{
-                next_img=img_prodotto[index-1]
-            }
-
-            img_mobile.style.backgroundImage="url("+next_img+")"
-        }
-    }
-})
 
 /* ... */
 
