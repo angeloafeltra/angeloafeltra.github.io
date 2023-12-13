@@ -14,9 +14,12 @@ body, html {
     overscroll-behavior-x: none;
 }
 
+
+
+
 /* || Main Image Element Style */
 
-    .main_img{
+    .container_immagine_principale{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,10 +33,18 @@ body, html {
 
     .frase{
         color: white;
-        font-family: 'Alfa Slab One';
+        font-family: 'Alfa Slab One', sans-serif;
         font-size: 20px;
         font-weight: lighter;
         text-transform: uppercase;
+        opacity: 0;
+        animation: fadeInFrase 1s ease-out forwards;
+    }
+
+    @keyframes fadeInFrase {
+        to {
+            opacity: 1;
+        }
     }
 
     @media (min-width: 600px) {
@@ -46,7 +57,7 @@ body, html {
 
     @media (min-width: 1024px) {
 
-        .main_img{
+        .container_immagine_principale{
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
@@ -61,7 +72,7 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .main_img{
+        .container_immagine_principale{
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
@@ -79,138 +90,210 @@ body, html {
 
 
 
-/* || Section1 Element Style */
+/* || Sezione "Info Preventivo" Element Style */
 
-    .info_preventivo{
+    .sezione_info_preventivo{
         background-color: white;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        padding: 5% 0% 0% 0%;
+        padding: 10% 7% 10% 7%;
+        gap: 20px;
     }
 
-    .descrizione_sezione{
+    .sezione_info_preventivo .container_descrizione{
         flex-basis: 100%;
-        padding: 15px;
-        /*border: black solid;*/
-    }
 
-    .descrizione_sezione h1{
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
-        font-weight: lighter;
-        margin-bottom: 5%;
-        color: black;
-    }
-
-    .descrizione_sezione p{
-        font-family: 'Montserrat';
-        font-size: 18px;
-        font-weight: lighter;
-        margin-bottom: 5%;
-        color: black;
-    }
-
-    .info{
-        flex-basis: 100%;
-        padding: 4% 3% 4% 3%;
-        /*border: black solid;*/
-        background-color: #770404;
-    }
-
-    .info h1{
-        color: white;
-        padding: 7px;
-        font-size: 28px;
-        font-family: "Alfa Slab One";
-        font-weight: lighter;
-    }
-
-    .info h2{
-        color: white;
-        padding: 5px;
-        font-size: 20px;
-        font-family: "Alfa Slab One";
-        font-weight: lighter;
-    }
-
-    .info p{
-        font-family: Montserrat;
-        color: white;
-        padding: 5px;
-        font-size: 16px;
-    }
-
-    .btn_chiama{
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: white;
-        border: none;
-        padding: 2px 2px 2px 2px;
-        border-radius: 20px;
-        border: white solid;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
-    .btn_chiama div{
+    .sezione_info_preventivo .container_descrizione .header_descrizione{
+        flex-basis: 100%;
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
+        color: black;
+        font-weight: lighter;
+    }
+
+    .sezione_info_preventivo .container_descrizione .body_descrizione{
+        flex-basis: 100%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        color: black;
+    }
+
+    .sezione_info_preventivo .container_info{
+        flex-basis: 100%;
+        padding: 10% 5% 10% 5%;
+        background-color: #770404;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .sezione_info_preventivo .container_info .container_sede_e_recapiti{
+        flex-basis: 100%;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+        gap: 20px;
+    }
+
+    .sezione_info_preventivo .container_info .container_sede_e_recapiti h1{
+        color: white;
+        font-size: 28px;
+        font-family: "Alfa Slab One", sans-serif;
+        font-weight: lighter;
+    }
+
+    .sezione_info_preventivo .container_info .container_sede_e_recapiti p{
+        font-family: Montserrat, sans-serif;
+        color: white;
+        font-size: 16px;
+    }
+
+    .sezione_info_preventivo .container_info .container_sede_e_recapiti .btn_chiama{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap:10px;
+
+        background-color: white;
+        padding: 2px 2px 2px 2px;
+        height: 30px;
+        border-radius: 20px;
+        border: white solid;
+
+        cursor: pointer;
+    }
+
+    .sezione_info_preventivo .container_info .container_sede_e_recapiti .btn_chiama .icona_telefono{
         width: 8%;
         display: inline-block;
     }
 
-    .btn_chiama p{
+    .sezione_info_preventivo .container_info .container_sede_e_recapiti .btn_chiama p{
         color: #770404;
-        font-family: Montserrat;
+        font-family: Montserrat, sans-serif;
         font-size: 14px;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari{
+        flex-basis: 100%;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+        gap: 20px;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari h1{
+        flex-basis: 100%;
+        color: white;
+        font-size: 28px;
+        font-family: "Alfa Slab One", sans-serif;
+        font-weight: lighter;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari .container_orario {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari .container_orario h2{
+        flex-basis: 100%;
+
+        color: white;
+        font-size: 20px;
+        font-family: "Alfa Slab One",sans-serif;
+        font-weight: lighter;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari .container_orario .giorni{
+        flex-basis: 45%;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 10px;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari .container_orario .ora{
+        flex-basis: 45%;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 10px;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari .container_orario .giorni p{
+        font-family: Montserrat, sans-serif;
+        color: white;
+        font-size: 16px;
+    }
+
+    .sezione_info_preventivo .container_info .container_orari .container_orario .ora p{
+        font-family: Montserrat, sans-serif;
+        color: white;
+        font-size: 16px;
     }
 
     @media (min-width: 600px) {
 
-        .info_preventivo{
+        .sezione_info_preventivo{
             flex-wrap: nowrap;
             align-items: stretch;
-            padding: 5% 2% 5% 2%;
+            padding: 5% 5% 5% 5%;
         }
 
-        .descrizione_sezione{
+        .sezione_info_preventivo .container_descrizione{
             flex-basis: 55%;
-            padding: 10px;
-            /*border: black solid;*/
         }
 
-        .info{
+        .sezione_info_preventivo .container_info{
             flex-basis: 40%;
-            padding: 4% 1% 4% 1%;
-            /*border: black solid;*/
-            background-color: #770404;
         }
 
     }
 
     @media (min-width: 1024px) {
 
-        .info_preventivo{
-            flex-wrap: nowrap;
-            align-items: stretch;
+        .sezione_info_preventivo{
+            align-items: start;
             padding: 5% 10% 5% 10%;
+            gap: 30px;
         }
 
-        .descrizione_sezione{
-            flex-basis: 50%;
-            padding: 10px;
-            /*border: black solid;*/
+        .sezione_info_preventivo .container_descrizione{
+            flex-basis: 55%;
         }
 
-        .info{
+        .sezione_info_preventivo .container_info{
             flex-basis: 40%;
-            padding: 4% 1% 4% 1%;
-            /*border: black solid;*/
-            background-color: #770404;
+            padding: 5% 3% 5% 3%;
         }
 
 
@@ -219,30 +302,57 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .info_preventivo{
-            flex-wrap: nowrap;
-            align-items: stretch;
-            padding: 5% 10% 5% 10%;
+        .sezione_info_preventivo .container_descrizione{
+            flex-basis: 55%;
         }
 
-        .descrizione_sezione{
-            flex-basis: 50%;
-            padding: 10px;
-            /*border: black solid;*/
-        }
-
-        .info{
+        .sezione_info_preventivo .container_info{
             flex-basis: 40%;
-            padding: 4% 1% 4% 1%;
-            /*border: black solid;*/
-            background-color: #770404;
+            padding: 5% 3% 5% 3%;
         }
 
-        .descrizione_sezione h1{
+        .sezione_info_preventivo .container_descrizione .header_descrizione{
+            font-size: 50px;
+        }
+
+        .sezione_info_preventivo .container_descrizione .body_descrizione{
+            font-size: 24px;
+        }
+
+        .sezione_info_preventivo .container_info .container_sede_e_recapiti h1{
             font-size: 40px;
         }
 
-        .descrizione_sezione p{
+        .sezione_info_preventivo .container_info .container_sede_e_recapiti p{
+            font-size: 20px;
+        }
+
+        .sezione_info_preventivo .container_info .container_sede_e_recapiti .btn_chiama{
+            height: 40px;
+            border-radius: 30px;
+        }
+
+        .sezione_info_preventivo .container_info .container_sede_e_recapiti .btn_chiama .icona_telefono{
+            width: 11%;
+        }
+
+        .sezione_info_preventivo .container_info .container_sede_e_recapiti .btn_chiama p{
+            font-size: 16px;
+        }
+
+        .sezione_info_preventivo .container_info .container_orari h1{
+            font-size: 40px;
+        }
+
+        .sezione_info_preventivo .container_info .container_orari .container_orario h2{
+            font-size: 32px;
+        }
+
+        .sezione_info_preventivo .container_info .container_orari .container_orario .giorni p{
+            font-size: 20px;
+        }
+
+        .sezione_info_preventivo .container_info .container_orari .container_orario .ora p{
             font-size: 20px;
         }
 
@@ -252,9 +362,9 @@ body, html {
 
 
 
-/* || Section2 Element Style */
+/* || Sezione "Richiedi Preventivo" Element Style */
 
-    .richiedi_preventivo{
+    .sezione_richiedi_preventivo{
         width: 100%;
         display: flex;
         flex-wrap: wrap-reverse;
@@ -264,66 +374,68 @@ body, html {
         background-size: cover;
     }
 
-    .map_container{
+    .sezione_richiedi_preventivo .container_mappa{
         flex-basis: 100%;
+        height: 400px;
     }
 
-    .form_container{
+    .sezione_richiedi_preventivo .container_form{
         flex-basis: 100%;
         padding:10%;
         background: none;
     }
 
-    form h1{
+    .sezione_richiedi_preventivo .container_form form h1{
         font-size: 30px;
-        font-family: 'Alfa Slab One';
+        font-family: 'Alfa Slab One', sans-serif;
         text-transform: uppercase;
         font-weight: lighter;
         color: white;
     }
 
-    form p{
+    .sezione_richiedi_preventivo .container_form form p{
         font-size: 18px;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         margin-bottom: 4%;
         color: white;
     }
 
-    #errore{
-        font-family: 'Montserrat';
+    .sezione_richiedi_preventivo .container_form form #errore{
+        font-family: 'Montserrat', sans-serif;
         font-size: 16px;
+        height: 20px;
         color: red;
         padding: 5px;
         display: block;
         text-align: center;
-        display: none;
     }
 
-    form .container{
+    .sezione_richiedi_preventivo .container_form form .container_input_dati_cliente{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+        gap:10px;
+        margin-bottom: 10px;
     }
 
-    .campo_form {
+    .sezione_richiedi_preventivo .container_form form .container_input_dati_cliente .campo_form {
         flex-basis: 100%;
-        padding: 5px;
     }
 
-    .campo_form h2{
+    .sezione_richiedi_preventivo .container_form form .container_input_dati_cliente .campo_form h2{
         font-size: 18px;
-        font-family: 'Alfa Slab One';
+        font-family: 'Alfa Slab One', sans-serif;
         font-weight: lighter;
         color: white;
     }
 
-    .campo_form input{
+    .sezione_richiedi_preventivo .container_form form .container_input_dati_cliente .campo_form input{
         width: 100%;
         border: white solid;
         background: none;
         font-size: 16px;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         padding: 5px;
         color: white;
     }
@@ -333,30 +445,37 @@ body, html {
         opacity: 0.7;
     }
 
+    .sezione_richiedi_preventivo .container_form form .campo_form_messaggio h2{
+        font-size: 18px;
+        font-family: 'Alfa Slab One', sans-serif;
+        font-weight: lighter;
+        color: white;
+    }
 
-    .campo_form textarea{
+    .sezione_richiedi_preventivo .container_form form .campo_form_messaggio textarea{
         width: 100%;
         padding:5px;
         height: 100px;
         border: white solid;
         background: none;
         font-size: 16px;
-        font-family: 'Montserrat';
-        overflow-wrap: break-word;
+        font-family: 'Montserrat', sans-serif;
+        word-wrap: break-word;
         color:white;
         resize: none;
     }
 
-    .container_trattamento_dati{
+    .sezione_richiedi_preventivo .container_form form .container_trattamento_dati{
         display: flex;
         flex-wrap: nowrap;
         width: 100%;
         align-items: stretch;
         justify-content: center;
         gap:10px;
+        margin-top: 10px;
     }
 
-    .container_trattamento_dati input{
+    .sezione_richiedi_preventivo .container_form form .container_trattamento_dati input{
         flex-basis:3%;
         height: 30px;
         width: 30px;
@@ -364,65 +483,83 @@ body, html {
 
     }
 
-    .container_trattamento_dati p{
+    .sezione_richiedi_preventivo .container_form form .container_trattamento_dati p{
         flex-basis:97%;
         font-size: 16px;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat', sans-serif;
         color: white;
     }
 
-    .submit{
-        display: block;
-        font-size: 16px;
-        font-family: 'Montserrat';
-        padding: 10px 60px 10px 60px;
-        margin: 10px auto 10px auto;
-        border-radius: 20px;
-        text-transform: uppercase;
-        border: none;
-        background: white;
-        color: #770404;
-    }
+    .sezione_richiedi_preventivo .container_form form .submit{
+            display: block;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px 60px 10px 60px;
+            margin: 10px auto 10px auto;
+            border-radius: 20px;
+            text-transform: uppercase;
+            border: none;
+            background: white;
+            color: #770404;
+            cursor: pointer;
+        }
 
     @media (min-width: 600px){
+
+        .sezione_richiedi_preventivo .container_mappa{
+            height: 500px;
+        }
+
+        .sezione_richiedi_preventivo .container_form{
+            padding:5%;
+        }
+
     }
 
     @media (min-width: 1024px){
 
-        .richiedi_preventivo{
-            background-color: #D9D9D9;
-            width: 100%;
-            display: flex;
+        .sezione_richiedi_preventivo{
             flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
-        .map_container{
+        .sezione_richiedi_preventivo .container_mappa {
             flex-basis: 50%;
         }
 
-        .form_container{
+        .sezione_richiedi_preventivo .container_form{
             flex-basis: 50%;
-            padding:5%;
-            background: none;
         }
 
     }
 
     @media (min-width: 1920px){
 
-        .richiedi_preventivo{
-            background-color: #D9D9D9;
-            width: 100%;
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
+        .sezione_richiedi_preventivo{
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center fixed;
             background-size: cover;
+        }
+
+        .sezione_richiedi_preventivo .container_form form h1{
+            font-size: 50px;
+        }
+
+        .sezione_richiedi_preventivo .container_form form p{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sezione_richiedi_preventivo .container_form form #error{
+            font-size: 20px;
+        }
+
+        .sezione_richiedi_preventivo .container_form form .container_input_dati_cliente .campo_form h2{
+            font-size: 20px;
+        }
+
+        .sezione_richiedi_preventivo .container_form form .container_input_dati_cliente .campo_form h2{
+            font-size: 20px;
         }
 
     }

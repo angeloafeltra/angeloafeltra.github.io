@@ -1,16 +1,19 @@
-const frase=document.querySelector('.frase')
-const header_richiedi_preventivo=document.querySelector('.descrizione_sezione h1')
-const body_richiedi_preventivo=document.getElementsByClassName('body')
-const info=document.querySelector('.info')
-const mappa=document.querySelector('.map_container')
-const formPreventivo=document.querySelector('form')
 
-function createIntersectionObserver(classToAdd,visibility) {
-    const handleIntersection = (entries, observer) => {
+const header_richiedi_preventivo=document.querySelector('.sezione_info_preventivo .container_descrizione .header_descrizione')
+const list_body_richiedi_preventivo=document.querySelectorAll('.sezione_info_preventivo .container_descrizione .body_descrizione')
+
+const info=document.querySelector('.sezione_info_preventivo .container_info')
+
+const mappa=document.querySelector('.sezione_richiedi_preventivo .container_mappa')
+const formPreventivo=document.querySelector('.sezione_richiedi_preventivo .container_form')
+
+function createIntersectionObserver(classToAdd,visibility,delay) {
+    const handleIntersection = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add(classToAdd);
-                observer.unobserve(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add(classToAdd);
+                }, delay)
             }
         });
     };
@@ -20,35 +23,23 @@ function createIntersectionObserver(classToAdd,visibility) {
     });
 }
 
-const observer_swipeUp = createIntersectionObserver('swipe_up_animation_end',0.5)
-const observer_comparsaGraduale = createIntersectionObserver('comparsa_graduale_end',0.5)
-const observer_swipeRight = createIntersectionObserver('swipe_right_animation_end',0.5)
-const observer_entrataRight = createIntersectionObserver('entrate_right_animation_end',0.5)
-const observer_entrataLeft = createIntersectionObserver('entrate_left_animation_end',0.5)
+function setAnimation(element,animation_start,animation_end,visibility,delay){
+    element.classList.add(animation_start)
+    let observer=createIntersectionObserver(animation_end,visibility, delay)
+    observer.observe(element)
+}
+
 
 window.addEventListener('load', function (){
-    console.log("Setto le animazioni")
 
-    frase.classList.add('comparsa_graduale_start');
-    observer_comparsaGraduale.observe(frase);
-
-
-    header_richiedi_preventivo.classList.add('comparsa_graduale_start');
-    observer_comparsaGraduale.observe(header_richiedi_preventivo);
-
-    for(i=0;i<body_richiedi_preventivo.length;i++){
-        body_richiedi_preventivo[i].classList.add('comparsa_graduale_start');
-        observer_comparsaGraduale.observe(body_richiedi_preventivo[i]);
+    setAnimation(header_richiedi_preventivo, 'move_diagona_right_up_start', 'move_diagona_right_up_end', 0.5, 0)
+    for(let body of list_body_richiedi_preventivo){
+        setAnimation(body, 'move_diagona_right_up_start', 'move_diagona_right_up_end', 0.5, 0)
     }
+    setAnimation(info,'entrate_right_start','entrate_right_end',0.5,0)
 
-    info.classList.add('entrate_right_animation_start');
-    observer_entrataRight.observe(info);
-
-    mappa.classList.add('entrate_left_animation_start');
-    observer_entrataLeft.observe(mappa);
-
-    formPreventivo.classList.add('comparsa_graduale_start');
-    observer_comparsaGraduale.observe(formPreventivo);
+    setAnimation(formPreventivo,'entrate_right_start','entrate_right_end',0.5,0)
+    setAnimation(mappa,'entrate_left_start','entrate_left_end',0.5,0)
 
 });
 

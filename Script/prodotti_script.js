@@ -45,6 +45,9 @@
 
 
         showDescrizione(){
+            console.log("Dimensione immagine: ",this.#immagine.offsetHeight)
+            console.log("Dimensione container: ",this.#container.offsetHeight)
+
             if(this.#immagine.offsetHeight===this.#container.offsetHeight) {
                 this.#immagine.style.opacity = 0.3;
                 this.#descrizione.style.display = "flex";
