@@ -6,7 +6,6 @@
 
 body, html {
     font-family: sans-serif;
-    /*background-color: #EDEAEA;*/
     background-color: white;
     height: 100%;
     max-width: 100%;
@@ -17,12 +16,12 @@ body, html {
 
 /* || Main Image Element Style */
 
-    .main_img{
+    .container_immagine_principale{
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_10.png") no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ShowRoom/background_10.png") no-repeat center center;
         background-size: cover;
         text-align: center;
         padding-right: 10%;
@@ -31,8 +30,8 @@ body, html {
 
     .frase{
         color: white;
-        font-family: 'Alfa Slab One';
-        font-size: 30px;
+        font-family: 'Alfa Slab One', sans-serif;
+        font-size: 40px;
         font-weight: lighter;
         text-transform: uppercase;
         opacity: 0;
@@ -55,8 +54,8 @@ body, html {
 
     @media (min-width: 1024px) {
 
-        .main_img{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_10.png") no-repeat center center fixed;
+        .container_immagine_principale{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ShowRoom/background_10.png") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
             padding-left: 15%;
@@ -70,8 +69,8 @@ body, html {
 
     @media (min-width: 1920px) {
 
-        .main_img{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_10.png") no-repeat center center fixed;
+        .container_immagine_principale{
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/ShowRoom/background_10.png") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
             padding-left: 15%;
@@ -88,19 +87,18 @@ body, html {
 
 
 
-/* || Section1 Element Style */
+/* || Sezione Intro */
 
-    .container_section1{
+    .container_intro{
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        gap: 10px;
         padding: 10% 7% 10% 7%;
+        gap:50px
     }
 
-    .container_slogan{
+    .container_intro .container_slogan{
         flex-basis: 100%;
         text-align: center;
         display: flex;
@@ -108,232 +106,360 @@ body, html {
         gap: 10px;
     }
 
-    .container_slogan h1{
-        font-family: 'Helvetica Neue';
+    .container_intro .container_slogan .header_slogan{
+        font-family: 'Helvetica Neue',sans-serif;
         font-size: 35px;
         text-transform: uppercase;
         font-weight: bold;
-        padding: 5px;
     }
 
-    .container_slogan p{
-        font-family: 'Montserrat';
+    .container_intro .container_slogan .subheader_slogan{
+        font-family: 'Montserrat',sans-serif;
         font-size: 20px;
-        padding: 5px;
     }
 
-    .container_paroleChiavi{
+    .container_intro .container_caratteristiche{
         flex-basis: 100%;
-
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: 0;
-        padding: 50px 0px 50px 0px;
+        gap:0px
     }
 
-    .container_parolaChiave{
-        flex-basis:100%;
-        text-align: center;
-
+    .container_intro .container_caratteristiche .container_caratteristica{
+        display: block;
+        flex-basis: 85%;
         height: 350px;
-        display: flex;
-        flex-direction: column;
         position: relative;
     }
 
-    .img_space{
+    .container_intro .container_caratteristiche .container_caratteristica .container_immagine{
+        display: block;
         width: 100%;
         height: 100%;
-        box-shadow: 5px 0px 10px black;
         opacity: 1;
-        z-index: 2;
-        cursor: pointer;
     }
 
-    .container_parolaChiave .descrizione{
-        display: none;
-        width: 100%;
+    .container_intro .container_caratteristiche .container_caratteristica .container_descrizione{
+
         position: absolute;
+        top:0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        width: 100%;
+        height: 100%;
         padding: 10px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        text-align: center;
     }
 
-    .container_parolaChiave .descrizione h1{
-        font-family: 'Helvetica Neue';
-        font-size: 28px;
-        padding: 5px;
+    .container_intro .container_caratteristiche .container_caratteristica .container_descrizione .header_descrizione{
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 26px;
     }
 
-    .container_parolaChiave .descrizione p{
-        font-family: 'Montserrat';
-        font-size: 18px;
-        padding: 5px;
+    .container_intro .container_caratteristiche .container_caratteristica .container_descrizione .body_descrizione{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
     }
 
-    .touch-btn{
+    .container_intro .container_caratteristiche .container_caratteristica .icona_touch{
         position: absolute;
         width: 40px;
         height: 40px;
         background-color: #770404;
         display: block;
         bottom: 20px;
+        right: 10px;
         border-radius: 20px;
         padding: 7px;
         box-shadow: 3px 3px 8px black;
-        z-index: 5;
-    }
-
-    .btn1{
-        left: 85%;
-    }
-
-    .btn2{
-        left: 5%;
-    }
-
-    .btn3{
-        left: 85%;
-    }
-
-    .btn1 img{
-        width: 100%;
-        height: 100%;
-        rotate: -45deg
-    }
-
-    .btn2 img{
-        width: 100%;
-        height: 100%;
-        rotate: 45deg;
-    }
-
-    .btn3 img{
-        width: 100%;
-        height: 100%;
-        rotate: -45deg
     }
 
 
-    @media (min-width: 600px){
+    @media (min-width: 800px) {
 
-        .container_section1{
-            padding: 5% 5% 5% 5%;
+        .container_intro{
+            padding: 10% 7% 5% 7%;
         }
 
-        .container_paroleChiavi{
+        .container_intro .container_slogan .header_slogan{
+            font-size: 40px;
+        }
+
+        .container_intro .container_slogan .subheader_slogan{
+            font-size: 24px;
+        }
+
+        .container_intro .container_caratteristiche{
             flex-wrap: nowrap;
+            gap:0px;
             align-items: start;
         }
 
-        .container_parolaChiave{
-            flex-basis:33%;
+        .container_intro .container_caratteristiche .container_caratteristica{
+            height: 400px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica:nth-child(1){
+            margin-top: 50px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica:nth-child(2){
+            margin-top: 100px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica:nth-child(3){
+            margin-top: 150px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica{
+            flex-basis: 33%;
             height: 370px;
         }
 
-        .container_parolaChiave .descrizione h1{
-            font-size: 28px;
-        }
-
-        .container_parolaChiave .descrizione p{
-            font-size: 1.8vh;
-        }
-
-        .block1{
-            margin-top: 0;
-        }
-
-        .block2{
-            margin-top: 70px;
-        }
-
-        .block3{
-            margin-top: 120px;
-        }
-
-        .btn2 img{
-            rotate: -45deg;
-        }
-
-        .btn1{
-            left: 78%;
-        }
-
-        .btn2{
-            left: 78%;
-        }
-
-        .btn3{
-            left: 78%;
-        }
-
-
-
     }
-
 
     @media (min-width: 1024px) {
 
-    .container_section1{
-        padding: 5% 10% 5% 10%;
+        .container_intro{
+            padding: 10% 10% 5% 10%;
+        }
+
+        .container_intro .container_slogan .header_slogan{
+            font-size: 45px;
+        }
+
+        .container_intro .container_slogan .subheader_slogan{
+            font-size: 25px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica:hover{
+            transform: translateY(-30px);
+            transition: transform 1s ease;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica .container_descrizione .header_descrizione{
+            font-size: 30px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica .container_descrizione .body_descrizione{
+            font-size: 17px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica .icona_touch{
+            display: none;
+        }
+
     }
 
+    @media (min-width: 1920px) {
 
-    .container_slogan h1{
-        font-size: 45px;
+        .container_intro{
+            padding: 5% 10% 5% 10%;
+            gap:70px;
+        }
+
+        .container_intro .container_caratteristiche .container_caratteristica{
+            flex-basis: 25%;
+        }
+
     }
 
-    .container_slogan p{
-        font-size: 25px;
+/* ... */
+
+
+
+
+/* || Sezione "Richiedi Preventivo" Element Style */
+
+.sezione_richiedi_appuntamento{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/ShowRoom/background_6.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.sezione_richiedi_appuntamento .container_mappa{
+    flex-basis: 100%;
+    height: 400px;
+}
+
+.sezione_richiedi_appuntamento .container_form{
+    flex-basis: 100%;
+    padding:10%;
+    background: none;
+}
+
+.sezione_richiedi_appuntamento .container_form form h1{
+    font-size: 30px;
+    font-family: 'Alfa Slab One', sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: white;
+}
+
+.sezione_richiedi_appuntamento .container_form form p{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 4%;
+    color: white;
+}
+
+.sezione_richiedi_appuntamento .container_form form #errore{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    height: 20px;
+    color: red;
+    padding: 5px;
+    display: block;
+    text-align: center;
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_input_dati_cliente{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    margin-bottom: 10px;
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_input_dati_cliente .campo_form {
+    flex-basis: 100%;
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_input_dati_cliente .campo_form h2{
+    font-size: 18px;
+    font-family: 'Alfa Slab One', sans-serif;
+    font-weight: lighter;
+    color: white;
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_input_dati_cliente .campo_form input{
+    width: 100%;
+    border: white solid;
+    background: none;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    color: white;
+}
+
+::placeholder{
+    color: white;
+    opacity: 0.7;
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_trattamento_dati{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: stretch;
+    justify-content: center;
+    gap:10px;
+    margin-top: 10px;
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_trattamento_dati input{
+    flex-basis:3%;
+    height: 30px;
+    width: 30px;
+    margin-top: 3px;
+
+}
+
+.sezione_richiedi_appuntamento .container_form form .container_trattamento_dati p{
+    flex-basis:97%;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.sezione_richiedi_appuntamento .container_form form .submit{
+    display: block;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 60px 10px 60px;
+    margin: 10px auto 10px auto;
+    border-radius: 20px;
+    text-transform: uppercase;
+    border: none;
+    background: white;
+    color: #770404;
+    cursor: pointer;
+}
+
+@media (min-width: 600px){
+
+    .sezione_richiedi_appuntamento .container_mappa{
+        height: 500px;
     }
 
-    .container_parolaChiave{
-        height: 400px;
-        transform: translateY(0px);
-        transition: transform 0.5s ease;
-        position: relative;
+    .sezione_richiedi_appuntamento .container_form{
+        padding:5%;
     }
 
-    .container_parolaChiave:hover{
-        transform: translateY(-30px);
-        transition: transform 1s ease;
+}
+
+@media (min-width: 1024px){
+
+    .sezione_richiedi_appuntamento{
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/ShowRoom/background_6.jpg) no-repeat center center fixed;
+        background-size: cover;
     }
 
-    .container_parolaChiave .descrizione h1{
-        font-size: 5vh;
+    .sezione_richiedi_appuntamento .container_mappa {
+        flex-basis: 50%;
     }
 
-    .container_parolaChiave .descrizione p{
-        font-size: 2.5vh;
+    .sezione_richiedi_appuntamento .container_form{
+        flex-basis: 50%;
     }
 
-    .touch-btn{
-        display: none;
+}
+
+@media (min-width: 1920px){
+
+    .sezione_richiedi_appuntamento{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/ShowRoom/background_6.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .sezione_richiedi_appuntamento .container_form form h1{
+        font-size: 50px;
+    }
+
+    .sezione_richiedi_appuntamento .container_form form p{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sezione_richiedi_appuntamento .container_form form #error{
+        font-size: 20px;
+    }
+
+    .sezione_richiedi_appuntamento .container_form form .container_input_dati_cliente .campo_form h2{
+        font-size: 20px;
     }
 
 
 }
 
-    @media (min-width: 1920px) {
 
-        .container_slogan h1{
-            font-size: 55px;
-        }
 
-        .block1{
-            margin-top: 0;
-        }
 
-        .block2{
-            margin-top: 100px;
-        }
+/* ... */
 
-        .block3{
-            margin-top: 200px;
-        }
-
-    }
 
