@@ -148,20 +148,6 @@
 
     }
 
-    class CategoriaBean {
-        #nome;
-        #immagine_categoria;
-
-        constructor(nome, immagine) {
-            this.#nome=nome;
-            this.#immagine_categoria=immagine;
-        }
-
-        getNome() { return this.#nome; }
-        getImmagine() { return this.#immagine_categoria;}
-
-    }
-
 /* ... */
 
 
@@ -216,20 +202,25 @@
         });
     }
 
+    function getImgCategoria(xmlDoc,categoria){
+        let prodottiElements=xmlDoc.getElementsByTagName('prodotto');
+        let list_img=[]
+        for(let prodotto of prodottiElements){
+            if(prodotto.getElementsByTagName('categoria')[0].textContent===categoria){
+                list_img=prodotto.getElementsByTagName('img');
+                if(list_img.length>0)
+                    return list_img[0].textContent
+            }
+        }
+        return "";
+    }
+
     function getCategorie(xmlDoc){
         let categoryElements=xmlDoc.getElementsByTagName('categoria');
         let list_categorie=[];
-        let tmp=[];
         for (let categoria of categoryElements){
-            if(tmp.indexOf(categoria.textContent)===-1){
-                tmp.push(categoria.textContent);
-                let padre=categoria.parentNode;
-                let immagini_elements=padre.getElementsByTagName('img');
-                if(immagini_elements.length>0)
-                    list_categorie.push(new CategoriaBean(categoria.textContent, immagini_elements[0].textContent))
-                else
-                    list_categorie.push(new CategoriaBean(categoria.textContent, ""))
-            }
+            if(list_categorie.indexOf((categoria.textContent))===-1)
+                list_categorie.push(categoria.textContent);
         }
         return list_categorie;
     }
@@ -267,8 +258,9 @@ window.addEventListener("load", (event) => {
     window.scrollTo(0,0)
     getXMLFile().then(function(xmlFile){
         for(let categoria of getCategorie(xmlFile)){
-            let num_sottocategorie=getNumProdottiByCategory(xmlFile,categoria.getNome())
-            catalgo.addProdotto(categoria.getNome(),categoria.getImmagine(),num_sottocategorie)
+            let num_sottocategorie=getNumProdottiByCategory(xmlFile,categoria)
+            let img_categoria=getImgCategoria(xmlFile,categoria)
+            catalgo.addProdotto(categoria,img_categoria,num_sottocategorie)
         }
     });
 

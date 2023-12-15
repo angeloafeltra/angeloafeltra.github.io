@@ -78,7 +78,6 @@ window.addEventListener('load', function (){
 
     setTimeout(()=>{
         for(let item of catalogo.querySelectorAll('.container_item')){
-        console.log("Item")
         setAnimation(item,'move_down_start','move_down_end',0.5,0)
     }
     } ,500);
