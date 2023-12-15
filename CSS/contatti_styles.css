@@ -24,7 +24,7 @@ body, html {
         align-items: center;
         justify-content: center;
         height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Contatti/background_5.jpg") no-repeat center center;
         background-size: cover;
         text-align: center;
         padding-right: 10%;
@@ -58,7 +58,7 @@ body, html {
     @media (min-width: 1024px) {
 
         .container_immagine_principale{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Contatti/background_5.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
             padding-left: 15%;
@@ -73,7 +73,7 @@ body, html {
     @media (min-width: 1920px) {
 
         .container_immagine_principale{
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Background/background_5.jpg") no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Immagini/Contatti/background_5.jpg") no-repeat center center fixed;
             background-size: cover;
             padding-right: 15%;
             padding-left: 15%;
@@ -370,7 +370,7 @@ body, html {
         flex-wrap: wrap-reverse;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Contatti/background_16.jpg) no-repeat center center;
         background-size: cover;
     }
 
@@ -520,7 +520,7 @@ body, html {
 
         .sezione_richiedi_preventivo{
             flex-wrap: nowrap;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Contatti/background_16.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -537,7 +537,7 @@ body, html {
     @media (min-width: 1920px){
 
         .sezione_richiedi_preventivo{
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Background/background_16.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../Immagini/Contatti/background_16.jpg) no-repeat center center fixed;
             background-size: cover;
         }
 
