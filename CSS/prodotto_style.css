@@ -176,7 +176,7 @@ body, html {
     }
 
     .sezione_immagini .slider{
-        display: block;
+        display: none;
         width: 100%;
         height: 500px;
         background-position: center center;

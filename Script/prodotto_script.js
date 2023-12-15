@@ -10,6 +10,7 @@
 
         constructor(ref_container_img,ref_img,lista_immagini,start_img) {
             this.#container_immagine=ref_container_img;
+            this.#container_immagine.style.display="block";
             this.#img=ref_img;
             this.#list_immagini=lista_immagini;
             this.setImg(start_img);
@@ -285,21 +286,24 @@ window.addEventListener("load", () => {
     getXMLFile().then(function(xmlFile) {
         let prodotto=getProdottoByName(xmlFile,nome_prodotto);
         descrizioneProdotto.innerHTML=prodotto.getDescrizione();
-        slider=new Slider(document.querySelector('.sezione_immagini .slider'),
-            document.querySelector('.sezione_immagini .slider .immagine'),
-            prodotto.getImmagini(),
-            prodotto.getImmagini()[0])
-        mosaico=new Mosaico(document.querySelector('.sezione_immagini .mosaico_immagini'));
-        for (let immagine of prodotto.getImmagini()) {
-            mosaico.addItem(immagine)
-        }
-        sliderDesktop=new SliderDesktop(document.querySelector('.container_slider_fullscreen'),
-            document.querySelector('.container_slider_fullscreen .container_immagine'),
-            document.querySelector('.container_slider_fullscreen .btn_avanti'),
-            document.querySelector('.container_slider_fullscreen .btn_dietro'),
-            document.querySelector('.container_slider_fullscreen .btn_close'),
-            prodotto.getImmagini()
+        if(prodotto.getImmagini().length >0) {
+            console.log("Nome: ", prodotto.getNome(), " Img:", prodotto.getImmagini())
+            slider = new Slider(document.querySelector('.sezione_immagini .slider'),
+                document.querySelector('.sezione_immagini .slider .immagine'),
+                prodotto.getImmagini(),
+                prodotto.getImmagini()[0])
+            mosaico = new Mosaico(document.querySelector('.sezione_immagini .mosaico_immagini'));
+            for (let immagine of prodotto.getImmagini()) {
+                mosaico.addItem(immagine)
+            }
+            sliderDesktop = new SliderDesktop(document.querySelector('.container_slider_fullscreen'),
+                document.querySelector('.container_slider_fullscreen .container_immagine'),
+                document.querySelector('.container_slider_fullscreen .btn_avanti'),
+                document.querySelector('.container_slider_fullscreen .btn_dietro'),
+                document.querySelector('.container_slider_fullscreen .btn_close'),
+                prodotto.getImmagini()
             );
+        }
     });
 
 })
