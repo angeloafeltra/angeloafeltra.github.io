@@ -108,6 +108,14 @@
 
     const sezione_showRoom_container_img=document.querySelector('.sezione_showRoom .container_immagine')
     const sezione_showRoom_container_desc=document.querySelector('.sezione_showRoom .container_descrizione')
+    const sezione_ChiSiamo_img=document.querySelector('.sezione_chiSiamo .container_immagine .subcontainer_immagine img')
+    const sezione_Prodotti_img=document.querySelector('.sezione_prodotti .container_immagine .subcontainer_immagine img')
+
+    const list_img_chiSiamo=['Immagini/Home/ImgChiSiamo.jpg','Immagini/Home/ImgChiSiamo2.png','Immagini/Home/ImgChiSiamo3.jpeg'];
+    const list_img_prodotti=['Immagini/Home/ImgProdotti.jpg','Immagini/Home/ImgProdotti2.jpeg','Immagini/Home/ImgProdotti3.jpeg']
+
+    let indexChiSiamo=0;
+    let indexProdotti=0;
 
 /* ... */
 
@@ -152,6 +160,26 @@
                 link.style.color = "#000000";
             }
         }
+
+        setInterval(()=>{
+
+            if(indexChiSiamo==list_img_chiSiamo.length-1)
+                indexChiSiamo=0;
+            else
+                indexChiSiamo+=1;
+            sezione_ChiSiamo_img.src=list_img_chiSiamo[indexChiSiamo];
+
+        },3000,sezione_ChiSiamo_img,list_img_chiSiamo,indexChiSiamo)
+
+        setInterval(()=>{
+
+            if(indexProdotti==list_img_prodotti.length-1)
+                indexProdotti=0;
+            else
+                indexProdotti+=1;
+            sezione_Prodotti_img.src=list_img_prodotti[indexProdotti];
+
+        },3000,sezione_Prodotti_img,list_img_prodotti,indexProdotti)
     });
 
 /* ... */

@@ -155,17 +155,17 @@
 
 /* || Variabili e constanti globali */
     const caratteristica1=new Caratteristica(document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica')[0],
-        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine')[0],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine img')[0],
         document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_descrizione')[0],
         document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .icona_touch')[0]);
 
     const caratteristica2=new Caratteristica(document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica')[1],
-        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine')[1],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine img')[1],
         document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_descrizione')[1],
         document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .icona_touch')[1]);
 
     const caratteristica3=new Caratteristica(document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica')[2],
-        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine')[2],
+        document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_immagine img')[2],
         document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .container_descrizione')[2],
         document.querySelectorAll('.container_intro .container_caratteristiche .container_caratteristica .icona_touch')[2]);
 

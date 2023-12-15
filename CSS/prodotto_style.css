@@ -275,7 +275,7 @@ body, html {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.85);
             z-index: 2000;
         }
 
@@ -465,6 +465,7 @@ body, html {
 
         .sezione_contattaci button{
             flex-basis: 15%;
+            font-size: 20px;
         }
 
         .sezione_contattaci .container_descrizione .header_descrizione{
@@ -472,10 +473,6 @@ body, html {
         }
 
         .sezione_contattaci .container_descrizione .body_descrizione{
-            font-size: 20px;
-        }
-
-        .sezione_contattaci button{
             font-size: 20px;
         }
 
