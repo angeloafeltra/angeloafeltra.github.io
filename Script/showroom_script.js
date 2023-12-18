@@ -133,7 +133,7 @@ class FormAppuntamento{
 
 
 
-        if(!this.validazioneTelefono(telefono)==null){
+        if(!this.validazioneTelefono(telefono)){
             this.#error.innerHTML="Inserire un numero di telefono valido";
             this.#error.style.display="block";
             return;
@@ -169,7 +169,7 @@ class FormAppuntamento{
 
     validazioneTelefono(telefono){
         let telefonoformat= /^((\+39)|(0039)|(\(00\+39\)))?([ ]?[3][0-9]{2}[ ]?[-\s\.]?\d{6,7})$/;
-        return telefono.match(telefonoformat);
+        return telefono.test(telefonoformat);
     }
 
     validazioneTrattamentoDati(){

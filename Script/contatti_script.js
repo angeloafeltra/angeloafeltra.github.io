@@ -48,13 +48,13 @@
                 return;
             }
 
-            if(this.validazioneMail(mail)==null){
+            if(this.validazioneMail(mail)){
                 this.#error.innerHTML="Inserire una mail valida";
                 this.#error.style.display="block";
                 return;
             }
 
-            if(!this.validazioneTelefono(telefono)==null){
+            if(!this.validazioneTelefono(telefono)){
                 this.#error.innerHTML="Inserire un numero di telefono valido";
                 this.#error.style.display="block";
                 return;
@@ -83,12 +83,12 @@
 
         validazioneMail(mail){
             let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return mail.match(mailformat);
+            return mail.test(mailformat);
         }
 
         validazioneTelefono(telefono){
             let telefonoformat= /^((\+39)|(0039)|(\(00\+39\)))?([ ]?[3][0-9]{2}[ ]?[-\s\.]?\d{6,7})$/;
-            return telefono.match(telefonoformat);
+            return telefono.test(telefonoformat);
         }
 
         validazioneTrattamentoDati(){

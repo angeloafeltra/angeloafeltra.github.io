@@ -10,7 +10,7 @@
 
         constructor(ref_container_img,ref_img,lista_immagini,start_img) {
             this.#container_immagine=ref_container_img;
-            this.#container_immagine.style.display="block";
+            //this.#container_immagine.style.display="block";
             this.#img=ref_img;
             this.#list_immagini=lista_immagini;
             this.setImg(start_img);
@@ -19,7 +19,9 @@
             this.#container_immagine.addEventListener('touchstart',this.logInitialTouch.bind(this));
             this.#container_immagine.addEventListener('touchend',this.actionSwipeImg.bind(this));
         }
-
+        static hiddenContainer(ref_container_img) {
+            ref_container_img.style.display="none";
+        }
         getIndexCurrentImg(){
             let path_img=this.#container_immagine.style.backgroundImage
             let index=0
@@ -287,7 +289,6 @@ window.addEventListener("load", () => {
         let prodotto=getProdottoByName(xmlFile,nome_prodotto);
         descrizioneProdotto.innerHTML=prodotto.getDescrizione();
         if(prodotto.getImmagini().length >0) {
-            console.log("Nome: ", prodotto.getNome(), " Img:", prodotto.getImmagini())
             slider = new Slider(document.querySelector('.sezione_immagini .slider'),
                 document.querySelector('.sezione_immagini .slider .immagine'),
                 prodotto.getImmagini(),
@@ -303,6 +304,8 @@ window.addEventListener("load", () => {
                 document.querySelector('.container_slider_fullscreen .btn_close'),
                 prodotto.getImmagini()
             );
+        }else{
+            Slider.hiddenContainer(document.querySelector('.sezione_immagini .slider'));
         }
     });
 
