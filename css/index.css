@@ -7,7 +7,7 @@
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
     appearance: none !important;
-    /*border: solid 1px magenta;*/
+    border: solid 1px magenta;
 }
 
 body, html {
