@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/skill_component.css"/>
     <link rel="stylesheet" href="./css/work_component.css"/>
     <link rel="stylesheet" href="css/contactMe.css"/>
+    <link rel="stylesheet" href="css/preloader.css"/>
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Kristi" />
     <title>Home</title>
@@ -48,6 +49,19 @@
         </nav>
 
     </header>
+
+    <div class="preloader">
+        <h1>Angelo Afeltra</h1>
+        <div class="wrapperanimate">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Loading...</span>
+        </div>
+    </div>
 
     <main>
 
@@ -198,6 +212,12 @@
 
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var preloader = document.querySelector(".preloader");
+    preloader.style.display = "none";
+    });
+</script>
 <script src="./script/navbar.js"></script>
 <script src="./script/aboutMe_component.js"></script>
 <script src="./script/skill_component.js"></script>
