@@ -1,0 +1,197 @@
+
+.carrerMap{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    width: auto;
+    height: 370px;
+    padding: 25px;
+    background-color: #C2A33B;
+    overflow-y: scroll;
+}
+
+.container_card{
+    display: block;
+    width: 220px;
+    min-width: 220px;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+
+    position: relative;
+}
+
+.container_card:nth-child(1){
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Immagini/1x/CarrerMap_Img/retro-computer.jpg") center center no-repeat;
+    background-size: cover;
+}
+.container_card:nth-child(2){
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Immagini/1x/CarrerMap_Img/computer_modern.jpg") center center no-repeat;
+    background-size: cover;
+}
+.container_card:nth-child(3){
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Immagini/1x/CarrerMap_Img/keyboard.jpg") center center no-repeat;
+    background-size: cover;
+}
+.container_card:nth-child(4){
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Immagini/1x/CarrerMap_Img/develop.jpg") center center no-repeat;
+    background-size: cover;
+}
+.container_card:nth-child(5){
+    background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Immagini/1x/CarrerMap_Img/artificial_intelligence.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.container_card .container_info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+
+    width: 100%;
+    height: auto;
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.container_card .container_info .container_year{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    background-color: black;
+    border-radius: 37.5px;
+    margin: 0 auto 0 auto;
+}
+
+.container_card .container_info .container_year h1{
+    font-family: Arial, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: normal;
+    color: white;
+}
+
+.container_card .container_info h2{
+    font-family: Satoshi, serif;
+    font-size: 0.938rem;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    color: white;
+}
+
+.container_card .container_info h4{
+    font-family: Satoshi, serif;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: white;
+}
+
+.container_card .container_info h3{
+    font-family: Satoshi, serif;
+    font-size: 0.938rem;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    color: white;
+}
+
+@media screen and (min-width: 428px) {
+
+    .container_card{
+        width: 260px;
+        min-width: 260px;
+        height: 100%;
+    }
+
+    .container_card .container_info .container_year h1{
+        font-size: 2.5rem;
+    }
+
+    .container_card .container_info h2{
+        font-size: 1rem;
+    }
+
+    .container_card .container_info h4{
+        font-size: 0.875rem;
+    }
+
+    .container_card .container_info h3{
+        font-size: 1.063rem;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .carrerMap{
+        height: 500px;
+    }
+
+    .container_card{
+        width: 290px;
+        min-width: 290px;
+        height: 100%;
+    }
+
+    .container_card .container_info h2{
+        font-size: 1.125rem;
+    }
+
+    .container_card .container_info h4{
+        font-size: 1rem;
+    }
+
+    .container_card .container_info h3{
+        font-size: 1.188rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .carrerMap{
+        height: 640px;
+    }
+
+    .container_card{
+        width: 373px;
+        min-width: 373px;
+        height: 100%;
+    }
+
+    .container_card .container_info .container_year{
+        width: 140px;
+        height: 140px;
+        border-radius: 70px;
+    }
+
+    .container_card .container_info .container_year h1{
+        font-size: 4.625rem;
+    }
+
+    .container_card .container_info h2{
+        font-size: 1.5rem;
+    }
+
+    .container_card .container_info h4{
+        font-size: 1.375rem;
+    }
+
+    .container_card .container_info h3{
+        font-size: 1.438rem;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+
+}

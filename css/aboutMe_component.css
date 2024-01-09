@@ -1,0 +1,278 @@
+
+.container_aboutMe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    width: 100%;
+    min-width: 315px;
+    height: auto;
+    padding: 50px 20px 50px 20px;
+}
+
+.container_aboutMe .container_img{
+    flex-basis: 0;
+    overflow: hidden;
+}
+
+.container_aboutMe .container{
+    flex-basis: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.container_aboutMe .container .container_header{
+    flex-basis: 100%;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.container_aboutMe .container .container_header h1{
+    width: auto;
+    height: auto;
+
+    font-family: Satoshi;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3.375rem;
+}
+
+.container_aboutMe .container .container_header img{
+    width: 77px;
+    height: 53px;
+    margin-top: 10px;
+}
+
+.container_aboutMe .container .description{
+    flex-basis: 100%;
+
+    font-family: Satoshi;
+    font-size: 0.875rem;
+    font-weight: 100;
+    font-style: normal;
+    color: black;
+    text-align: left;
+}
+
+.container_aboutMe .container .container_social{
+    flex-basis: auto;
+    height: auto;
+    list-style-type: none;
+}
+
+.container_aboutMe .container .container_social li{
+    display: inline-block;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.container_aboutMe .container .container_social li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.container_aboutMe .container .container_social li a img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: scale 0.3s linear;
+}
+
+.container_aboutMe .container .container_social li a img:hover{
+    scale: 1.3;
+}
+
+.container_aboutMe .container button{
+    flex-basis: auto;
+
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    border-radius: 40px;
+    box-shadow: 5px 10px 10px gray;
+    cursor: pointer;
+    border: none;
+}
+
+.container_aboutMe .container button:hover{
+    background-color: darkviolet;
+}
+
+.container_aboutMe .container button img{
+    width: 38px;
+    height: 35px;
+}
+
+.container_aboutMe .container button p{
+    display: block;
+    width: 30px;
+    margin: 0 auto 0 auto;
+
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 428px) {
+
+    .container_aboutMe .container .container_header h1{
+        font-size: 4rem;
+    }
+
+    .container_aboutMe .container .description{
+        font-size: 1rem;
+    }
+
+    .container_aboutMe .container .container_social li{
+        width: 40px;
+        height: 40px;
+    }
+
+    .container_aboutMe .container button{
+        height: 106px;
+        width: 106px;
+        border-radius: 53px;
+    }
+
+    .container_aboutMe .container button img{
+        width: 51px;
+        height: 47px;
+    }
+
+    
+}
+
+@media screen and (min-width: 768px) {
+
+    .container_aboutMe{
+        padding: 50px 50px 50px 50px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+
+    .container_aboutMe{
+        align-items: stretch;
+        justify-content: center;
+        gap:10px;
+
+        padding: 50px 47px 50px 47px;
+    }
+
+
+    .container_aboutMe .container_img{
+        flex-basis:25.8%;
+
+        display: block;
+        height: 686px;
+        padding: 20px;
+        border-radius: 132.5px 132.5px 0px 132.5px;
+        background-color: black;
+
+    }
+
+    .container_aboutMe .container_img img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 132.5px 132.5px 0px 132.5px;
+        object-position: center center;
+        object-fit: cover;
+    }
+
+    .container_aboutMe .container{
+        flex-basis: 70%;
+    }
+
+    .container_aboutMe .container .container_header h1{
+        font-size: 5.625rem;
+    }
+
+    .container_aboutMe .container .container_header img{
+        width: 98px;
+        height: 68px;
+    }
+
+    .container_aboutMe .container .description{
+        font-size: 1.25rem;
+    }
+
+    .container_aboutMe .container .container_social li {
+        width: 50px;
+        height: 50px;
+    }
+
+    .container_aboutMe .container button{
+        width: 140px;
+        height: 140px;
+        border-radius: 70px;
+    }
+
+    .container_aboutMe .container button img{
+        width: 64px;
+        height: 71px;
+    }
+
+    .container_aboutMe .container button p{
+        width: 50px;
+        font-size: 1.875rem;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+
+    .container_aboutMe .container .container_header h1{
+        font-size: 8rem;
+    }
+
+    .container_aboutMe .container .container_header img{
+        width: 170px;
+        height: 117px;
+    }
+
+    .container_aboutMe .container .description{
+        font-size: 1.5rem;
+    }
+
+    .container_aboutMe .container .container_social li{
+        width: 69px;
+        height: 69px;
+    }
+
+    .container_aboutMe .container button{
+        width: 160px;
+        height: 160px;
+        border-radius: 80px;
+    }
+
+    .container_aboutMe .container button img{
+        width: 76px;
+        height: 70px;
+    }
+
+    .container_aboutMe .container button p{
+        width: 50px;
+        font-size: 1.875rem;
+    }
+
+}

@@ -1,0 +1,305 @@
+
+.container_contactMe{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-width: 312px;
+    height: auto;
+    padding: 0px 20px 50px 20px;
+
+}
+
+.container_contactMe h1{
+    flex-basis: 100%;
+
+    font-family: Satoshi, serif;
+    font-size: 2.813rem;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.container_contactMe p{
+    font-family: Satoshi, serif;
+    font-size: 0.875rem;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.container_contactMe form{
+    flex-basis: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    margin-top: 10px;
+}
+
+.container_contactMe form p{
+    flex-basis: 49%;
+
+    font-family: Satoshi, serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.container_contactMe form p:nth-child(1) {
+    border-bottom: 2px solid black;
+}
+.container_contactMe form p:nth-child(3) {
+    border-bottom: 2px solid black;
+}
+
+.container_contactMe form input[type="text"]{
+    flex-basis: 45%;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    background: none;
+
+    font-family: Satoshi, serif;
+    font-size: 0.875rem;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container_contactMe form textarea{
+    flex-basis: 100%;
+    height: 80px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    background: none;
+    resize: none;
+
+    font-family: Satoshi, serif;
+    font-size: 0.875rem;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container_contactMe form textarea:focus, .container_contactMe form input[type="text"]:focus{
+    outline: none;
+}
+
+.container_contactMe form textarea:hover, .container_contactMe form input[type="text"]:hover{
+    cursor: text;
+}
+
+.container_contactMe form button{
+    flex-basis: auto;
+
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-left: 70%;
+    background: red;
+    border-radius: 40px;
+    filter: blur(10px);
+}
+
+.container_contactMe ul{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.container_contactMe ul li{
+    flex-basis: auto;
+
+    display: block;
+    width: 54px;
+    height: 54px;
+    transition: scale 0.4s linear;
+}
+
+.container_contactMe ul li:hover{
+    scale: 1.1;
+}
+
+.container_contactMe ul li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container_contactMe h2{
+    flex-basis: 100%;
+    margin-top: 70px;
+    text-align: center;
+
+    font-family: "Island Moments", serif;
+    font-size: 3.75rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+@media screen and (min-width: 428px) {
+
+    .container_contactMe p{
+        font-size: 1rem;
+    }
+
+    .container_contactMe form p{
+        flex-basis: 40%;
+        font-size: 1rem;
+    }
+
+    .container_contactMe form input[type="text"]{
+        flex-basis: 60%;
+        font-size: 1rem;
+    }
+
+    .container_contactMe form textarea{
+        font-size: 1rem;
+    }
+
+    .container_contactMe form button{
+        margin-left: 75%;
+    }
+
+}
+
+@media screen and (min-width: 728px) {
+
+    .container_contactMe h1{
+        font-size: 4.375rem;
+    }
+
+    .container_contactMe form{
+        flex-basis: 75%;
+    }
+
+    .container_contactMe p{
+        font-size: 1.125rem;
+    }
+
+    .container_contactMe form p{
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe form input[type="text"]{
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe form textarea{
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe form button{
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-left: 75%;
+    }
+
+    .container_contactMe ul{
+        flex-basis: 20%;
+        flex-direction: column;
+    }
+
+    .container_contactMe ul li{
+        width: 70px;
+        height: 70px;
+    }
+
+    .container_contactMe h2{
+        font-size: 5.625rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .container_contactMe{
+        padding: 0px 50px 50px 50px;
+    }
+
+    .container_contactMe h1{
+        font-size: 6.25rem;
+    }
+
+    .container_contactMe p{
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe form p{
+        flex-basis: 28%;
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe form input[type="text"]{
+        flex-basis: 72%;
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe form textarea{
+        font-size: 1.25rem;
+    }
+
+    .container_contactMe ul li{
+        flex-basis: 80px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .container_contactMe h2{
+        font-size: 12.5rem;
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+
+    .container_contactMe h1{
+        font-size: 150px;
+    }
+
+    .container_contactMe form{
+        flex-basis: 65%;
+    }
+
+    .container_contactMe p{
+        font-size: 28px;
+    }
+
+    .container_contactMe form p{
+        font-size: 28px;
+    }
+
+    .container_contactMe form input{
+        font-size: 28px;
+    }
+
+    .container_contactMe form textarea{
+        font-size: 28px;
+    }
+
+    .container_contactMe ul{
+        flex-basis: 30%;
+        flex-direction: row;
+    }
+
+    .container_contactMe ul li{
+        flex-basis: 100px;
+        height: 100px;
+    }
+
+
+}
+

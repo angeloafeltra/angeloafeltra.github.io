@@ -1,0 +1,130 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    /*border: solid 1px magenta;*/
+}
+
+body, html {
+    font-family: sans-serif;
+    background: url("../Immagini/1x/background3.jpg") center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-width: 350px;
+    margin: 0;
+    overscroll-behavior-y: none;
+    overflow:hidden;
+}
+
+main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/Satoshi/Satoshi-Black.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: italic;
+    font-weight: 900;
+    src: url("../fonts/Satoshi/Satoshi-BlackItalic.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/Satoshi/Satoshi-Bold.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: italic;
+    font-weight: bold;
+    src: url("../fonts/Satoshi/Satoshi-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: italic;
+    font-weight: normal;
+    src: url("../fonts/Satoshi/Satoshi-Italic.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: normal;
+    font-weight: 100;
+    src: url("../fonts/Satoshi/Satoshi-Light.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: italic;
+    font-weight: 100;
+    src: url("../fonts/Satoshi/Satoshi-LightItalic.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: normal;
+    font-weight: 200;
+    src: url("../fonts/Satoshi/Satoshi-Medium.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: italic;
+    font-weight: 200;
+    src: url("../fonts/Satoshi/Satoshi-MediumItalic.otf");
+}
+
+@font-face {
+    font-family: Satoshi;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Satoshi/Satoshi-Regular.otf");
+}
+
+@font-face {
+    font-family: Vogue;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/Vogue/Vogue.otf");
+}
+
+@font-face {
+    font-family: Vogue;
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/Vogue/Vogue Bold.otf");
+}
+
+@font-face {
+    font-family: Vogue;
+    font-style: italic;
+    font-weight: bold;
+    src: url("../fonts/Vogue/Vogue Bold Italic.otf");
+}
+
+@font-face {
+    font-family: Vogue;
+    font-style: italic;
+    font-weight: normal;
+    src: url("../fonts/Vogue/Vogue Italic.otf");
+}
